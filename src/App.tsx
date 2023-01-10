@@ -1,4 +1,15 @@
 import React, { useState, useEffect, useRef } from "react";
+import {
+  FaHome,
+  FaCode,
+  FaLaptop,
+  FaPhoneAlt,
+  FaLinkedin,
+  FaGithub,
+  FaEnvelope,
+  FaRegNewspaper,
+  FaNewspaper,
+} from "react-icons/fa";
 import "./App.css";
 
 function App() {
@@ -15,6 +26,44 @@ function App() {
   return (
     <main>
       <nav className="nav-bar">
+        <div className="nav__background">
+          <div className="nav--links">
+            <button className="nav--home">
+              <FaHome className="nav__link__icon" />
+              <h3 className="nav__link__name">Home</h3>
+            </button>
+            <button className="nav--projects">
+              <FaCode className="nav__link__icon" />
+              <h3 className="nav__link__name">Projects</h3>
+            </button>
+            <button className="nav--experience">
+              <FaLaptop className="nav__link__icon" />
+              <h3 className="nav__link__name">Experience</h3>
+            </button>
+            <button className="nav--contact">
+              <FaPhoneAlt className="nav__link__icon" />
+              <h3 className="nav__link__name">Contact</h3>
+            </button>
+          </div>
+          <div className="nav--socials">
+            <button className="nav--linkedin">
+              <FaLinkedin className="nav__social__icon" />
+              <h4 className="nav__social__name">LinkedIn</h4>
+            </button>
+            <button className="nav--github">
+              <FaGithub className="nav__social__icon" />
+              <h4 className="nav__social__name">GitHub</h4>
+            </button>
+            <button className="nav--email">
+              <FaEnvelope className="nav__social__icon" />
+              <h4 className="nav__social__name">Email</h4>
+            </button>
+            <button className="nav--resume">
+              <FaNewspaper className="nav__social__icon" />
+              <h4 className="nav__social__name">Resume</h4>
+            </button>
+          </div>
+        </div>
         <div className="nav__circle">
           <button className="nav__burger">
             <div className="nav__line"></div>

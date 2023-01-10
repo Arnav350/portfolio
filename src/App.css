@@ -79,37 +79,84 @@ body::-webkit-scrollbar-thumb {
   scrollbar-color: red black;
 } */
 
+/* nav_background */
+
+.nav__background {
+  position: fixed;
+  border-style: solid;
+  border-width: 100vh 0 0 320px;
+  border-color: transparent transparent transparent #444444;
+}
+
+.nav__link__icon {
+  height: 64px;
+  width: 64px;
+  padding: 16px;
+  color: #f8f8f8;
+  border: solid 2px #f8f8f8;
+  border-radius: 50%;
+}
+
+.nav__link__name {
+  font-size: 32px;
+  font-weight: 300;
+  color: #f8f8f8;
+}
+
+.nav__social__icon {
+  height: 48px;
+  width: 48px;
+  padding: 12px;
+  color: #f8f8f8;
+  border: solid 2px #f8f8f8;
+  border-radius: 50%;
+}
+
+.nav__social__name {
+  font-size: 24px;
+  font-weight: 300;
+  color: #f8f8f8;
+}
+
+.nav--home {
+  position: absolute;
+  top: 0px;
+  left: 0;
+}
+
 /* intro__circle */
 
 .nav__circle {
-  position: absolute;
-  top: -120px;
-  left: -160px;
+  position: fixed;
+  top: -160px;
+  left: -120px;
   background-color: #f8f8f8;
-  height: 240px;
+  height: 320px;
   width: 320px;
   border-radius: 50%;
-  box-shadow: 0 0 0 4px rgba(225, 255, 255, 0.05),
-    0 0 0 8px rgba(225, 255, 255, 0.05),
-    0 0 0 12px rgba(225, 255, 255, 0.05);
+  box-shadow: 6px 1px 0 6px rgba(225, 255, 255, 0.05),
+    6px 1px 0 12px rgba(225, 255, 255, 0.05),
+    6px 1px 0 18px rgba(225, 255, 255, 0.05),
+    inset -12px -2px 4px 8px #eeeeee;
 }
 
-.intro__circle::after {
+.nav__circle::after {
   content: '';
   position: absolute;
   background-color: #eeeeee;
   height: 24px;
   width: 24px;
   border-radius: 50%;
-  top: 136px;
-  left: 168px;
-  box-shadow: 64px -16px 0 16px #eeeeee, 16px 48px 0 8px #eeeeee;
+  top: 172px;
+  left: 128px;
+  box-shadow: 48px -16px 0 16px #eeeeee,
+    16px 40px 0 8px #eeeeee;
 }
 
 .nav__burger {
   position: absolute;
-  top: 160px;
-  left: 216px;
+  top: 216px;
+  left: 200px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -122,8 +169,8 @@ body::-webkit-scrollbar-thumb {
 }
 
 .nav__line {
-  width: 24px;
-  height: 2px;
+  width: 32px;
+  height: 3px;
   background-color: #242424;
   transition: all 300ms ease;
 }
@@ -132,18 +179,18 @@ body::-webkit-scrollbar-thumb {
 .nav__line::after {
   content: '';
   position: absolute;
-  width: 24px;
-  height: 2px;
+  width: 32px;
+  height: 3px;
   background-color: #000000;
   transition: all 300ms ease;
 }
 
 .nav__line::before {
-  transform: translate(-12px, -8px);
+  transform: translate(-16px, -10px);
 }
 
 .nav__line::after {
-  transform: translate(-12px, 8px);
+  transform: translate(-16px, 10px);
 }
 
 /* intro__text */
@@ -177,4 +224,5 @@ body::-webkit-scrollbar-thumb {
 
 .portfolio {
   height: 200vh;
+  background-color: #242424;
 }
