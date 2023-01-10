@@ -14,6 +14,7 @@ import "./App.css";
 
 function App() {
   const [nav, setNav] = useState(false);
+  const test: React.MutableRefObject<null> = useRef(null);
 
   function toggleNav() {
     if (nav === false) {
@@ -23,7 +24,15 @@ function App() {
     }
   }
 
-  // function toggleNavName(input: string) {}
+  // function toggleNavName(input: string) {
+  //   const name: Element | null = document.querySelector(".nav__social--name");
+  //   if (name) {
+  //     console.log(name.style)
+  //   }
+  //   if (test.current) {
+  //     console.log(test.current.style);
+  //   }
+  // }
 
   return (
     <main>
@@ -66,7 +75,9 @@ function App() {
               <FaNewspaper className="nav__social__icon nav__icon--resume" />
               <h4 className="nav__social__name nav__name--resume">Resume</h4>
             </button>
-            <h4 className="nav__social--name">Initial</h4>
+            <h4 className="nav__social--name" ref={test}>
+              Initial
+            </h4>
           </div>
         </div>
         <div className="nav__circle">
