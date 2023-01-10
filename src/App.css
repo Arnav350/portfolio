@@ -98,30 +98,86 @@ body::-webkit-scrollbar-thumb {
 }
 
 .nav__link__name {
-  font-size: 32px;
+  padding: 8px;
+  font-size: 28px;
   font-weight: 300;
   color: #f8f8f8;
 }
 
 .nav__social__icon {
-  height: 48px;
-  width: 48px;
-  padding: 12px;
+  height: 32px;
+  width: 32px;
+  padding: 4px;
   color: #f8f8f8;
   border: solid 2px #f8f8f8;
   border-radius: 50%;
 }
 
 .nav__social__name {
-  font-size: 24px;
+  position: fixed;
+  top: 352px;
+  left: 64px;
+  font-size: 20px;
   font-weight: 300;
   color: #f8f8f8;
+  opacity: 0;
+  transform: translateX(-50%);
+  transition: all 200ms;
+}
+
+.nav__link {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .nav--home {
-  position: absolute;
-  top: 0px;
-  left: 0;
+  top: 400px;
+  left: 8px;
+}
+
+.nav--projects {
+  top: 480px;
+  left: 24px;
+}
+
+.nav--experience {
+  top: 560px;
+  left: 40px;
+}
+
+.nav--contact {
+  top: 640px;
+  left: 56px;
+}
+
+.nav--linkedin {
+  top: 240px;
+  left: 44px;
+}
+
+.nav--github {
+  top: 272px;
+  left: 12px;
+}
+
+.nav--email {
+  top: 272px;
+  left: 76px;
+}
+
+.nav--resume {
+  top: 304px;
+  left: 44px;
+}
+
+.nav--linkedin:hover .nav__name--linkedin,
+.nav--github:hover .nav__name--github,
+.nav--email:hover .nav__name--email,
+.nav--resume:hover .nav__name--resume {
+  opacity: 1;
+  transform: translateY(16px)
 }
 
 /* intro__circle */

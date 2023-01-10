@@ -28,39 +28,41 @@ function App() {
       <nav className="nav-bar">
         <div className="nav__background">
           <div className="nav--links">
-            <button className="nav--home">
+            <button className="nav--home nav__link">
               <FaHome className="nav__link__icon" />
               <h3 className="nav__link__name">Home</h3>
             </button>
-            <button className="nav--projects">
+            <button className="nav--projects nav__link">
               <FaCode className="nav__link__icon" />
               <h3 className="nav__link__name">Projects</h3>
             </button>
-            <button className="nav--experience">
+            <button className="nav--experience nav__link">
               <FaLaptop className="nav__link__icon" />
               <h3 className="nav__link__name">Experience</h3>
             </button>
-            <button className="nav--contact">
+            <button className="nav--contact nav__link">
               <FaPhoneAlt className="nav__link__icon" />
               <h3 className="nav__link__name">Contact</h3>
             </button>
           </div>
           <div className="nav--socials">
-            <button className="nav--linkedin">
-              <FaLinkedin className="nav__social__icon" />
-              <h4 className="nav__social__name">LinkedIn</h4>
+            <button className="nav--linkedin nav__link">
+              <FaLinkedin className="nav__social__icon nav__icon--linkedin" />
+              <h4 className="nav__social__name nav__name--linkedin">
+                LinkedIn
+              </h4>
             </button>
-            <button className="nav--github">
-              <FaGithub className="nav__social__icon" />
-              <h4 className="nav__social__name">GitHub</h4>
+            <button className="nav--github nav__link">
+              <FaGithub className="nav__social__icon nav__icon--github" />
+              <h4 className="nav__social__name nav__name--github">GitHub</h4>
             </button>
-            <button className="nav--email">
-              <FaEnvelope className="nav__social__icon" />
-              <h4 className="nav__social__name">Email</h4>
+            <button className="nav--email nav__link">
+              <FaEnvelope className="nav__social__icon nav__icon--email" />
+              <h4 className="nav__social__name nav__name--email">Email</h4>
             </button>
-            <button className="nav--resume">
-              <FaNewspaper className="nav__social__icon" />
-              <h4 className="nav__social__name">Resume</h4>
+            <button className="nav--resume nav__link">
+              <FaNewspaper className="nav__social__icon nav__icon--resume" />
+              <h4 className="nav__social__name nav__name--resume">Resume</h4>
             </button>
           </div>
         </div>
@@ -77,13 +79,13 @@ function App() {
             <span className="secondary">I'm Arnav</span>
           </h1>
           <h3 className="intro__sub">
-            I am a <span className="secondary">frontend</span> software
-            developer based in the United States, specializing in the creation
-            of <span className="secondary">remarkable</span> online journies!
+            I am a <b className="secondary">frontend</b> software developer
+            based in the United States, specializing in the creation of{" "}
+            <b className="secondary">remarkable</b> online journies!
           </h3>
           <h3 className="intro__sub">
             Interested in working together? Let's have a{" "}
-            <span className="secondary">talk.</span>
+            <b className="secondary">talk.</b>
           </h3>
         </div>
       </section>
