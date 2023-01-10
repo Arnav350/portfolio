@@ -121,7 +121,7 @@ body::-webkit-scrollbar-thumb {
   font-weight: 300;
   color: #f8f8f8;
   opacity: 0;
-  transform: translateX(-50%);
+  visibility: hidden;
   transition: all 200ms;
 }
 
@@ -177,7 +177,16 @@ body::-webkit-scrollbar-thumb {
 .nav--email:hover .nav__name--email,
 .nav--resume:hover .nav__name--resume {
   opacity: 1;
-  transform: translateY(16px)
+  visibility: visible;
+  transform: translateY(-16px);
+}
+
+.nav__social--name {
+  position: fixed;
+  top: 50px;
+  left: 500px;
+  font-weight: 300;
+  color: #f8f8f8;
 }
 
 /* intro__circle */
@@ -278,7 +287,18 @@ body::-webkit-scrollbar-thumb {
 
 /* portfolio */
 
-.portfolio {
+.projects {
   height: 200vh;
-  background-color: #242424;
+  background-color: #333333;
+}
+
+.temp {
+  display: flex;
+  justify-content: center;
+}
+
+.projects__title {
+  padding: 64px;
+  font-size: 64px;
+  color: #d1405f;
 }

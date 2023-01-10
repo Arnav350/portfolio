@@ -23,6 +23,8 @@ function App() {
     }
   }
 
+  // function toggleNavName(input: string) {}
+
   return (
     <main>
       <nav className="nav-bar">
@@ -64,6 +66,7 @@ function App() {
               <FaNewspaper className="nav__social__icon nav__icon--resume" />
               <h4 className="nav__social__name nav__name--resume">Resume</h4>
             </button>
+            <h4 className="nav__social--name">Initial</h4>
           </div>
         </div>
         <div className="nav__circle">
@@ -89,7 +92,11 @@ function App() {
           </h3>
         </div>
       </section>
-      <section className="portfolio">sec</section>
+      <section className="projects">
+        <div className="temp container">
+          <h1 className="projects__title">Projects</h1>
+        </div>
+      </section>
       <footer>footer</footer>
     </main>
   );
