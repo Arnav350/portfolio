@@ -86,6 +86,15 @@ body::-webkit-scrollbar-thumb {
   border-style: solid;
   border-width: 100vh 0 0 320px;
   border-color: transparent transparent transparent #444444;
+  transform-origin: top left;
+  transform: rotate(45deg);
+}
+
+.nav__link {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .nav__link__icon {
@@ -102,34 +111,6 @@ body::-webkit-scrollbar-thumb {
   font-size: 28px;
   font-weight: 300;
   color: #f8f8f8;
-}
-
-.nav__social__icon {
-  height: 32px;
-  width: 32px;
-  padding: 4px;
-  color: #f8f8f8;
-  border: solid 2px #f8f8f8;
-  border-radius: 50%;
-}
-
-.nav__social__name {
-  position: fixed;
-  top: 352px;
-  left: 64px;
-  font-size: 20px;
-  font-weight: 300;
-  color: #f8f8f8;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 200ms;
-}
-
-.nav__link {
-  position: fixed;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .nav--home {
@@ -150,6 +131,29 @@ body::-webkit-scrollbar-thumb {
 .nav--contact {
   top: 640px;
   left: 56px;
+}
+
+.nav__social__icon {
+  height: 32px;
+  width: 32px;
+  padding: 4px;
+  color: #f8f8f8;
+  border: solid 2px #f8f8f8;
+  border-radius: 50%;
+}
+
+.nav__social__name {
+  position: fixed;
+  top: 352px;
+  left: 0px;
+  width: 120px;
+  font-size: 20px;
+  font-weight: 300;
+  text-align: center;
+  color: #f8f8f8;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 200ms;
 }
 
 .nav--linkedin {
@@ -178,15 +182,7 @@ body::-webkit-scrollbar-thumb {
 .nav--resume:hover .nav__name--resume {
   opacity: 1;
   visibility: visible;
-  transform: translateY(-16px);
-}
-
-.nav__social--name {
-  position: fixed;
-  top: 50px;
-  left: 500px;
-  font-weight: 300;
-  color: #f8f8f8;
+  transform: translateY(-8px);
 }
 
 /* intro__circle */

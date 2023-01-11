@@ -8,36 +8,27 @@ import {
   FaGithub,
   FaEnvelope,
   FaRegNewspaper,
-  FaNewspaper,
 } from "react-icons/fa";
 import "./App.css";
 
 function App() {
   const [nav, setNav] = useState(false);
-  const test: React.MutableRefObject<null> = useRef(null);
+  const navBackground = useRef<HTMLDivElement>(null!);
 
   function toggleNav() {
     if (nav === false) {
       setNav(true);
+      navBackground.current.style.transform = "rotate(0)";
     } else {
       setNav(false);
+      navBackground.current.style.transform = "rotate(45deg)";
     }
   }
-
-  // function toggleNavName(input: string) {
-  //   const name: Element | null = document.querySelector(".nav__social--name");
-  //   if (name) {
-  //     console.log(name.style)
-  //   }
-  //   if (test.current) {
-  //     console.log(test.current.style);
-  //   }
-  // }
 
   return (
     <main>
       <nav className="nav-bar">
-        <div className="nav__background">
+        <div className="nav__background" ref={navBackground}>
           <div className="nav--links">
             <button className="nav--home nav__link">
               <FaHome className="nav__link__icon" />
@@ -57,31 +48,28 @@ function App() {
             </button>
           </div>
           <div className="nav--socials">
-            <button className="nav--linkedin nav__link">
-              <FaLinkedin className="nav__social__icon nav__icon--linkedin" />
+            <a className="nav--linkedin nav__link">
+              <FaLinkedin className="nav__social__icon" />
               <h4 className="nav__social__name nav__name--linkedin">
                 LinkedIn
               </h4>
-            </button>
-            <button className="nav--github nav__link">
-              <FaGithub className="nav__social__icon nav__icon--github" />
+            </a>
+            <a className="nav--github nav__link">
+              <FaGithub className="nav__social__icon" />
               <h4 className="nav__social__name nav__name--github">GitHub</h4>
-            </button>
-            <button className="nav--email nav__link">
-              <FaEnvelope className="nav__social__icon nav__icon--email" />
+            </a>
+            <a className="nav--email nav__link">
+              <FaEnvelope className="nav__social__icon" />
               <h4 className="nav__social__name nav__name--email">Email</h4>
-            </button>
-            <button className="nav--resume nav__link">
-              <FaNewspaper className="nav__social__icon nav__icon--resume" />
+            </a>
+            <a className="nav--resume nav__link">
+              <FaRegNewspaper className="nav__social__icon" />
               <h4 className="nav__social__name nav__name--resume">Resume</h4>
-            </button>
-            <h4 className="nav__social--name" ref={test}>
-              Initial
-            </h4>
+            </a>
           </div>
         </div>
         <div className="nav__circle">
-          <button className="nav__burger">
+          <button className="nav__burger" onClick={toggleNav}>
             <div className="nav__line"></div>
           </button>
         </div>
