@@ -13,20 +13,24 @@ import "./App.css";
 
 function App() {
   const [nav, setNav] = useState(false);
+  const main = useRef<HTMLElement>(null!);
   const navBackground = useRef<HTMLDivElement>(null!);
 
   function toggleNav() {
+    // main.current.style.transformOrigin = "0px " + window.scrollY + "px";
     if (nav === false) {
       setNav(true);
-      navBackground.current.style.transform = "rotate(0)";
+      navBackground.current.style.rotate = "0deg";
+      // main.current.style.rotate = "0deg";
     } else {
       setNav(false);
-      navBackground.current.style.transform = "rotate(45deg)";
+      navBackground.current.style.rotate = "25deg";
+      // main.current.style.rotate = "0deg";
     }
   }
 
   return (
-    <main>
+    <main ref={main}>
       <nav className="nav-bar">
         <div className="nav__background" ref={navBackground}>
           <div className="nav--links">

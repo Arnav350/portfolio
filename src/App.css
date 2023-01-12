@@ -79,19 +79,23 @@ body::-webkit-scrollbar-thumb {
   scrollbar-color: red black;
 } */
 
+/* main {
+  rotate: 0deg;
+} */
+
 /* nav_background */
 
 .nav__background {
   position: fixed;
-  border-style: solid;
-  border-width: 100vh 0 0 320px;
-  border-color: transparent transparent transparent #444444;
+  height: 100%;
+  width: 320px;
+  background: linear-gradient(to top right, #444444 0%, #444444 50%, transparent 50%, transparent 100%);
   transform-origin: top left;
-  transform: rotate(45deg);
+  rotate: 25deg;
 }
 
 .nav__link {
-  position: fixed;
+  position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -182,7 +186,7 @@ body::-webkit-scrollbar-thumb {
 .nav--resume:hover .nav__name--resume {
   opacity: 1;
   visibility: visible;
-  transform: translateY(-8px);
+  translate: 0px -8px;
 }
 
 /* intro__circle */
@@ -247,11 +251,11 @@ body::-webkit-scrollbar-thumb {
 }
 
 .nav__line::before {
-  transform: translate(-16px, -10px);
+  translate: -16px -10px;
 }
 
 .nav__line::after {
-  transform: translate(-16px, 10px);
+  translate: -16px 10px;
 }
 
 /* intro__text */
