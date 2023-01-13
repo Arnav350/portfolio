@@ -4,33 +4,26 @@ import {
   FaCode,
   FaLaptop,
   FaPhoneAlt,
-  FaLinkedin,
+  FaLinkedinIn,
   FaGithub,
   FaEnvelope,
   FaRegNewspaper,
+  FaBars,
+  FaTimes,
 } from "react-icons/fa";
 import "./App.css";
 
 function App() {
   const [nav, setNav] = useState(false);
-  const main = useRef<HTMLElement>(null!);
+  const page = useRef<HTMLDivElement>(null!);
   const navBackground = useRef<HTMLDivElement>(null!);
 
   function toggleNav() {
-    // main.current.style.transformOrigin = "0px " + window.scrollY + "px";
-    if (nav === false) {
-      setNav(true);
-      navBackground.current.style.rotate = "0deg";
-      // main.current.style.rotate = "0deg";
-    } else {
-      setNav(false);
-      navBackground.current.style.rotate = "25deg";
-      // main.current.style.rotate = "0deg";
-    }
+    setNav(!nav);
   }
 
   return (
-    <main ref={main}>
+    <div className={nav ? "page open" : "page"} ref={page}>
       <nav className="nav-bar">
         <div className="nav__background" ref={navBackground}>
           <div className="nav--links">
@@ -53,7 +46,7 @@ function App() {
           </div>
           <div className="nav--socials">
             <a className="nav--linkedin nav__link">
-              <FaLinkedin className="nav__social__icon" />
+              <FaLinkedinIn className="nav__social__icon" />
               <h4 className="nav__social__name nav__name--linkedin">
                 LinkedIn
               </h4>
@@ -72,36 +65,39 @@ function App() {
             </a>
           </div>
         </div>
-        <div className="nav__circle">
-          <button className="nav__burger" onClick={toggleNav}>
-            <div className="nav__line"></div>
-          </button>
+        <div className="nav__circle" onClick={toggleNav}>
+          <FaBars className="nav--bars" />
+          <FaTimes className="nav--times" />
         </div>
       </nav>
-      <section className="intro">
-        <div className="intro__text">
-          <h1 className="intro__title">Hello,</h1>
-          <h1 className="intro__title">
-            <span className="secondary">I'm Arnav</span>
-          </h1>
-          <h3 className="intro__sub">
-            I am a <b className="secondary">frontend</b> software developer
-            based in the United States, specializing in the creation of{" "}
-            <b className="secondary">remarkable</b> online journies!
-          </h3>
-          <h3 className="intro__sub">
-            Interested in working together? Let's have a{" "}
-            <b className="secondary">talk.</b>
-          </h3>
-        </div>
-      </section>
-      <section className="projects">
-        <div className="temp container">
-          <h1 className="projects__title">Projects</h1>
-        </div>
-      </section>
-      <footer>footer</footer>
-    </main>
+      <div className="main__wrapper">
+        <main className="main">
+          <section className="intro">
+            <div className="intro__text container">
+              <h1 className="intro__title">Hello,</h1>
+              <h1 className="intro__title">
+                <span className="secondary">I'm Arnav</span>
+              </h1>
+              <h3 className="intro__sub">
+                I am a <b className="secondary">frontend</b> software developer
+                based in the United States, specializing in the creation of{" "}
+                <b className="secondary">remarkable</b> online journies!
+              </h3>
+              <h3 className="intro__sub">
+                Interested in working together? Let's have a{" "}
+                <b className="secondary">talk.</b>
+              </h3>
+            </div>
+          </section>
+          <section className="projects">
+            <div className="temp container">
+              <h1 className="projects__title secondary">Projects</h1>
+            </div>
+          </section>
+          <footer>footer</footer>
+        </main>
+      </div>
+    </div>
   );
 }
 
