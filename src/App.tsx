@@ -94,7 +94,16 @@ function App() {
               <h1 className="projects__title secondary">Projects</h1>
             </div>
           </section>
-          <footer>footer</footer>
+          <section className="experience">
+            <div className="temp container">
+              <h1 className="experience__title secondary">Experience</h1>
+            </div>
+          </section>
+          <section className="contact">
+            <div className="temp container">
+              <h1 className="contact__title secondary">Contact</h1>
+            </div>
+          </section>
         </main>
       </div>
     </div>

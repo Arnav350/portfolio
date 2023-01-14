@@ -306,7 +306,7 @@ img {
 /* projects */
 
 .projects {
-  height: 200vh;
+  height: 100vh;
   background-color: #333333;
 }
 
@@ -316,6 +316,40 @@ img {
 }
 
 .projects__title {
+  padding: 64px;
+  font-size: 64px;
+}
+
+/* experience */
+
+.experience {
+  height: 100vh;
+  background-color: #242424;
+}
+
+.temp {
+  display: flex;
+  justify-content: center;
+}
+
+.experience__title {
+  padding: 64px;
+  font-size: 64px;
+}
+
+/* contact */
+
+.contact {
+  height: 100vh;
+  background-color: #333333;
+}
+
+.temp {
+  display: flex;
+  justify-content: center;
+}
+
+.contact__title {
   padding: 64px;
   font-size: 64px;
 }
