@@ -90,10 +90,10 @@ img {
 .nav__background {
   position: fixed;
   height: 100%;
-  width: 320px;
+  width: 412px;
   background: linear-gradient(to top right, #444444 0%, #444444 50%, transparent 50%, transparent 100%);
   transform-origin: top left;
-  rotate: 25deg;
+  rotate: 30deg;
   transition: rotate 500ms cubic-bezier(1, 0, 0.25, 1);
 }
 
@@ -198,15 +198,15 @@ img {
   position: fixed;
   top: -160px;
   left: -120px;
-  background-color: #f8f8f8;
+  background-color: #f8f8f0;
   height: 320px;
   width: 320px;
   border-radius: 50%;
   z-index: 2;
-  box-shadow: 6px 1px 0 6px rgba(225, 255, 255, 0.05),
-    6px 1px 0 12px rgba(225, 255, 255, 0.05),
-    6px 1px 0 18px rgba(225, 255, 255, 0.05),
-    inset -12px -2px 4px 8px #eeeeee;
+  box-shadow: 6px 1px 0 6px #f8f8f00f,
+    6px 1px 0 12px #f8f8f00f,
+    6px 1px 0 18px #f8f8f00f,
+    inset -12px -2px 4px 8px #eeeee0;
   transition: rotate 500ms cubic-bezier(1, 0, 0.25, 1);
 }
 
@@ -217,16 +217,16 @@ img {
 .nav__circle::after {
   content: '';
   position: absolute;
-  background-color: #eeeeee;
+  background-color: #eeeee0;
   height: 24px;
   width: 24px;
   border-radius: 50%;
   top: 172px;
   left: 128px;
-  box-shadow: 48px -16px 0 16px #eeeeee,
-    16px 40px 0 8px #eeeeee,
-    -48px -8px 0 12px #eeeeee,
-    0px -40px 0 8px #eeeeee;
+  box-shadow: 48px -16px 0 16px #eeeee0,
+    16px 40px 0 8px #eeeee0,
+    -48px -8px 0 12px #eeeee0,
+    0px -40px 0 8px #eeeee0;
 }
 
 .nav--bars,
@@ -245,36 +245,6 @@ img {
   top: 216px;
   left: 88px;
   rotate: 75deg;
-}
-
-/* open */
-
-.page {
-  background-color: #444444;
-}
-
-.main__wrapper {
-  height: 200vh;
-  background-color: #242424;
-  transform-origin: top left;
-  transition: rotate 500ms cubic-bezier(1, 0, 0.25, 1);
-}
-
-.main {
-  height: 100vh;
-  overflow-y: scroll;
-}
-
-.open .main__wrapper {
-  rotate: -30deg;
-}
-
-.open .nav__circle {
-  rotate: -75deg;
-}
-
-.open .nav__background {
-  rotate: 0deg;
 }
 
 /* intro__text */
@@ -352,4 +322,50 @@ img {
 .contact__title {
   padding: 64px;
   font-size: 64px;
+}
+
+/* open */
+
+.page {
+  background-color: #444444;
+}
+
+.main__wrapper {
+  height: 200vh;
+  background-color: #242424;
+  transform-origin: top left;
+  transition: rotate 500ms cubic-bezier(1, 0, 0.25, 1);
+}
+
+.main {
+  height: 100vh;
+  overflow-y: scroll;
+  transition: height 500ms cubic-bezier(1, 0, 0.25, 1);
+}
+
+.open .main {
+  height: 200vh;
+}
+
+.open .main__wrapper {
+  rotate: -30deg;
+}
+
+.open .nav__circle {
+  rotate: -75deg;
+}
+
+.open .nav__background {
+  rotate: 0deg;
+}
+
+/* dark */
+
+.dark section,
+.dark .nav__background {
+  filter: invert(1);
+}
+
+.dark .nav__circle {
+  filter: saturate(30) hue-rotate(-20deg);
 }

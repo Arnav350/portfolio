@@ -15,17 +15,27 @@ import "./App.css";
 
 function App() {
   const [nav, setNav] = useState(false);
+  const [dark, setDark] = useState(true);
   const page = useRef<HTMLDivElement>(null!);
-  const navBackground = useRef<HTMLDivElement>(null!);
 
   function toggleNav() {
     setNav(!nav);
+    if (page) {
+      page.current.classList.toggle("open");
+    }
+  }
+
+  function toggleDark() {
+    setDark(!dark);
+    if (page) {
+      page.current.classList.toggle("dark");
+    }
   }
 
   return (
-    <div className={nav ? "page open" : "page"} ref={page}>
+    <div className="page" ref={page}>
       <nav className="nav-bar">
-        <div className="nav__background" ref={navBackground}>
+        <div className="nav__background">
           <div className="nav--links">
             <button className="nav--home nav__link">
               <FaHome className="nav__link__icon" />
@@ -75,7 +85,7 @@ function App() {
           <section className="intro">
             <div className="intro__text container">
               <h1 className="intro__title">Hello,</h1>
-              <h1 className="intro__title">
+              <h1 className="intro__title" onClick={toggleDark}>
                 <span className="secondary">I'm Arnav</span>
               </h1>
               <h3 className="intro__sub">
