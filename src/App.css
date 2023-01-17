@@ -250,6 +250,16 @@ img {
   height: 100vh;
 }
 
+.intro__dark {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  height: 24px;
+  width: 24px;
+  color: #f8f8f8;
+  cursor: pointer;
+}
+
 .intro__text {
   width: 600px;
   padding-top: 15%;

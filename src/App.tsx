@@ -10,6 +10,7 @@ import {
   FaRegNewspaper,
   FaBars,
   FaTimes,
+  FaLightbulb,
 } from "react-icons/fa";
 import "./App.css";
 
@@ -83,9 +84,10 @@ function App() {
       <div className="main__wrapper">
         <main className="main">
           <section className="intro">
+            <FaLightbulb className="intro__dark" onClick={toggleDark} />
             <div className="intro__text container">
               <h1 className="intro__title">Hello,</h1>
-              <h1 className="intro__title" onClick={toggleDark}>
+              <h1 className="intro__title">
                 <span className="secondary">I'm Arnav</span>
               </h1>
               <h3 className="intro__sub">
