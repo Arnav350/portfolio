@@ -252,10 +252,10 @@ img {
 
 .intro__dark {
   position: absolute;
-  right: 10px;
-  top: 10px;
-  height: 24px;
-  width: 24px;
+  right: 32px;
+  top: 32px;
+  height: 32px;
+  width: 32px;
   color: #f8f8f8;
   cursor: pointer;
 }
