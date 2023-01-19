@@ -1,4 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
+import constellation1 from "./assets/constellation1.png";
+import constellation2 from "./assets/constellation2.png";
+import constellation3 from "./assets/constellation3.png";
+import constellation4 from "./assets/constellation4.png";
+import constellation5 from "./assets/constellation5.png";
 import {
   FaHome,
   FaCode,
@@ -100,6 +105,21 @@ function App() {
                 <b className="secondary">talk.</b>
               </h3>
             </div>
+            <figure>
+              <img src={constellation1} />
+            </figure>
+            <figure>
+              <img src={constellation2} />
+            </figure>
+            <figure>
+              <img src={constellation3} />
+            </figure>
+            <figure>
+              <img src={constellation4} />
+            </figure>
+            <figure>
+              <img src={constellation5} />
+            </figure>
           </section>
           <section className="projects">
             <div className="temp container">
