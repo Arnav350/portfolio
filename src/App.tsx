@@ -44,7 +44,9 @@ function App() {
 
   function navScroll(nameClass: React.MutableRefObject<HTMLButtonElement>) {
     nameClass.current.scrollIntoView({ behavior: "smooth" });
-    toggleNav();
+    setTimeout(() => {
+      toggleNav();
+    }, 300);
   }
 
   return (
@@ -111,6 +113,21 @@ function App() {
         <main className="main">
           <section className="intro" ref={intro}>
             <FaLightbulb className="intro__dark" onClick={toggleDark} />
+            <figure className="intro__constellation intro__constellation--1">
+              <img src={constellation1} />
+            </figure>
+            <figure className="intro__constellation intro__constellation--2">
+              <img src={constellation2} />
+            </figure>
+            <figure className="intro__constellation intro__constellation--3">
+              <img src={constellation3} />
+            </figure>
+            <figure className="intro__constellation intro__constellation--4">
+              <img src={constellation4} />
+            </figure>
+            <figure className="intro__constellation intro__constellation--5">
+              <img src={constellation5} />
+            </figure>
             <div className="intro__text container">
               <h1 className="intro__title">Hello,</h1>
               <h1 className="intro__title">
@@ -126,21 +143,6 @@ function App() {
                 <b className="secondary">talk.</b>
               </h3>
             </div>
-            <figure>
-              <img src={constellation1} />
-            </figure>
-            <figure>
-              <img src={constellation2} />
-            </figure>
-            <figure>
-              <img src={constellation4} />
-            </figure>
-            <figure>
-              <img src={constellation5} />
-            </figure>
-            <figure>
-              <img src={constellation3} />
-            </figure>
           </section>
           <section className="projects" ref={projects}>
             <div className="temp container">
