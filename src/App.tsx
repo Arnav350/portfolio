@@ -23,6 +23,10 @@ function App() {
   const [nav, setNav] = useState(false);
   const [dark, setDark] = useState(true);
   const page = useRef<HTMLDivElement>(null!);
+  const intro = useRef<HTMLButtonElement>(null!);
+  const projects = useRef<HTMLButtonElement>(null!);
+  const experience = useRef<HTMLButtonElement>(null!);
+  const contact = useRef<HTMLButtonElement>(null!);
 
   function toggleNav() {
     setNav(!nav);
@@ -38,24 +42,41 @@ function App() {
     }
   }
 
+  function navScroll(nameClass: React.MutableRefObject<HTMLButtonElement>) {
+    nameClass.current.scrollIntoView({ behavior: "smooth" });
+    toggleNav();
+  }
+
   return (
     <div className="page" ref={page}>
       <nav className="nav-bar">
         <div className="nav__background">
           <div className="nav--links">
-            <button className="nav--home nav__link">
+            <button
+              className="nav--home nav__link"
+              onClick={() => navScroll(intro)}
+            >
               <FaHome className="nav__link__icon" />
               <h3 className="nav__link__name">Home</h3>
             </button>
-            <button className="nav--projects nav__link">
+            <button
+              className="nav--projects nav__link"
+              onClick={() => navScroll(projects)}
+            >
               <FaCode className="nav__link__icon" />
               <h3 className="nav__link__name">Projects</h3>
             </button>
-            <button className="nav--experience nav__link">
+            <button
+              className="nav--experience nav__link"
+              onClick={() => navScroll(experience)}
+            >
               <FaLaptop className="nav__link__icon" />
               <h3 className="nav__link__name">Experience</h3>
             </button>
-            <button className="nav--contact nav__link">
+            <button
+              className="nav--contact nav__link"
+              onClick={() => navScroll(contact)}
+            >
               <FaPhoneAlt className="nav__link__icon" />
               <h3 className="nav__link__name">Contact</h3>
             </button>
@@ -88,7 +109,7 @@ function App() {
       </nav>
       <div className="main__wrapper">
         <main className="main">
-          <section className="intro">
+          <section className="intro" ref={intro}>
             <FaLightbulb className="intro__dark" onClick={toggleDark} />
             <div className="intro__text container">
               <h1 className="intro__title">Hello,</h1>
@@ -112,26 +133,26 @@ function App() {
               <img src={constellation2} />
             </figure>
             <figure>
-              <img src={constellation3} />
-            </figure>
-            <figure>
               <img src={constellation4} />
             </figure>
             <figure>
               <img src={constellation5} />
             </figure>
+            <figure>
+              <img src={constellation3} />
+            </figure>
           </section>
-          <section className="projects">
+          <section className="projects" ref={projects}>
             <div className="temp container">
               <h1 className="projects__title secondary">Projects</h1>
             </div>
           </section>
-          <section className="experience">
+          <section className="experience" ref={experience}>
             <div className="temp container">
               <h1 className="experience__title secondary">Experience</h1>
             </div>
           </section>
-          <section className="contact">
+          <section className="contact" ref={contact}>
             <div className="temp container">
               <h1 className="contact__title secondary">Contact</h1>
             </div>

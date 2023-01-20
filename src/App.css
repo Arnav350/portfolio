@@ -67,7 +67,7 @@ img {
 
 
 .main::-webkit-scrollbar-track {
-  background-color: #242424;
+  background-color: #222222;
 }
 
 .main::-webkit-scrollbar-thumb {
@@ -246,8 +246,9 @@ img {
 /* intro__text */
 
 .intro {
-  background-color: #242424;
   height: 100vh;
+  background-color: #222222;
+  transition: filter 700ms ease;
 }
 
 .intro__dark {
@@ -283,7 +284,7 @@ img {
 
 .projects {
   height: 100vh;
-  background-color: #333333;
+  background-color: #222222;
 }
 
 .temp {
@@ -300,7 +301,7 @@ img {
 
 .experience {
   height: 100vh;
-  background-color: #242424;
+  background-color: #222222;
 }
 
 .temp {
@@ -317,7 +318,7 @@ img {
 
 .contact {
   height: 100vh;
-  background-color: #333333;
+  background-color: #222222;
 }
 
 .temp {
@@ -338,7 +339,7 @@ img {
 
 .main__wrapper {
   height: 200vh;
-  background-color: #242424;
+  background-color: #222222;
   transform-origin: top left;
   transition: rotate 500ms cubic-bezier(1, 0, 0.25, 1);
 }
