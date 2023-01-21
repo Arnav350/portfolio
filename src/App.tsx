@@ -84,21 +84,21 @@ function App() {
             </button>
           </div>
           <div className="nav--socials">
-            <a className="nav--linkedin nav__link">
+            <a href="" className="nav--linkedin nav__link">
               <FaLinkedinIn className="nav__social__icon" />
               <h4 className="nav__social__name nav__name--linkedin">
                 LinkedIn
               </h4>
             </a>
-            <a className="nav--github nav__link">
+            <a href="" className="nav--github nav__link">
               <FaGithub className="nav__social__icon" />
               <h4 className="nav__social__name nav__name--github">GitHub</h4>
             </a>
-            <a className="nav--email nav__link">
+            <a href="" className="nav--email nav__link">
               <FaEnvelope className="nav__social__icon" />
               <h4 className="nav__social__name nav__name--email">Email</h4>
             </a>
-            <a className="nav--resume nav__link">
+            <a href="" className="nav--resume nav__link">
               <FaRegNewspaper className="nav__social__icon" />
               <h4 className="nav__social__name nav__name--resume">Resume</h4>
             </a>

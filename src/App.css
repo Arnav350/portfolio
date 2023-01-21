@@ -99,6 +99,13 @@ img {
   align-items: center;
 }
 
+.nav__link:hover .nav__link__icon,
+.nav__link:hover .nav__link__name {
+  color: #f8f8f8cc;
+  border-color: #f8f8f8cc;
+  translate: 0px -2px;
+}
+
 .nav__link__icon {
   height: 64px;
   width: 64px;
@@ -106,6 +113,7 @@ img {
   color: #f8f8f8;
   border: solid 2px #f8f8f8;
   border-radius: 50%;
+  transition: translate 200ms ease;
 }
 
 .nav__link__name {
@@ -113,6 +121,7 @@ img {
   font-size: 28px;
   font-weight: 300;
   color: #f8f8f8;
+  transition: translate 200ms ease;
 }
 
 .nav--home {
@@ -142,6 +151,14 @@ img {
   color: #f8f8f8;
   border: solid 2px #f8f8f8;
   border-radius: 50%;
+  transition: translate 200ms ease;
+}
+
+.nav__social__icon:hover {
+  color: #f8f8f8cc;
+  border-color: #f8f8f8cc;
+  translate: 0px -2px;
+  cursor: pointer;
 }
 
 .nav__social__name {
