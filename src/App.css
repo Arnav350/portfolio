@@ -59,6 +59,18 @@ img {
   color: #d1405f;
 }
 
+.click {
+  transition: scale 100ms ease;
+}
+
+.click:hover {
+  scale: 1.2;
+}
+
+.click:active {
+  scale: 0.9;
+}
+
 /* scrollbar */
 
 .main::-webkit-scrollbar {

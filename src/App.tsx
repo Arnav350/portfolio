@@ -55,7 +55,7 @@ function App() {
   }
 
   function clipboardEmail() {
-    navigator.clipboard.writeText("HELLO");
+    navigator.clipboard.writeText("patelarnavm+impt@gmail.com");
   }
 
   return (
@@ -118,14 +118,14 @@ function App() {
           </div>
         </div>
         <div className="nav__circle" onClick={toggleNav}>
-          <FaBars className="nav--bars" />
-          <FaTimes className="nav--times" />
+          <FaBars className="nav--bars click" />
+          <FaTimes className="nav--times click" />
         </div>
       </nav>
       <div className="main__wrapper">
         <main className="main">
           <section className="intro" ref={intro}>
-            <FaLightbulb className="intro__dark" onClick={toggleDark} />
+            <FaLightbulb className="intro__dark click" onClick={toggleDark} />
             <figure className="intro__constellation intro__constellation--1">
               <img src={constellation1} />
             </figure>
