@@ -28,6 +28,11 @@ function App() {
   const experience = useRef<HTMLButtonElement>(null!);
   const contact = useRef<HTMLButtonElement>(null!);
 
+  const socials = {
+    linkedIn: "www.linkedin.com/in/patel-arnav",
+    github: "https://github.com/Arnav350",
+  };
+
   function toggleNav() {
     setNav(!nav);
     if (page) {
@@ -47,6 +52,10 @@ function App() {
     setTimeout(() => {
       toggleNav();
     }, 300);
+  }
+
+  function clipboardEmail() {
+    navigator.clipboard.writeText("HELLO");
   }
 
   return (
@@ -84,17 +93,21 @@ function App() {
             </button>
           </div>
           <div className="nav--socials">
-            <a href="" className="nav--linkedin nav__link">
+            <a
+              href={socials.linkedIn}
+              target="_blank"
+              className="nav--linkedin nav__link"
+            >
               <FaLinkedinIn className="nav__social__icon" />
               <h4 className="nav__social__name nav__name--linkedin">
                 LinkedIn
               </h4>
             </a>
-            <a href="" className="nav--github nav__link">
+            <a href={socials.github} className="nav--github nav__link">
               <FaGithub className="nav__social__icon" />
               <h4 className="nav__social__name nav__name--github">GitHub</h4>
             </a>
-            <a href="" className="nav--email nav__link">
+            <a className="nav--email nav__link" onClick={clipboardEmail}>
               <FaEnvelope className="nav__social__icon" />
               <h4 className="nav__social__name nav__name--email">Email</h4>
             </a>
