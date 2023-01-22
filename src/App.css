@@ -279,12 +279,54 @@ img {
   rotate: 75deg;
 }
 
+/* constellation */
+
+.constellation__box {
+  height: 100vh;
+}
+
+.constellation {
+  position: absolute;
+  /* opacity: 0.3; */
+  /* filter: blur(5px); */
+  transition: opacity 100ms ease;
+}
+
+.constellation--1 {
+  top: 70%;
+  left: 30%;
+  width: 22%;
+}
+
+.constellation--2 {
+  top: 20%;
+  left: 80%;
+  width: 14%;
+}
+
+.constellation--3 {
+  top: 40%;
+  left: 5%;
+  width: 10%;
+}
+
+.constellation--4 {
+  top: 8%;
+  left: 40%;
+  width: 22%;
+}
+
+.constellation--5 {
+  top: 56%;
+  left: 68%;
+  width: 22%;
+}
+
 /* intro */
 
 .intro {
-  position: relative;
+  /* position: relative; */
   height: 100vh;
-  transition: filter 700ms ease;
 }
 
 .intro__dark {
@@ -314,43 +356,6 @@ img {
 
 .intro__sub {
   font-weight: 300;
-}
-
-.intro__constellation {
-  position: absolute;
-  opacity: 0.3;
-  filter: blur(5px);
-  transition: opacity 100ms ease;
-}
-
-.intro__constellation--1 {
-  top: 70%;
-  left: 30%;
-  width: 22%;
-}
-
-.intro__constellation--2 {
-  top: 20%;
-  left: 80%;
-  width: 14%;
-}
-
-.intro__constellation--3 {
-  top: 40%;
-  left: 5%;
-  width: 10%;
-}
-
-.intro__constellation--4 {
-  top: 8%;
-  left: 40%;
-  width: 22%;
-}
-
-.intro__constellation--5 {
-  top: 56%;
-  left: 68%;
-  width: 22%;
 }
 
 /* projects */
@@ -411,7 +416,7 @@ img {
   height: 200vh;
   background-color: #222222;
   transform-origin: top left;
-  transition: rotate 500ms cubic-bezier(1, 0, 0.25, 1);
+  transition: rotate 500ms cubic-bezier(1, 0, 0.25, 1), filter 700ms ease;
 }
 
 .main {

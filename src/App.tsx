@@ -127,19 +127,19 @@ function App() {
       <div className="main__wrapper">
         <main className="main">
           <div className="constellation__box">
-            <figure className="intro__constellation intro__constellation--1">
+            <figure className="constellation constellation--1">
               <img src={constellation1} />
             </figure>
-            <figure className="intro__constellation intro__constellation--2">
+            <figure className="constellation constellation--2">
               <img src={constellation2} />
             </figure>
-            <figure className="intro__constellation intro__constellation--3">
+            <figure className="constellation constellation--3">
               <img src={constellation3} />
             </figure>
-            <figure className="intro__constellation intro__constellation--4">
+            <figure className="constellation constellation--4">
               <img src={constellation4} />
             </figure>
-            <figure className="intro__constellation intro__constellation--5">
+            <figure className="constellation constellation--5">
               <img src={constellation5} />
             </figure>
           </div>
