@@ -65,10 +65,12 @@ img {
 
 .click:hover {
   scale: 1.2;
+  opacity: 0.9;
 }
 
 .click:active {
   scale: 0.9;
+  opacity: 0.7;
 }
 
 /* scrollbar */
@@ -105,17 +107,82 @@ img {
 }
 
 .nav__link {
-  position: absolute;
+  /* position: absolute; */
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .nav__link:hover .nav__link__icon,
-.nav__link:hover .nav__link__name {
+.nav__link:hover .nav__link__name,
+.nav__social__icon:hover {
   color: #f8f8f8cc;
   border-color: #f8f8f8cc;
   translate: 0px -2px;
+}
+
+.nav--socials {
+  display: grid;
+  grid-template-areas:
+    ". top ."
+    "left . right"
+    ". bottom .";
+  width: 96px;
+  height: 96px;
+  margin: 200px 0 0 16px;
+}
+
+.nav__social__icon {
+  height: 32px;
+  width: 32px;
+  padding: 4px;
+  color: #f8f8f8;
+  border: solid 2px #f8f8f8;
+  border-radius: 50%;
+  transition: translate 200ms ease;
+}
+
+.nav__social__name {
+  position: fixed;
+  top: 346px;
+  left: 0px;
+  width: 120px;
+  font-size: 20px;
+  font-weight: 300;
+  text-align: center;
+  color: #f8f8f8;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 200ms;
+}
+
+.nav--linkedin {
+  grid-area: top;
+}
+
+.nav--github {
+  grid-area: left;
+}
+
+.nav--email {
+  grid-area: right;
+}
+
+.nav--resume {
+  grid-area: bottom;
+}
+
+.nav--linkedin:hover .nav__name--linkedin,
+.nav--github:hover .nav__name--github,
+.nav--email:hover .nav__name--email,
+.nav--resume:hover .nav__name--resume {
+  opacity: 1;
+  visibility: visible;
+  translate: 0px -8px;
+}
+
+.nav--links {
+  margin-top: 80px;
 }
 
 .nav__link__icon {
@@ -156,65 +223,6 @@ img {
   left: 56px;
 }
 
-.nav__social__icon {
-  height: 32px;
-  width: 32px;
-  padding: 4px;
-  color: #f8f8f8;
-  border: solid 2px #f8f8f8;
-  border-radius: 50%;
-  transition: translate 200ms ease;
-}
-
-.nav__social__icon:hover {
-  color: #f8f8f8cc;
-  border-color: #f8f8f8cc;
-  translate: 0px -2px;
-  cursor: pointer;
-}
-
-.nav__social__name {
-  position: fixed;
-  top: 352px;
-  left: 0px;
-  width: 120px;
-  font-size: 20px;
-  font-weight: 300;
-  text-align: center;
-  color: #f8f8f8;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 200ms;
-}
-
-.nav--linkedin {
-  top: 240px;
-  left: 44px;
-}
-
-.nav--github {
-  top: 272px;
-  left: 12px;
-}
-
-.nav--email {
-  top: 272px;
-  left: 76px;
-}
-
-.nav--resume {
-  top: 304px;
-  left: 44px;
-}
-
-.nav--linkedin:hover .nav__name--linkedin,
-.nav--github:hover .nav__name--github,
-.nav--email:hover .nav__name--email,
-.nav--resume:hover .nav__name--resume {
-  opacity: 1;
-  visibility: visible;
-  translate: 0px -8px;
-}
 
 /* intro__circle */
 

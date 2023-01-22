@@ -62,6 +62,32 @@ function App() {
     <div className="page" ref={page}>
       <nav className="nav-bar">
         <div className="nav__background">
+          <div className="nav--socials">
+            <a
+              href={socials.linkedIn}
+              target="_blank"
+              className="nav--linkedin nav__link"
+            >
+              <FaLinkedinIn className="nav__social__icon" />
+              <h4 className="nav__social__name nav__name--linkedin">
+                LinkedIn
+              </h4>
+            </a>
+            <a href={socials.github} className="nav--github nav__link">
+              <FaGithub className="nav__social__icon" />
+              <h4 className="nav__social__name nav__name--github">GitHub</h4>
+            </a>
+            <a className="nav--email nav__link" onClick={clipboardEmail}>
+              <FaEnvelope className="nav__social__icon" />
+              <h4 className="nav__social__name nav__name--email">
+                Copy to Clipboard
+              </h4>
+            </a>
+            <a href="" className="nav--resume nav__link">
+              <FaRegNewspaper className="nav__social__icon" />
+              <h4 className="nav__social__name nav__name--resume">Resume</h4>
+            </a>
+          </div>
           <div className="nav--links">
             <button
               className="nav--home nav__link"
@@ -91,30 +117,6 @@ function App() {
               <FaPhoneAlt className="nav__link__icon" />
               <h3 className="nav__link__name">Contact</h3>
             </button>
-          </div>
-          <div className="nav--socials">
-            <a
-              href={socials.linkedIn}
-              target="_blank"
-              className="nav--linkedin nav__link"
-            >
-              <FaLinkedinIn className="nav__social__icon" />
-              <h4 className="nav__social__name nav__name--linkedin">
-                LinkedIn
-              </h4>
-            </a>
-            <a href={socials.github} className="nav--github nav__link">
-              <FaGithub className="nav__social__icon" />
-              <h4 className="nav__social__name nav__name--github">GitHub</h4>
-            </a>
-            <a className="nav--email nav__link" onClick={clipboardEmail}>
-              <FaEnvelope className="nav__social__icon" />
-              <h4 className="nav__social__name nav__name--email">Email</h4>
-            </a>
-            <a href="" className="nav--resume nav__link">
-              <FaRegNewspaper className="nav__social__icon" />
-              <h4 className="nav__social__name nav__name--resume">Resume</h4>
-            </a>
           </div>
         </div>
         <div className="nav__circle" onClick={toggleNav}>
