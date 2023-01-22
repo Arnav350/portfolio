@@ -224,7 +224,7 @@ img {
 }
 
 
-/* intro__circle */
+/* nav__circle */
 
 .nav__circle {
   position: fixed;
@@ -279,12 +279,11 @@ img {
   rotate: 75deg;
 }
 
-/* intro__text */
+/* intro */
 
 .intro {
   position: relative;
   height: 100vh;
-  background-color: #222222;
   transition: filter 700ms ease;
 }
 
@@ -320,6 +319,7 @@ img {
 .intro__constellation {
   position: absolute;
   opacity: 0.3;
+  filter: blur(5px);
   transition: opacity 100ms ease;
 }
 
@@ -357,7 +357,6 @@ img {
 
 .projects {
   height: 100vh;
-  background-color: #222222;
 }
 
 .temp {
@@ -374,7 +373,6 @@ img {
 
 .experience {
   height: 100vh;
-  background-color: #222222;
 }
 
 .temp {
@@ -391,7 +389,6 @@ img {
 
 .contact {
   height: 100vh;
-  background-color: #222222;
 }
 
 .temp {
@@ -441,7 +438,7 @@ img {
 
 /* dark */
 
-.dark section,
+.dark .main__wrapper,
 .dark .nav__background {
   filter: invert(1);
 }

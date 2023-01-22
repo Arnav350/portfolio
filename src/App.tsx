@@ -126,8 +126,7 @@ function App() {
       </nav>
       <div className="main__wrapper">
         <main className="main">
-          <section className="intro" ref={intro}>
-            <FaLightbulb className="intro__dark click" onClick={toggleDark} />
+          <div className="constellation__box">
             <figure className="intro__constellation intro__constellation--1">
               <img src={constellation1} />
             </figure>
@@ -143,6 +142,9 @@ function App() {
             <figure className="intro__constellation intro__constellation--5">
               <img src={constellation5} />
             </figure>
+          </div>
+          <section className="intro" ref={intro}>
+            <FaLightbulb className="intro__dark click" onClick={toggleDark} />
             <div className="intro__text container">
               <h1 className="intro__title">Hello,</h1>
               <h1 className="intro__title">
