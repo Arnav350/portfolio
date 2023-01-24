@@ -90,28 +90,28 @@ function App() {
           </div>
           <div className="nav--links">
             <button
-              className="nav--home nav__link"
+              className="nav--home nav__button"
               onClick={() => navScroll(intro)}
             >
               <FaHome className="nav__link__icon" />
               <h3 className="nav__link__name">Home</h3>
             </button>
             <button
-              className="nav--projects nav__link"
+              className="nav--projects nav__button"
               onClick={() => navScroll(projects)}
             >
               <FaCode className="nav__link__icon" />
               <h3 className="nav__link__name">Projects</h3>
             </button>
             <button
-              className="nav--experience nav__link"
+              className="nav--experience nav__button"
               onClick={() => navScroll(experience)}
             >
               <FaLaptop className="nav__link__icon" />
               <h3 className="nav__link__name">Experience</h3>
             </button>
             <button
-              className="nav--contact nav__link"
+              className="nav--contact nav__button"
               onClick={() => navScroll(contact)}
             >
               <FaPhoneAlt className="nav__link__icon" />

@@ -48,6 +48,10 @@ img {
   width: 100%;
 }
 
+section {
+  position: relative;
+}
+
 .container {
   width: 100%;
   max-width: 1000px;
@@ -97,7 +101,7 @@ img {
 /* nav_background */
 
 .nav__background {
-  position: fixed;
+  position: absolute;
   height: 100%;
   width: 412px;
   background: linear-gradient(to top right, #444444 0%, #444444 50%, transparent 50%, transparent 100%);
@@ -106,15 +110,19 @@ img {
   transition: rotate 500ms cubic-bezier(1, 0, 0.25, 1);
 }
 
-.nav__link {
-  /* position: absolute; */
+.nav__link,
+.nav__button {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.nav__link:hover .nav__link__icon,
-.nav__link:hover .nav__link__name,
+.nav__button {
+  padding: 4px;
+}
+
+.nav__button:hover .nav__link__icon,
+.nav__button:hover .nav__link__name,
 .nav__social__icon:hover {
   color: #f8f8f8cc;
   border-color: #f8f8f8cc;
@@ -143,8 +151,8 @@ img {
 }
 
 .nav__social__name {
-  position: fixed;
-  top: 346px;
+  position: absolute;
+  top: 312px;
   left: 0px;
   width: 120px;
   font-size: 20px;
@@ -204,30 +212,26 @@ img {
 }
 
 .nav--home {
-  top: 400px;
-  left: 8px;
+  padding-left: 8px;
 }
 
 .nav--projects {
-  top: 480px;
-  left: 24px;
+  padding-left: 16px;
 }
 
 .nav--experience {
-  top: 560px;
-  left: 40px;
+  padding-left: 24px;
 }
 
 .nav--contact {
-  top: 640px;
-  left: 56px;
+  padding-left: 32px;
 }
 
 
 /* nav__circle */
 
 .nav__circle {
-  position: fixed;
+  position: absolute;
   top: -160px;
   left: -120px;
   background-color: #f8f8f0;
@@ -281,8 +285,35 @@ img {
 
 /* constellation */
 
-.constellation__box {
+.test {
+  perspective: 2px;
+}
+
+.test {
+  transform-style: preserve-3d;
+  position: relative;
   height: 100vh;
+}
+
+.test {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: translateZ(-1px) scale(1.5);
+  background-size: 100%;
+  z-index: -1;
+}
+
+.constellation__box {
+  position: relative;
+  top: 500px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  transform-style: preserve-3d;
+  perspective: 2px;
 }
 
 .constellation {
@@ -290,6 +321,8 @@ img {
   /* opacity: 0.3; */
   /* filter: blur(5px); */
   transition: opacity 100ms ease;
+  transform: translateZ(-100px) scale(80);
+  background-size: 100%;
 }
 
 .constellation--1 {
@@ -325,7 +358,6 @@ img {
 /* intro */
 
 .intro {
-  /* position: relative; */
   height: 100vh;
 }
 
@@ -452,7 +484,7 @@ img {
   filter: saturate(30) hue-rotate(-20deg);
 }
 
-.dark .intro__constellation {
+.dark .constellation {
   display: none;
   opacity: 0;
 }
