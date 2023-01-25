@@ -312,8 +312,8 @@ section {
   left: 0;
   bottom: 0;
   right: 0;
-  transform-style: preserve-3d;
-  perspective: 2px;
+  /* transform-style: preserve-3d; */
+  /* perspective: 2px; */
 }
 
 .constellation {
@@ -321,7 +321,7 @@ section {
   /* opacity: 0.3; */
   /* filter: blur(5px); */
   transition: opacity 100ms ease;
-  transform: translateZ(-100px) scale(80);
+  /* transform: translateZ(-100px) scale(80); */
   background-size: 100%;
 }
 
