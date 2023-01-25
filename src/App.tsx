@@ -22,6 +22,7 @@ import "./App.css";
 function App() {
   const [nav, setNav] = useState(false);
   const [dark, setDark] = useState(true);
+
   const page = useRef<HTMLDivElement>(null!);
   const intro = useRef<HTMLButtonElement>(null!);
   const projects = useRef<HTMLButtonElement>(null!);
