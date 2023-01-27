@@ -398,12 +398,92 @@ section {
 
 .temp {
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
 .projects__title {
   padding: 64px;
   font-size: 64px;
+}
+
+.projects__system {
+  position: relative;
+  width: 100%;
+  height: 500px;
+}
+
+.projects__star {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  height: 384px;
+  width: 384px;
+  background-color: yellow;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.projects__planet {
+  position: absolute;
+  top: 50%;
+  translate: -50% -50%;
+  height: 128px;
+  width: 128px;
+  border-radius: 50%;
+  transition: transform 200ms;
+  animation: orbit 20s infinite ease-in-out;
+}
+
+.projects__planet:hover {
+  cursor: pointer;
+  transform: scale(2);
+}
+
+.projects__planet--blue {
+  background-color: blue;
+}
+
+.projects__planet--red {
+  background-color: red;
+  animation-delay: -2s;
+}
+
+.projects__planet--green {
+  background-color: green;
+  animation-delay: -5s;
+}
+
+@keyframes orbit {
+  0% {
+    left: 0%;
+    z-index: 1;
+  }
+
+  25% {
+    scale: 0.8;
+  }
+
+  49% {
+    left: 100%;
+    z-index: 1;
+  }
+
+  50% {
+    left: 100%;
+    z-index: 3;
+  }
+
+  75% {
+    scale: 1.2;
+  }
+
+  100% {
+    left: 0%;
+    z-index: 3;
+  }
 }
 
 /* experience */
@@ -487,4 +567,10 @@ section {
 .dark .constellation {
   display: none;
   opacity: 0;
+}
+
+/* pause */
+
+.pause {
+  animation-play-state: paused;
 }

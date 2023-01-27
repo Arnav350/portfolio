@@ -20,14 +20,15 @@ import {
 import "./App.css";
 
 function App() {
-  const [nav, setNav] = useState(false);
-  const [dark, setDark] = useState(true);
-
   const page = useRef<HTMLDivElement>(null!);
   const intro = useRef<HTMLButtonElement>(null!);
   const projects = useRef<HTMLButtonElement>(null!);
   const experience = useRef<HTMLButtonElement>(null!);
   const contact = useRef<HTMLButtonElement>(null!);
+
+  const blue = useRef<HTMLDivElement>(null!);
+  const red = useRef<HTMLDivElement>(null!);
+  const green = useRef<HTMLDivElement>(null!);
 
   const socials = {
     linkedIn: "www.linkedin.com/in/patel-arnav",
@@ -35,21 +36,20 @@ function App() {
   };
 
   function toggleNav() {
-    setNav(!nav);
-    if (page) {
-      page.current.classList.toggle("open");
-    }
+    page.current?.classList.toggle("open");
   }
 
   function toggleDark() {
-    setDark(!dark);
-    if (page) {
-      page.current.classList.toggle("dark");
-    }
+    page.current?.classList.toggle("dark");
+  }
+
+  function toggleOrbit(planet: React.MutableRefObject<HTMLDivElement>) {
+    planet.current?.classList.toggle("pause");
+    console.log(planet);
   }
 
   function navScroll(nameClass: React.MutableRefObject<HTMLButtonElement>) {
-    nameClass.current.scrollIntoView({ behavior: "smooth" });
+    nameClass.current.scrollIntoView({ behavior: "smooth" }); //false instead of { behavior: "smooth" }
     setTimeout(() => {
       toggleNav();
     }, 300);
@@ -127,7 +127,7 @@ function App() {
       </nav>
       <div className="main__wrapper">
         <main className="main">
-          <div className="constellation__box">
+          {/* <div className="constellation__box">
             <figure className="constellation constellation--1">
               <img src={constellation1} />
             </figure>
@@ -143,7 +143,7 @@ function App() {
             <figure className="constellation constellation--5">
               <img src={constellation5} />
             </figure>
-          </div>
+          </div> */}
           <section className="intro" ref={intro}>
             <FaLightbulb className="intro__dark click" onClick={toggleDark} />
             <div className="intro__text container">
@@ -163,8 +163,27 @@ function App() {
             </div>
           </section>
           <section className="projects" ref={projects}>
+            {/* Create a 3d solar system of planets, each of which are projects, that rotate around a line along the y axis */}
             <div className="temp container">
               <h1 className="projects__title secondary">Projects</h1>
+              <div className="projects__system">
+                <div className="projects__star"></div>
+                <div
+                  className="projects__planet projects__planet--blue"
+                  ref={blue}
+                  onClick={() => toggleOrbit(blue)}
+                ></div>
+                <div
+                  className="projects__planet projects__planet--red"
+                  ref={red}
+                  onClick={() => toggleOrbit(red)}
+                ></div>
+                <div
+                  className="projects__planet projects__planet--green"
+                  ref={green}
+                  onClick={() => toggleOrbit(green)}
+                ></div>
+              </div>
             </div>
           </section>
           <section className="experience" ref={experience}>
