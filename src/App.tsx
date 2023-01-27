@@ -16,23 +16,25 @@ import {
   FaBars,
   FaTimes,
   FaLightbulb,
+  FaPause,
+  FaPlay,
 } from "react-icons/fa";
 import "./App.css";
 
 function App() {
+  const [pause, setPause] = useState(false);
+
   const page = useRef<HTMLDivElement>(null!);
   const intro = useRef<HTMLButtonElement>(null!);
   const projects = useRef<HTMLButtonElement>(null!);
   const experience = useRef<HTMLButtonElement>(null!);
   const contact = useRef<HTMLButtonElement>(null!);
-
-  const blue = useRef<HTMLDivElement>(null!);
-  const red = useRef<HTMLDivElement>(null!);
-  const green = useRef<HTMLDivElement>(null!);
+  const system = useRef<HTMLButtonElement>(null!);
 
   const socials = {
     linkedIn: "www.linkedin.com/in/patel-arnav",
     github: "https://github.com/Arnav350",
+    email: "patelarnavm+impt@gmail.com",
   };
 
   function toggleNav() {
@@ -43,9 +45,9 @@ function App() {
     page.current?.classList.toggle("dark");
   }
 
-  function toggleOrbit(planet: React.MutableRefObject<HTMLDivElement>) {
-    planet.current?.classList.toggle("pause");
-    console.log(planet);
+  function toggleOrbit() {
+    system.current?.classList.toggle("pause");
+    setPause(!pause);
   }
 
   function navScroll(nameClass: React.MutableRefObject<HTMLButtonElement>) {
@@ -56,7 +58,7 @@ function App() {
   }
 
   function clipboardEmail() {
-    navigator.clipboard.writeText("patelarnavm+impt@gmail.com");
+    navigator.clipboard.writeText(socials.email);
   }
 
   return (
@@ -166,24 +168,79 @@ function App() {
             {/* Create a 3d solar system of planets, each of which are projects, that rotate around a line along the y axis */}
             <div className="temp container">
               <h1 className="projects__title secondary">Projects</h1>
-              <div className="projects__system">
-                <div className="projects__star"></div>
-                <div
-                  className="projects__planet projects__planet--blue"
-                  ref={blue}
-                  onClick={() => toggleOrbit(blue)}
-                ></div>
-                <div
-                  className="projects__planet projects__planet--red"
-                  ref={red}
-                  onClick={() => toggleOrbit(red)}
-                ></div>
-                <div
-                  className="projects__planet projects__planet--green"
-                  ref={green}
-                  onClick={() => toggleOrbit(green)}
-                ></div>
-              </div>
+              <button
+                className="projects__system"
+                ref={system}
+                onClick={toggleOrbit}
+              >
+                <div className="projects__star">
+                  {pause ? (
+                    <FaPlay className="projects__pause" />
+                  ) : (
+                    <FaPause className="projects__pause" />
+                  )}
+                </div>
+                <div className="projects__planet projects__planet--blue">
+                  <h3 className="projects__heading">Temporary Title</h3>
+                  <p className="projects__description">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Ducimus error laborum eveniet, distinctio beatae nihil
+                    expedita explicabo totam dolorum iusto. Ratione et sint
+                    fugit? Quia illum debitis accusamus voluptatem distinctio?
+                  </p>
+                  <a href="" className="projects__link">
+                    Link
+                  </a>
+                </div>
+                <div className="projects__planet projects__planet--red">
+                  <h3 className="projects__heading">Temporary Title</h3>
+                  <p className="projects__description">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Ducimus error laborum eveniet, distinctio beatae nihil
+                    expedita explicabo totam dolorum iusto. Ratione et sint
+                    fugit? Quia illum debitis accusamus voluptatem distinctio?
+                  </p>
+                  <a href="" className="projects__link">
+                    Link
+                  </a>
+                </div>
+                <div className="projects__planet projects__planet--green">
+                  <h3 className="projects__heading">Temporary Title</h3>
+                  <p className="projects__description">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Ducimus error laborum eveniet, distinctio beatae nihil
+                    expedita explicabo totam dolorum iusto. Ratione et sint
+                    fugit? Quia illum debitis accusamus voluptatem distinctio?
+                  </p>
+                  <a href="" className="projects__link">
+                    Link
+                  </a>
+                </div>
+                <div className="projects__planet projects__planet--orange">
+                  <h3 className="projects__heading">Temporary Title</h3>
+                  <p className="projects__description">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Ducimus error laborum eveniet, distinctio beatae nihil
+                    expedita explicabo totam dolorum iusto. Ratione et sint
+                    fugit? Quia illum debitis accusamus voluptatem distinctio?
+                  </p>
+                  <a href="" className="projects__link">
+                    Link
+                  </a>
+                </div>
+                <div className="projects__planet projects__planet--purple">
+                  <h3 className="projects__heading">Temporary Title</h3>
+                  <p className="projects__description">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Ducimus error laborum eveniet, distinctio beatae nihil
+                    expedita explicabo totam dolorum iusto. Ratione et sint
+                    fugit? Quia illum debitis accusamus voluptatem distinctio?
+                  </p>
+                  <a href="" className="projects__link">
+                    Link
+                  </a>
+                </div>
+              </button>
             </div>
           </section>
           <section className="experience" ref={experience}>

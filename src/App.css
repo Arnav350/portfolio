@@ -238,7 +238,7 @@ section {
   height: 320px;
   width: 320px;
   border-radius: 50%;
-  z-index: 2;
+  z-index: 5;
   box-shadow: 6px 1px 0 6px #f8f8f00f,
     6px 1px 0 12px #f8f8f00f,
     6px 1px 0 18px #f8f8f00f,
@@ -392,6 +392,40 @@ section {
 
 /* projects */
 
+@keyframes orbit {
+  0% {
+    left: 0%;
+    z-index: var(--planet-index, 1);
+    scale: 1;
+  }
+
+  25% {
+    scale: 0.8;
+  }
+
+  49% {
+    left: 100%;
+    z-index: var(--planet-index, 1);
+    scale: 1;
+  }
+
+  50% {
+    left: 100%;
+    z-index: var(--planet-index, 3);
+    scale: 1;
+  }
+
+  75% {
+    scale: 1.2;
+  }
+
+  100% {
+    left: 0%;
+    z-index: var(--planet-index, 3);
+    scale: 1;
+  }
+}
+
 .projects {
   height: 100vh;
 }
@@ -414,32 +448,67 @@ section {
   height: 500px;
 }
 
-.projects__star {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  translate: -50% -50%;
-  height: 384px;
-  width: 384px;
-  background-color: yellow;
-  border-radius: 50%;
-  z-index: 2;
-}
-
+.projects__star,
 .projects__planet {
   position: absolute;
   top: 50%;
   translate: -50% -50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.projects__star {
+  left: 50%;
+  height: 384px;
+  width: 384px;
+  background-color: yellow;
+  box-shadow: 0px 0px 40px 15px yellow;
+  z-index: 2;
+}
+
+.projects__pause {
+  width: 200px;
+  height: 200px;
+  color: #fffb00;
+}
+
+.projects__planet {
   height: 128px;
   width: 128px;
-  border-radius: 50%;
-  transition: transform 200ms;
+  transition: transform 400ms, border-radius 400ms;
   animation: orbit 20s infinite ease-in-out;
 }
 
 .projects__planet:hover {
-  cursor: pointer;
-  transform: scale(2);
+  transform: scale(3);
+  border-radius: 16px;
+  --planet-index: 4;
+}
+
+.projects__heading {
+  color: black;
+  font-weight: 400;
+}
+
+.projects__description {
+  color: black;
+  display: none;
+  font-size: 8px;
+}
+
+.projects__link {
+  color: black;
+  display: none;
+  font-size: 10px;
+}
+
+.projects__planet:hover .projects__description,
+.projects__planet:hover .projects__link {
+  display: block;
 }
 
 .projects__planet--blue {
@@ -448,42 +517,22 @@ section {
 
 .projects__planet--red {
   background-color: red;
-  animation-delay: -2s;
+  animation-delay: -4s;
 }
 
 .projects__planet--green {
   background-color: green;
-  animation-delay: -5s;
+  animation-delay: -7s;
 }
 
-@keyframes orbit {
-  0% {
-    left: 0%;
-    z-index: 1;
-  }
+.projects__planet--orange {
+  background-color: orange;
+  animation-delay: -11s;
+}
 
-  25% {
-    scale: 0.8;
-  }
-
-  49% {
-    left: 100%;
-    z-index: 1;
-  }
-
-  50% {
-    left: 100%;
-    z-index: 3;
-  }
-
-  75% {
-    scale: 1.2;
-  }
-
-  100% {
-    left: 0%;
-    z-index: 3;
-  }
+.projects__planet--purple {
+  background-color: purple;
+  animation-delay: -16s;
 }
 
 /* experience */
@@ -571,6 +620,6 @@ section {
 
 /* pause */
 
-.pause {
+.pause .projects__planet {
   animation-play-state: paused;
 }
