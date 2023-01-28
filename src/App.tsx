@@ -18,6 +18,7 @@ import {
   FaLightbulb,
   FaPause,
   FaPlay,
+  FaExternalLinkAlt,
 } from "react-icons/fa";
 import "./App.css";
 
@@ -188,9 +189,14 @@ function App() {
                     expedita explicabo totam dolorum iusto. Ratione et sint
                     fugit? Quia illum debitis accusamus voluptatem distinctio?
                   </p>
-                  <a href="" className="projects__link">
-                    Link
-                  </a>
+                  <div>
+                    <a href="" className="projects__link">
+                      <FaGithub />
+                    </a>
+                    <a href="" className="projects__link">
+                      <FaExternalLinkAlt />
+                    </a>
+                  </div>
                 </div>
                 <div className="projects__planet projects__planet--red">
                   <h3 className="projects__heading">Temporary Title</h3>
@@ -200,9 +206,14 @@ function App() {
                     expedita explicabo totam dolorum iusto. Ratione et sint
                     fugit? Quia illum debitis accusamus voluptatem distinctio?
                   </p>
-                  <a href="" className="projects__link">
-                    Link
-                  </a>
+                  <div>
+                    <a href="" className="projects__link">
+                      <FaGithub />
+                    </a>
+                    <a href="" className="projects__link">
+                      <FaExternalLinkAlt />
+                    </a>
+                  </div>
                 </div>
                 <div className="projects__planet projects__planet--green">
                   <h3 className="projects__heading">Temporary Title</h3>
@@ -212,9 +223,14 @@ function App() {
                     expedita explicabo totam dolorum iusto. Ratione et sint
                     fugit? Quia illum debitis accusamus voluptatem distinctio?
                   </p>
-                  <a href="" className="projects__link">
-                    Link
-                  </a>
+                  <div>
+                    <a href="" className="projects__link">
+                      <FaGithub />
+                    </a>
+                    <a href="" className="projects__link">
+                      <FaExternalLinkAlt />
+                    </a>
+                  </div>
                 </div>
                 <div className="projects__planet projects__planet--orange">
                   <h3 className="projects__heading">Temporary Title</h3>
@@ -224,9 +240,14 @@ function App() {
                     expedita explicabo totam dolorum iusto. Ratione et sint
                     fugit? Quia illum debitis accusamus voluptatem distinctio?
                   </p>
-                  <a href="" className="projects__link">
-                    Link
-                  </a>
+                  <div>
+                    <a href="" className="projects__link">
+                      <FaGithub />
+                    </a>
+                    <a href="" className="projects__link">
+                      <FaExternalLinkAlt />
+                    </a>
+                  </div>
                 </div>
                 <div className="projects__planet projects__planet--purple">
                   <h3 className="projects__heading">Temporary Title</h3>
@@ -236,9 +257,14 @@ function App() {
                     expedita explicabo totam dolorum iusto. Ratione et sint
                     fugit? Quia illum debitis accusamus voluptatem distinctio?
                   </p>
-                  <a href="" className="projects__link">
-                    Link
-                  </a>
+                  <div>
+                    <a href="" className="projects__link">
+                      <FaGithub />
+                    </a>
+                    <a href="" className="projects__link">
+                      <FaExternalLinkAlt />
+                    </a>
+                  </div>
                 </div>
               </button>
             </div>
