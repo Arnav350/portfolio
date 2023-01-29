@@ -130,24 +130,22 @@ function App() {
       </nav>
       <div className="main__wrapper">
         <main className="main">
-          {/* <div className="constellation__box">
-            <figure className="constellation constellation--1">
+          <section className="intro" ref={intro}>
+            <figure className="intro__constellation intro__constellation--1">
               <img src={constellation1} />
             </figure>
-            <figure className="constellation constellation--2">
+            <figure className="intro__constellation intro__constellation--2">
               <img src={constellation2} />
             </figure>
-            <figure className="constellation constellation--3">
+            <figure className="intro__constellation intro__constellation--3">
               <img src={constellation3} />
             </figure>
-            <figure className="constellation constellation--4">
+            <figure className="intro__constellation intro__constellation--4">
               <img src={constellation4} />
             </figure>
-            <figure className="constellation constellation--5">
+            <figure className="intro__constellation intro__constellation--5">
               <img src={constellation5} />
             </figure>
-          </div> */}
-          <section className="intro" ref={intro}>
             <FaLightbulb className="intro__dark click" onClick={toggleDark} />
             <div className="intro__text container">
               <h1 className="intro__title">Hello,</h1>
@@ -166,7 +164,6 @@ function App() {
             </div>
           </section>
           <section className="projects" ref={projects}>
-            {/* Create a 3d solar system of planets, each of which are projects, that rotate around a line along the y axis */}
             <div className="temp container">
               <h1 className="projects__title secondary">Projects</h1>
               <button
