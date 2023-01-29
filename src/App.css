@@ -471,22 +471,22 @@ section {
   left: 50%;
   height: 384px;
   width: 384px;
-  background-color: yellow;
+  background-color: orange;
   z-index: 2;
-  box-shadow: 0px 0px 40px 15px yellow;
+  box-shadow: 0 0 10px orange, 0 0 60px orange, 0 0 200px yellow, inset 0 0 80px yellow;
   transition: opacity 300ms;
 }
 
 .projects__pause {
   width: 200px;
   height: 200px;
-  color: #fffb00;
+  color: rgb(255, 162, 0);
 }
 
 .projects__planet {
   height: 128px;
   width: 128px;
-  transition: width 400ms, height 400ms, border-radius 400ms, opacity 300ms;
+  transition: width 400ms, height 400ms, border-radius 400ms, opacity 300ms, background-image 300ms;
   animation: orbit 20s infinite ease-in-out;
   overflow: hidden;
   background-size: cover;
@@ -502,36 +502,60 @@ section {
   background-image: url("./assets/planet1.png");
 }
 
-.projects__heading {
-  margin-top: 104px;
-  color: black;
-  font-size: 12px;
-  font-weight: 400;
-  transition: margin-top 300ms ease;
-}
-
-.projects__description,
-.projects__link {
-  color: black;
-  opacity: 0;
-  transition: opacity 300ms ease;
-}
-
 .projects__system:has(.projects__planet:hover) .projects__planet:not(:hover),
 .projects__system:has(.projects__planet:hover) .projects__star {
   opacity: 0.7;
 }
 
-.projects__description {
-  font-size: 8px;
+.projects__planet--red {
+  background-image: url("./assets/planet1.png");
+}
+
+.projects__planet--purple {
+  background-image: url("./assets/planet2.png");
+  animation-delay: -4s;
+}
+
+.projects__planet--green {
+  background-image: url("./assets/planet3.png");
+  animation-delay: -7s;
+}
+
+.projects__planet--orange {
+  background-image: url("./assets/planet4.png");
+  animation-delay: -11s;
+}
+
+.projects__planet--blue {
+  background-image: url("./assets/planet5.png");
+  animation-delay: -16s;
+}
+
+.projects__heading {
+  padding: 232px 0 8px 0;
+  color: black;
+  font-size: 12px;
+  font-weight: 400;
+  transition: padding-top 300ms, font-size 300ms;
+}
+
+.projects__description,
+.projects__link {
+  width: 256px;
+  color: black;
+  font-size: 18px;
+  opacity: 0;
+  transition: opacity 300ms;
 }
 
 .projects__link {
-  font-size: 10px;
+  padding: 8px 4px 0 4px;
+  font-size: 24px;
 }
 
 .projects__planet:hover .projects__heading {
-  margin-top: 0;
+  padding-top: 0;
+  font-size: 32px;
 }
 
 .projects__planet:hover .projects__description,
@@ -539,29 +563,6 @@ section {
   opacity: 1;
 }
 
-.projects__planet--blue {
-  background-image: url("./assets/planet1.png");
-}
-
-.projects__planet--red {
-  background-color: red;
-  animation-delay: -4s;
-}
-
-.projects__planet--green {
-  background-color: green;
-  animation-delay: -7s;
-}
-
-.projects__planet--orange {
-  background-color: orange;
-  animation-delay: -11s;
-}
-
-.projects__planet--purple {
-  background-color: purple;
-  animation-delay: -16s;
-}
 
 /* experience */
 

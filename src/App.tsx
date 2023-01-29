@@ -181,7 +181,7 @@ function App() {
                     <FaPause className="projects__pause" />
                   )}
                 </div>
-                <div className="projects__planet projects__planet--blue">
+                <div className="projects__planet projects__planet--purple">
                   <h3 className="projects__heading">Temporary Title</h3>
                   <p className="projects__description">
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit.
@@ -189,12 +189,12 @@ function App() {
                     expedita explicabo totam dolorum iusto. Ratione et sint
                     fugit? Quia illum debitis accusamus voluptatem distinctio?
                   </p>
-                  <div>
+                  <div className="projects__link__wrapper">
                     <a href="" className="projects__link">
-                      <FaGithub />
+                      <FaGithub className="projects__icon" />
                     </a>
                     <a href="" className="projects__link">
-                      <FaExternalLinkAlt />
+                      <FaExternalLinkAlt className="projects__icon" />
                     </a>
                   </div>
                 </div>
@@ -206,12 +206,12 @@ function App() {
                     expedita explicabo totam dolorum iusto. Ratione et sint
                     fugit? Quia illum debitis accusamus voluptatem distinctio?
                   </p>
-                  <div>
+                  <div className="projects__link__wrapper">
                     <a href="" className="projects__link">
-                      <FaGithub />
+                      <FaGithub className="projects__icon" />
                     </a>
                     <a href="" className="projects__link">
-                      <FaExternalLinkAlt />
+                      <FaExternalLinkAlt className="projects__icon" />
                     </a>
                   </div>
                 </div>
@@ -223,12 +223,12 @@ function App() {
                     expedita explicabo totam dolorum iusto. Ratione et sint
                     fugit? Quia illum debitis accusamus voluptatem distinctio?
                   </p>
-                  <div>
+                  <div className="projects__link__wrapper">
                     <a href="" className="projects__link">
-                      <FaGithub />
+                      <FaGithub className="projects__icon" />
                     </a>
                     <a href="" className="projects__link">
-                      <FaExternalLinkAlt />
+                      <FaExternalLinkAlt className="projects__icon" />
                     </a>
                   </div>
                 </div>
@@ -240,16 +240,16 @@ function App() {
                     expedita explicabo totam dolorum iusto. Ratione et sint
                     fugit? Quia illum debitis accusamus voluptatem distinctio?
                   </p>
-                  <div>
+                  <div className="projects__link__wrapper">
                     <a href="" className="projects__link">
-                      <FaGithub />
+                      <FaGithub className="projects__icon" />
                     </a>
                     <a href="" className="projects__link">
-                      <FaExternalLinkAlt />
+                      <FaExternalLinkAlt className="projects__icon" />
                     </a>
                   </div>
                 </div>
-                <div className="projects__planet projects__planet--purple">
+                <div className="projects__planet projects__planet--blue">
                   <h3 className="projects__heading">Temporary Title</h3>
                   <p className="projects__description">
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit.
@@ -257,12 +257,12 @@ function App() {
                     expedita explicabo totam dolorum iusto. Ratione et sint
                     fugit? Quia illum debitis accusamus voluptatem distinctio?
                   </p>
-                  <div>
+                  <div className="projects__link__wrapper">
                     <a href="" className="projects__link">
-                      <FaGithub />
+                      <FaGithub className="projects__icon" />
                     </a>
                     <a href="" className="projects__link">
-                      <FaExternalLinkAlt />
+                      <FaExternalLinkAlt className="projects__icon" />
                     </a>
                   </div>
                 </div>
