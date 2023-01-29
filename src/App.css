@@ -465,14 +465,14 @@ section {
   width: 128px;
   transition: width 400ms,
     height 400ms,
-    border-radius 400ms,
+    border-radius 600ms,
     background-image 400ms,
-    background-color 400ms,
+    background-color 800ms,
     opacity 300ms;
   animation: orbit 20s infinite ease-in-out;
   overflow: hidden;
   background-size: cover;
-  background-position: center;
+  background-blend-mode: darken;
 }
 
 .projects__planet:hover {
@@ -480,7 +480,6 @@ section {
   height: 384px;
   border-radius: 16px;
   background-color: #00000080;
-  background-blend-mode: multiply;
   cursor: default;
   --planet-index: 4;
 }
