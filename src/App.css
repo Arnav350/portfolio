@@ -588,6 +588,46 @@ section {
   font-size: 64px;
 }
 
+.experience__box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.experience--jobs {
+  display: grid;
+}
+
+.experience__fluids {
+  display: flex;
+}
+
+.experience__fluid {
+  margin: 8px;
+  width: 48px;
+  height: 200px;
+  background-color: lightblue;
+}
+
+.experience--languages {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.experience__language {
+  width: 128px;
+  margin: 16px;
+  cursor: pointer;
+  transition: scale 200ms, opacity 200ms;
+}
+
+.experience__language:hover {
+  scale: 0.9;
+  opacity: 0.7;
+}
+
 /* contact */
 
 .contact {

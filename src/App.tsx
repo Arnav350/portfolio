@@ -4,6 +4,12 @@ import constellation2 from "./assets/constellation2.png";
 import constellation3 from "./assets/constellation3.png";
 import constellation4 from "./assets/constellation4.png";
 import constellation5 from "./assets/constellation5.png";
+import language_css from "./assets/language_css.png";
+import language_html from "./assets/language_html.png";
+import language_js from "./assets/language_js.png";
+import language_npm from "./assets/language_npm.png";
+import language_react from "./assets/language_react.png";
+import language_ts from "./assets/language_ts.png";
 import {
   FaHome,
   FaCode,
@@ -269,6 +275,40 @@ function App() {
           <section className="experience" ref={experience}>
             <div className="temp container">
               <h1 className="experience__title secondary">Experience</h1>
+              <div className="experience__box">
+                <div className="experience--jobs">
+                  <div className="experience__fluids">
+                    <div className="experience__fluid"></div>
+                    <div className="experience__fluid"></div>
+                  </div>
+                  <div className="experience__heading">Jobs</div>
+                  <div className="experience__screen">Screen</div>
+                  <div className="experience__nav">
+                    <button className="experience__left">Left</button>
+                    <button className="experience__right">Right</button>
+                  </div>
+                </div>
+                <div className="experience--languages">
+                  <figure className="experience__language">
+                    <img src={language_css} alt="" />
+                  </figure>
+                  <figure className="experience__language">
+                    <img src={language_html} alt="" />
+                  </figure>
+                  <figure className="experience__language">
+                    <img src={language_npm} alt="" />
+                  </figure>
+                  <figure className="experience__language">
+                    <img src={language_js} alt="" />
+                  </figure>
+                  <figure className="experience__language">
+                    <img src={language_ts} alt="" />
+                  </figure>
+                  <figure className="experience__language">
+                    <img src={language_react} alt="" />
+                  </figure>
+                </div>
+              </div>
             </div>
           </section>
           <section className="contact" ref={contact}>
