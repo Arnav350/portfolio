@@ -30,6 +30,7 @@ import "./App.css";
 
 function App() {
   const [pause, setPause] = useState(false);
+  const [screen, setScreen] = useState(1);
 
   const page = useRef<HTMLDivElement>(null!);
   const intro = useRef<HTMLButtonElement>(null!);
@@ -66,6 +67,10 @@ function App() {
 
   function clipboardEmail() {
     navigator.clipboard.writeText(socials.email);
+  }
+
+  function switchScreen() {
+    const test = document.querySelector(".experience__screen");
   }
 
   return (
@@ -278,18 +283,47 @@ function App() {
               <div className="experience__box">
                 <div className="experience--jobs">
                   <div className="experience__top">
-                    <div className="experience__button"></div>
-                    <div className="experience__button"></div>
-                    <div className="experience__button"></div>
-                    <div className="experience__button"></div>
-                    <div className="experience__button"></div>
+                    <div className="experience__light experience__light--1"></div>
+                    <div className="experience__light experience__light--2"></div>
+                    <div className="experience__light experience__light--3"></div>
+                    <div className="experience__light experience__light--4"></div>
+                    <div className="experience__light experience__light--5"></div>
                     <div className="experience__knob"></div>
                   </div>
                   <div className="experience__fluids">
                     <div className="experience__fluid"></div>
                     <div className="experience__fluid"></div>
                   </div>
-                  <div className="experience__screen">Screen</div>
+                  <div className="experience__screen experience__screen--1">
+                    <h1>Title 1</h1>
+                    <p>Bullet 1</p>
+                    <p>Bullet 2</p>
+                    <p>Bullet 3</p>
+                  </div>
+                  <div className="experience__screen experience__screen--2">
+                    <h1>Title 2</h1>
+                    <p>Bullet 1</p>
+                    <p>Bullet 2</p>
+                    <p>Bullet 3</p>
+                  </div>
+                  <div className="experience__screen experience__screen--3">
+                    <h1>Title 3</h1>
+                    <p>Bullet 1</p>
+                    <p>Bullet 2</p>
+                    <p>Bullet 3</p>
+                  </div>
+                  <div className="experience__screen experience__screen--4">
+                    <h1>Title 4</h1>
+                    <p>Bullet 1</p>
+                    <p>Bullet 2</p>
+                    <p>Bullet 3</p>
+                  </div>
+                  <div className="experience__screen experience__screen--5">
+                    <h1>Title 5</h1>
+                    <p>Bullet 1</p>
+                    <p>Bullet 2</p>
+                    <p>Bullet 3</p>
+                  </div>
                   <button className="experience__left"></button>
                   <button className="experience__right"></button>
                 </div>

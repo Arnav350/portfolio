@@ -600,7 +600,8 @@ section {
     "top top top top top top"
     "fluid fluid screen screen screen screen"
     ". . . left right .";
-  gap: 4px;
+  padding: 16px;
+  background-color: black;
 }
 
 .experience__top {
@@ -610,7 +611,7 @@ section {
   align-items: center;
 }
 
-.experience__button,
+.experience__light,
 .experience__knob {
   margin: 8px 16px;
   width: 48px;
@@ -618,8 +619,12 @@ section {
   border-radius: 50%;
 }
 
-.experience__button {
-  background-color: red;
+.experience__light {
+  background-color: rgb(155, 0, 0);
+}
+
+.experience__light--1 {
+  filter: brightness(2);
 }
 
 .experience__knob {
@@ -648,9 +653,16 @@ section {
   background-color: lightgray;
 }
 
+.experience__screen--2,
+.experience__screen--3,
+.experience__screen--4,
+.experience__screen--5 {
+  display: none;
+}
+
 .experience__left,
 .experience__right {
-  margin: 4px;
+  margin: 8px;
   padding: 10px;
   width: 4px;
   height: 4px;
