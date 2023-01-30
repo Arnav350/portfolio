@@ -277,16 +277,21 @@ function App() {
               <h1 className="experience__title secondary">Experience</h1>
               <div className="experience__box">
                 <div className="experience--jobs">
+                  <div className="experience__top">
+                    <div className="experience__button"></div>
+                    <div className="experience__button"></div>
+                    <div className="experience__button"></div>
+                    <div className="experience__button"></div>
+                    <div className="experience__button"></div>
+                    <div className="experience__knob"></div>
+                  </div>
                   <div className="experience__fluids">
                     <div className="experience__fluid"></div>
                     <div className="experience__fluid"></div>
                   </div>
-                  <div className="experience__heading">Jobs</div>
                   <div className="experience__screen">Screen</div>
-                  <div className="experience__nav">
-                    <button className="experience__left">Left</button>
-                    <button className="experience__right">Right</button>
-                  </div>
+                  <button className="experience__left"></button>
+                  <button className="experience__right"></button>
                 </div>
                 <div className="experience--languages">
                   <figure className="experience__language">
