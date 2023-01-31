@@ -623,7 +623,7 @@ section {
   background-color: rgb(155, 0, 0);
 }
 
-.experience__light--1 {
+.experience__light--0 {
   filter: brightness(2);
 }
 
@@ -643,6 +643,22 @@ section {
   width: 48px;
   height: 200px;
   background-color: lightblue;
+  background-repeat: no-repeat;
+  background-size:
+    12px 1px,
+    12px 1px,
+    12px 1px,
+    12px 1px;
+  background-position:
+    left 20%,
+    left 40%,
+    left 60%,
+    left 80%;
+  background-image:
+    linear-gradient(gray, gray),
+    linear-gradient(gray, gray),
+    linear-gradient(gray, gray),
+    linear-gradient(gray, gray);
 }
 
 .experience__screen {
@@ -653,10 +669,10 @@ section {
   background-color: lightgray;
 }
 
+.experience__screen--1,
 .experience__screen--2,
 .experience__screen--3,
-.experience__screen--4,
-.experience__screen--5 {
+.experience__screen--4 {
   display: none;
 }
 

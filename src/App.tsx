@@ -39,6 +39,8 @@ function App() {
   const contact = useRef<HTMLButtonElement>(null!);
   const system = useRef<HTMLButtonElement>(null!);
 
+  const jobs = 5;
+
   const socials = {
     linkedIn: "www.linkedin.com/in/patel-arnav",
     github: "https://github.com/Arnav350",
@@ -69,8 +71,52 @@ function App() {
     navigator.clipboard.writeText(socials.email);
   }
 
-  function switchScreen() {
-    const test = document.querySelector(".experience__screen");
+  function nextScreen() {
+    setScreen((screen + 1) % jobs);
+    const allLights =
+      document.querySelectorAll<HTMLDivElement>(".experience__light");
+    const currentLight = document.querySelector<HTMLDivElement>(
+      ".experience__light--" + screen
+    );
+    const allScreens = document.querySelectorAll<HTMLDivElement>(
+      ".experience__screen"
+    );
+    const currentScreen = document.querySelector<HTMLDivElement>(
+      ".experience__screen--" + screen
+    );
+    if (allLights && currentLight && allScreens && currentScreen) {
+      for (let i = 0; i < jobs; i++) {
+        allLights[i].style.filter = "brightness(1)";
+        allScreens[i].style.display = "none";
+      }
+      currentLight.style.filter = "brightness(2)";
+      currentScreen.style.display = "block";
+    }
+    console.log(screen);
+  }
+
+  function prevScreen() {
+    setScreen((screen + 4) % jobs);
+    const allLights =
+      document.querySelectorAll<HTMLDivElement>(".experience__light");
+    const currentLight = document.querySelector<HTMLDivElement>(
+      ".experience__light--" + screen
+    );
+    const allScreens = document.querySelectorAll<HTMLDivElement>(
+      ".experience__screen"
+    );
+    const currentScreen = document.querySelector<HTMLDivElement>(
+      ".experience__screen--" + screen
+    );
+    if (allLights && currentLight && allScreens && currentScreen) {
+      for (let i = 0; i < jobs; i++) {
+        allLights[i].style.filter = "brightness(1)";
+        allScreens[i].style.display = "none";
+      }
+      currentLight.style.filter = "brightness(2)";
+      currentScreen.style.display = "block";
+    }
+    console.log(screen);
   }
 
   return (
@@ -283,49 +329,55 @@ function App() {
               <div className="experience__box">
                 <div className="experience--jobs">
                   <div className="experience__top">
+                    <div className="experience__light experience__light--0"></div>
                     <div className="experience__light experience__light--1"></div>
                     <div className="experience__light experience__light--2"></div>
                     <div className="experience__light experience__light--3"></div>
                     <div className="experience__light experience__light--4"></div>
-                    <div className="experience__light experience__light--5"></div>
                     <div className="experience__knob"></div>
                   </div>
                   <div className="experience__fluids">
                     <div className="experience__fluid"></div>
                     <div className="experience__fluid"></div>
                   </div>
-                  <div className="experience__screen experience__screen--1">
+                  <div className="experience__screen experience__screen--0">
                     <h1>Title 1</h1>
                     <p>Bullet 1</p>
                     <p>Bullet 2</p>
                     <p>Bullet 3</p>
                   </div>
-                  <div className="experience__screen experience__screen--2">
+                  <div className="experience__screen experience__screen--1">
                     <h1>Title 2</h1>
                     <p>Bullet 1</p>
                     <p>Bullet 2</p>
                     <p>Bullet 3</p>
                   </div>
-                  <div className="experience__screen experience__screen--3">
+                  <div className="experience__screen experience__screen--2">
                     <h1>Title 3</h1>
                     <p>Bullet 1</p>
                     <p>Bullet 2</p>
                     <p>Bullet 3</p>
                   </div>
-                  <div className="experience__screen experience__screen--4">
+                  <div className="experience__screen experience__screen--3">
                     <h1>Title 4</h1>
                     <p>Bullet 1</p>
                     <p>Bullet 2</p>
                     <p>Bullet 3</p>
                   </div>
-                  <div className="experience__screen experience__screen--5">
+                  <div className="experience__screen experience__screen--4">
                     <h1>Title 5</h1>
                     <p>Bullet 1</p>
                     <p>Bullet 2</p>
                     <p>Bullet 3</p>
                   </div>
-                  <button className="experience__left"></button>
-                  <button className="experience__right"></button>
+                  <button
+                    className="experience__left"
+                    onClick={prevScreen}
+                  ></button>
+                  <button
+                    className="experience__right"
+                    onClick={nextScreen}
+                  ></button>
                 </div>
                 <div className="experience--languages">
                   <figure className="experience__language">
