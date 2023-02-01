@@ -77,6 +77,25 @@ section {
   opacity: 0.7;
 }
 
+.page {
+  background-color: #444444;
+}
+
+.main__wrapper {
+  height: 200vh;
+  background-color: #222222;
+  transform-origin: top left;
+  transition: rotate 500ms cubic-bezier(1, 0, 0.25, 1), filter 700ms ease;
+}
+
+.main {
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  transition: height 500ms cubic-bezier(1, 0, 0.25, 1);
+  perspective: 0px;
+}
+
 /* scrollbar */
 
 .main::-webkit-scrollbar {
@@ -298,43 +317,45 @@ section {
 
 .intro {
   height: 100vh;
+  transform-style: preserve-3d;
+  /* overflow: hidden; */
 }
 
 .intro__constellation {
   position: absolute;
   opacity: 0.3;
-  filter: blur(4px);
+  filter: blur(3px);
   transition: opacity 100ms ease;
-  background-size: 100%;
+  transform: translateZ(-0.5px) scale(1.7);
 }
 
 .intro__constellation--1 {
-  top: 70%;
-  left: 30%;
+  top: 88%;
+  left: 24%;
   width: 22%;
 }
 
 .intro__constellation--2 {
-  top: 20%;
-  left: 80%;
+  top: 8%;
+  left: 104%;
   width: 14%;
 }
 
 .intro__constellation--3 {
   top: 40%;
-  left: 5%;
+  left: -20%;
   width: 10%;
 }
 
 .intro__constellation--4 {
-  top: 8%;
+  top: -8%;
   left: 40%;
   width: 22%;
 }
 
 .intro__constellation--5 {
-  top: 56%;
-  left: 68%;
+  top: 68%;
+  left: 84%;
   width: 22%;
 }
 
@@ -596,8 +617,7 @@ section {
 
 .experience--jobs {
   display: grid;
-  grid-template-areas:
-    "top top top top top top"
+  grid-template-areas: "top top top top top top"
     "fluid fluid screen screen screen screen"
     ". . . left right .";
   padding: 16px;
@@ -644,18 +664,15 @@ section {
   height: 200px;
   background-color: lightblue;
   background-repeat: no-repeat;
-  background-size:
-    12px 2px,
+  background-size: 12px 2px,
     12px 2px,
     12px 2px,
     12px 2px;
-  background-position:
-    left 20%,
+  background-position: left 20%,
     left 40%,
     left 60%,
     left 80%;
-  background-image:
-    linear-gradient(gray, gray),
+  background-image: linear-gradient(gray, gray),
     linear-gradient(gray, gray),
     linear-gradient(gray, gray),
     linear-gradient(gray, gray);
@@ -740,23 +757,6 @@ section {
 }
 
 /* open */
-
-.page {
-  background-color: #444444;
-}
-
-.main__wrapper {
-  height: 200vh;
-  background-color: #222222;
-  transform-origin: top left;
-  transition: rotate 500ms cubic-bezier(1, 0, 0.25, 1), filter 700ms ease;
-}
-
-.main {
-  height: 100vh;
-  overflow-y: scroll;
-  transition: height 500ms cubic-bezier(1, 0, 0.25, 1);
-}
 
 .open .main {
   height: 200vh;
