@@ -596,7 +596,7 @@ section {
 /* experience */
 
 .experience {
-  height: 100vh;
+  height: 120vh;
 }
 
 .temp {
@@ -660,6 +660,7 @@ section {
 
 .experience__fluid {
   margin: 8px;
+  padding-top: 8px;
   width: 48px;
   height: 200px;
   background-color: lightblue;
@@ -679,7 +680,7 @@ section {
 }
 
 .experience__arrow {
-  margin-top: 184px;
+  height: 0;
   border-left: 8px solid gray;
   border-top: 8px solid transparent;
   border-bottom: 8px solid transparent;
@@ -730,7 +731,7 @@ section {
 
 .experience__language {
   width: 128px;
-  margin: 16px;
+  padding: 16px;
   cursor: pointer;
   transition: scale 200ms, opacity 200ms;
 }

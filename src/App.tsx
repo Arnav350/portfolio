@@ -4,10 +4,18 @@ import constellation2 from "./assets/constellation2.png";
 import constellation3 from "./assets/constellation3.png";
 import constellation4 from "./assets/constellation4.png";
 import constellation5 from "./assets/constellation5.png";
+import language_bem from "./assets/language_bem.png";
+import language_bootstrap from "./assets/language_bootstrap.png";
+import language_c from "./assets/language_c.png";
 import language_css from "./assets/language_css.png";
+import language_git from "./assets/language_git.png";
 import language_html from "./assets/language_html.png";
+import language_java from "./assets/language_java.png";
 import language_js from "./assets/language_js.png";
+import language_json from "./assets/language_json.png";
+import language_node from "./assets/language_node.png";
 import language_npm from "./assets/language_npm.png";
+import language_python from "./assets/language_python.png";
 import language_react from "./assets/language_react.png";
 import language_ts from "./assets/language_ts.png";
 import {
@@ -30,7 +38,7 @@ import "./App.css";
 
 function App() {
   const [pause, setPause] = useState(false);
-  const [screen, setScreen] = useState(1);
+  const [screen, setScreen] = useState(0);
 
   const page = useRef<HTMLDivElement>(null!);
   const intro = useRef<HTMLButtonElement>(null!);
@@ -72,34 +80,34 @@ function App() {
   }
 
   useEffect(() => {
-    // console.log("useState: " + screen);
+    console.log("useState: " + screen);
   }, [screen]);
 
   function switchScreen(direction: string) {
-    if (direction === "right") {
-      setScreen((screen + 1) % jobs);
-    } else {
-      setScreen((screen + jobs - 1) % jobs);
-    }
+    const screenNumber =
+      direction === "right" ? (screen + 1) % jobs : (screen + jobs - 1) % jobs;
 
-    const fluidHeight: number = 184 / 5;
+    setScreen(screenNumber);
+
+    const fluidHeight: number = 168 / 5;
     const randomLeft: number = Math.floor(
-      (Math.random() + screen) * fluidHeight
+      (Math.random() + screenNumber) * fluidHeight
     );
     const randomRight: number = Math.floor(
-      (Math.random() + screen) * fluidHeight
+      (Math.random() + screenNumber) * fluidHeight
     );
 
     const allLights =
       document.querySelectorAll<HTMLDivElement>(".experience__light");
-    const currentLight = document.querySelector<HTMLDivElement>(
-      ".experience__light--" + screen
-    );
+
     const allScreens = document.querySelectorAll<HTMLDivElement>(
       ".experience__screen"
     );
+    const currentLight = document.querySelector<HTMLDivElement>(
+      ".experience__light--" + screenNumber
+    );
     const currentScreen = document.querySelector<HTMLDivElement>(
-      ".experience__screen--" + screen
+      ".experience__screen--" + screenNumber
     );
     const allArrows =
       document.querySelectorAll<HTMLDivElement>(".experience__arrow");
@@ -335,7 +343,10 @@ function App() {
                   </div>
                   <div className="experience__fluids">
                     <div className="experience__fluid">
-                      <div className="experience__arrow"></div>
+                      <div className="experience__arrow">
+                        <p>Oct</p>
+                        <p>2020</p>
+                      </div>
                     </div>
                     <div className="experience__fluid">
                       <div className="experience__arrow"></div>
@@ -343,30 +354,35 @@ function App() {
                   </div>
                   <div className="experience__screen experience__screen--0">
                     <h1>Title 1</h1>
+                    <h3>Title 1</h3>
                     <p>Bullet 1</p>
                     <p>Bullet 2</p>
                     <p>Bullet 3</p>
                   </div>
                   <div className="experience__screen experience__screen--1">
                     <h1>Title 2</h1>
+                    <h3>Title 2</h3>
                     <p>Bullet 1</p>
                     <p>Bullet 2</p>
                     <p>Bullet 3</p>
                   </div>
                   <div className="experience__screen experience__screen--2">
-                    <h1>Title 3</h1>
+                    <h1>Biz4Group</h1>
+                    <h3>Frontend Developer Intern</h3>
                     <p>Bullet 1</p>
                     <p>Bullet 2</p>
                     <p>Bullet 3</p>
                   </div>
                   <div className="experience__screen experience__screen--3">
-                    <h1>Title 4</h1>
+                    <h1>Orlando Science Schools</h1>
+                    <h3>Volunteer</h3>
                     <p>Bullet 1</p>
                     <p>Bullet 2</p>
                     <p>Bullet 3</p>
                   </div>
                   <div className="experience__screen experience__screen--4">
-                    <h1>Title 5</h1>
+                    <h1>Orange Technical College</h1>
+                    <h3>Intern</h3>
                     <p>Bullet 1</p>
                     <p>Bullet 2</p>
                     <p>Bullet 3</p>
@@ -398,6 +414,30 @@ function App() {
                   </figure>
                   <figure className="experience__language">
                     <img src={language_react} alt="" />
+                  </figure>
+                  <figure className="experience__language">
+                    <img src={language_node} alt="" />
+                  </figure>
+                  <figure className="experience__language">
+                    <img src={language_json} alt="" />
+                  </figure>
+                  <figure className="experience__language">
+                    <img src={language_bootstrap} alt="" />
+                  </figure>
+                  <figure className="experience__language">
+                    <img src={language_git} alt="" />
+                  </figure>
+                  <figure className="experience__language">
+                    <img src={language_bem} alt="" />
+                  </figure>
+                  <figure className="experience__language">
+                    <img src={language_python} alt="" />
+                  </figure>
+                  <figure className="experience__language">
+                    <img src={language_java} alt="" />
+                  </figure>
+                  <figure className="experience__language">
+                    <img src={language_c} alt="" />
                   </figure>
                 </div>
               </div>
