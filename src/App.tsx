@@ -39,7 +39,7 @@ function App() {
   const contact = useRef<HTMLButtonElement>(null!);
   const system = useRef<HTMLButtonElement>(null!);
 
-  const jobs = 5;
+  const jobs: number = 5;
 
   const socials = {
     linkedIn: "www.linkedin.com/in/patel-arnav",
@@ -71,32 +71,25 @@ function App() {
     navigator.clipboard.writeText(socials.email);
   }
 
-  function nextScreen() {
-    setScreen((screen + 1) % jobs);
-    const allLights =
-      document.querySelectorAll<HTMLDivElement>(".experience__light");
-    const currentLight = document.querySelector<HTMLDivElement>(
-      ".experience__light--" + screen
-    );
-    const allScreens = document.querySelectorAll<HTMLDivElement>(
-      ".experience__screen"
-    );
-    const currentScreen = document.querySelector<HTMLDivElement>(
-      ".experience__screen--" + screen
-    );
-    if (allLights && currentLight && allScreens && currentScreen) {
-      for (let i = 0; i < jobs; i++) {
-        allLights[i].style.filter = "brightness(1)";
-        allScreens[i].style.display = "none";
-      }
-      currentLight.style.filter = "brightness(2)";
-      currentScreen.style.display = "block";
-    }
-    console.log(screen);
-  }
+  useEffect(() => {
+    // console.log("useState: " + screen);
+  }, [screen]);
 
-  function prevScreen() {
-    setScreen((screen + 4) % jobs);
+  function switchScreen(direction: string) {
+    if (direction === "right") {
+      setScreen((screen + 1) % jobs);
+    } else {
+      setScreen((screen + jobs - 1) % jobs);
+    }
+
+    const fluidHeight: number = 184 / 5;
+    const randomLeft: number = Math.floor(
+      (Math.random() + screen) * fluidHeight
+    );
+    const randomRight: number = Math.floor(
+      (Math.random() + screen) * fluidHeight
+    );
+
     const allLights =
       document.querySelectorAll<HTMLDivElement>(".experience__light");
     const currentLight = document.querySelector<HTMLDivElement>(
@@ -108,15 +101,19 @@ function App() {
     const currentScreen = document.querySelector<HTMLDivElement>(
       ".experience__screen--" + screen
     );
-    if (allLights && currentLight && allScreens && currentScreen) {
-      for (let i = 0; i < jobs; i++) {
-        allLights[i].style.filter = "brightness(1)";
-        allScreens[i].style.display = "none";
-      }
+    const allArrows =
+      document.querySelectorAll<HTMLDivElement>(".experience__arrow");
+
+    for (let i = 0; i < jobs; i++) {
+      allLights[i].style.filter = "brightness(1)";
+      allScreens[i].style.display = "none";
+    }
+    if (currentLight && currentScreen) {
       currentLight.style.filter = "brightness(2)";
       currentScreen.style.display = "block";
     }
-    console.log(screen);
+    allArrows[0].style.marginTop = `${randomLeft}px`;
+    allArrows[1].style.marginTop = `${randomRight}px`;
   }
 
   return (
@@ -337,8 +334,12 @@ function App() {
                     <div className="experience__knob"></div>
                   </div>
                   <div className="experience__fluids">
-                    <div className="experience__fluid"></div>
-                    <div className="experience__fluid"></div>
+                    <div className="experience__fluid">
+                      <div className="experience__arrow"></div>
+                    </div>
+                    <div className="experience__fluid">
+                      <div className="experience__arrow"></div>
+                    </div>
                   </div>
                   <div className="experience__screen experience__screen--0">
                     <h1>Title 1</h1>
@@ -372,11 +373,11 @@ function App() {
                   </div>
                   <button
                     className="experience__left"
-                    onClick={prevScreen}
+                    onClick={() => switchScreen("left")}
                   ></button>
                   <button
                     className="experience__right"
-                    onClick={nextScreen}
+                    onClick={() => switchScreen("right")}
                   ></button>
                 </div>
                 <div className="experience--languages">

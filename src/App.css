@@ -645,10 +645,10 @@ section {
   background-color: lightblue;
   background-repeat: no-repeat;
   background-size:
-    12px 1px,
-    12px 1px,
-    12px 1px,
-    12px 1px;
+    12px 2px,
+    12px 2px,
+    12px 2px,
+    12px 2px;
   background-position:
     left 20%,
     left 40%,
@@ -659,6 +659,13 @@ section {
     linear-gradient(gray, gray),
     linear-gradient(gray, gray),
     linear-gradient(gray, gray);
+}
+
+.experience__arrow {
+  margin-top: 184px;
+  border-left: 8px solid gray;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
 }
 
 .experience__screen {
