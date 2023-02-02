@@ -17,6 +17,7 @@ import language_node from "./assets/language_node.png";
 import language_npm from "./assets/language_npm.png";
 import language_python from "./assets/language_python.png";
 import language_react from "./assets/language_react.png";
+import language_redux from "./assets/language_redux.png";
 import language_ts from "./assets/language_ts.png";
 import {
   FaHome,
@@ -419,9 +420,6 @@ function App() {
                     <img src={language_node} alt="" />
                   </figure>
                   <figure className="experience__language">
-                    <img src={language_json} alt="" />
-                  </figure>
-                  <figure className="experience__language">
                     <img src={language_bootstrap} alt="" />
                   </figure>
                   <figure className="experience__language">
@@ -429,6 +427,12 @@ function App() {
                   </figure>
                   <figure className="experience__language">
                     <img src={language_bem} alt="" />
+                  </figure>
+                  <figure className="experience__language">
+                    <img src={language_redux} alt="" />
+                  </figure>
+                  <figure className="experience__language">
+                    <img src={language_json} alt="" />
                   </figure>
                   <figure className="experience__language">
                     <img src={language_python} alt="" />
@@ -446,6 +450,12 @@ function App() {
           <section className="contact" ref={contact}>
             <div className="temp container">
               <h1 className="contact__title secondary">Contact</h1>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Inventore minima dolores labore tenetur molestiae dolorem
+                impedit, voluptatum facilis tempore aliquid quia dicta eum
+                eveniet saepe incidunt odio facere repudiandae aliquam?
+              </p>
             </div>
           </section>
         </main>
