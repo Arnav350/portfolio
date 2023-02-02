@@ -63,6 +63,11 @@ section {
   color: #d1405f;
 }
 
+.shadow {
+  box-shadow: inset 4px 4px 8px -4px #ffffff80,
+    inset -4px -4px 8px 0 #00000080;
+}
+
 .click {
   transition: scale 100ms ease;
 }
@@ -643,8 +648,9 @@ section {
   background-color: rgb(155, 0, 0);
 }
 
-.experience__light--0 {
+.light {
   filter: brightness(2);
+  box-shadow: 0 0 8px 2px red;
 }
 
 .experience__knob {
@@ -689,6 +695,7 @@ section {
 .experience__screen {
   grid-area: screen;
   margin: 8px;
+  padding: 8px;
   width: 300px;
   height: 200px;
   background-color: lightgray;

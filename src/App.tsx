@@ -98,29 +98,27 @@ function App() {
       (Math.random() + screenNumber) * fluidHeight
     );
 
-    const allLights =
-      document.querySelectorAll<HTMLDivElement>(".experience__light");
-
-    const allScreens = document.querySelectorAll<HTMLDivElement>(
-      ".experience__screen"
-    );
-    const currentLight = document.querySelector<HTMLDivElement>(
-      ".experience__light--" + screenNumber
+    const previousScreen = document.querySelector<HTMLDivElement>(
+      ".experience__screen--" + screen
     );
     const currentScreen = document.querySelector<HTMLDivElement>(
       ".experience__screen--" + screenNumber
     );
+    const previousLight = document.querySelector<HTMLDivElement>(
+      ".experience__light--" + screen
+    );
+    const currentLight = document.querySelector<HTMLDivElement>(
+      ".experience__light--" + screenNumber
+    );
     const allArrows =
       document.querySelectorAll<HTMLDivElement>(".experience__arrow");
 
-    for (let i = 0; i < jobs; i++) {
-      allLights[i].style.filter = "brightness(1)";
-      allScreens[i].style.display = "none";
-    }
-    if (currentLight && currentScreen) {
-      currentLight.style.filter = "brightness(2)";
+    if (previousScreen && currentScreen) {
+      previousScreen.style.display = "none";
       currentScreen.style.display = "block";
     }
+    previousLight?.classList.remove("light");
+    currentLight?.classList.add("light");
     allArrows[0].style.marginTop = `${randomLeft}px`;
     allArrows[1].style.marginTop = `${randomRight}px`;
   }
@@ -335,53 +333,53 @@ function App() {
               <div className="experience__box">
                 <div className="experience--jobs">
                   <div className="experience__top">
-                    <div className="experience__light experience__light--0"></div>
-                    <div className="experience__light experience__light--1"></div>
-                    <div className="experience__light experience__light--2"></div>
-                    <div className="experience__light experience__light--3"></div>
-                    <div className="experience__light experience__light--4"></div>
-                    <div className="experience__knob"></div>
+                    <div className="experience__light shadow experience__light--0 light"></div>
+                    <div className="experience__light shadow experience__light--1"></div>
+                    <div className="experience__light shadow experience__light--2"></div>
+                    <div className="experience__light shadow experience__light--3"></div>
+                    <div className="experience__light shadow experience__light--4"></div>
+                    <div className="experience__knob shadow"></div>
                   </div>
                   <div className="experience__fluids">
-                    <div className="experience__fluid">
+                    <div className="experience__fluid shadow">
                       <div className="experience__arrow">
                         <p>Oct</p>
                         <p>2020</p>
                       </div>
                     </div>
-                    <div className="experience__fluid">
+                    <div className="experience__fluid shadow">
                       <div className="experience__arrow"></div>
                     </div>
                   </div>
-                  <div className="experience__screen experience__screen--0">
+                  <div className="experience__screen shadow experience__screen--0">
                     <h1>Title 1</h1>
                     <h3>Title 1</h3>
                     <p>Bullet 1</p>
                     <p>Bullet 2</p>
                     <p>Bullet 3</p>
                   </div>
-                  <div className="experience__screen experience__screen--1">
+                  <div className="experience__screen shadow experience__screen--1">
                     <h1>Title 2</h1>
                     <h3>Title 2</h3>
                     <p>Bullet 1</p>
                     <p>Bullet 2</p>
                     <p>Bullet 3</p>
                   </div>
-                  <div className="experience__screen experience__screen--2">
+                  <div className="experience__screen shadow experience__screen--2">
                     <h1>Biz4Group</h1>
                     <h3>Frontend Developer Intern</h3>
                     <p>Bullet 1</p>
                     <p>Bullet 2</p>
                     <p>Bullet 3</p>
                   </div>
-                  <div className="experience__screen experience__screen--3">
+                  <div className="experience__screen shadow experience__screen--3">
                     <h1>Orlando Science Schools</h1>
                     <h3>Volunteer</h3>
                     <p>Bullet 1</p>
                     <p>Bullet 2</p>
                     <p>Bullet 3</p>
                   </div>
-                  <div className="experience__screen experience__screen--4">
+                  <div className="experience__screen shadow experience__screen--4">
                     <h1>Orange Technical College</h1>
                     <h3>Intern</h3>
                     <p>Bullet 1</p>
