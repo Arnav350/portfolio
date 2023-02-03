@@ -460,12 +460,16 @@ function App() {
           <section className="contact" ref={contact}>
             <div className="temp container">
               <h1 className="contact__title secondary">Contact</h1>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Inventore minima dolores labore tenetur molestiae dolorem
-                impedit, voluptatum facilis tempore aliquid quia dicta eum
-                eveniet saepe incidunt odio facere repudiandae aliquam?
-              </p>
+              <div className="contact__ufo">
+                <div className="contact__top">
+                  <div className="contact__glass"></div>
+                  <div className="contact__belt"></div>
+                </div>
+                <div className="contact__bottom">
+                  <div className="contact__light"></div>
+                  {/* <div className="contact__belt"></div> */}
+                </div>
+              </div>
             </div>
           </section>
         </main>
