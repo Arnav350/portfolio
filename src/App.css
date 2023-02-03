@@ -27,7 +27,7 @@ span {
 
 p,
 label {
-  font-family: 'Nunito Sans', sans-serif;
+  font-family: "Nunito Sans", sans-serif;
 }
 
 label {
@@ -623,10 +623,10 @@ section {
 .experience--jobs {
   display: grid;
   grid-template-areas: "top top top top top top"
-    "fluid fluid screen screen screen screen"
+    "tube tube screen screen screen screen"
     ". . . left right .";
   padding: 16px;
-  background-color: black;
+  background-color: rgb(86, 86, 86);
 }
 
 .experience__top {
@@ -637,7 +637,7 @@ section {
 }
 
 .experience__light,
-.experience__knob {
+.experience__logo {
   margin: 8px 16px;
   width: 48px;
   height: 48px;
@@ -653,18 +653,20 @@ section {
   box-shadow: 0 0 8px 2px red;
 }
 
-.experience__knob {
-  background-color: gray;
+.experience__logo {
+  background-color: blue;
+  color: white;
+  padding: 12px 2px;
 }
 
-.experience__fluids {
-  grid-area: fluid;
+.experience__tubes {
+  grid-area: tube;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.experience__fluid {
+.experience__tube {
   margin: 8px;
   padding-top: 8px;
   width: 48px;
@@ -685,20 +687,28 @@ section {
     linear-gradient(gray, gray);
 }
 
+.experience__fluid {
+  background-color: #88bacb80;
+  width: 100%;
+  height: 100px;
+}
+
 .experience__arrow {
   height: 0;
   border-left: 8px solid gray;
   border-top: 8px solid transparent;
-  border-bottom: 8px solid transparent;
+  border-bottom: 8px solid #88bacb80;
 }
 
 .experience__screen {
   grid-area: screen;
   margin: 8px;
-  padding: 8px;
-  width: 300px;
+  padding: 20px;
+  width: 360px;
   height: 200px;
-  background-color: lightgray;
+  background-color: black;
+  border: 16px solid rgb(31, 31, 31);
+  border-radius: 64px;
 }
 
 .experience__screen--1,
@@ -706,6 +716,16 @@ section {
 .experience__screen--3,
 .experience__screen--4 {
   display: none;
+}
+
+.experience__employer,
+.experience__position {
+  color: white;
+  font-family: 'Nunito Sans';
+}
+
+.experience__bullet {
+  color: white;
 }
 
 .experience__left,

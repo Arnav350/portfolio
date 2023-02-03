@@ -80,22 +80,19 @@ function App() {
     navigator.clipboard.writeText(socials.email);
   }
 
-  useEffect(() => {
-    console.log("useState: " + screen);
-  }, [screen]);
-
   function switchScreen(direction: string) {
     const screenNumber =
       direction === "right" ? (screen + 1) % jobs : (screen + jobs - 1) % jobs;
 
     setScreen(screenNumber);
 
-    const fluidHeight: number = 168 / 5;
+    const tubeHeight: number = 168;
+    const arrowBorder: number = 8;
     const randomLeft: number = Math.floor(
-      (Math.random() + screenNumber) * fluidHeight
+      ((Math.random() + screenNumber) * tubeHeight) / jobs
     );
     const randomRight: number = Math.floor(
-      (Math.random() + screenNumber) * fluidHeight
+      ((Math.random() + screenNumber) * tubeHeight) / jobs
     );
 
     const previousScreen = document.querySelector<HTMLDivElement>(
@@ -112,6 +109,8 @@ function App() {
     );
     const allArrows =
       document.querySelectorAll<HTMLDivElement>(".experience__arrow");
+    const allFluids =
+      document.querySelectorAll<HTMLDivElement>(".experience__fluid");
 
     if (previousScreen && currentScreen) {
       previousScreen.style.display = "none";
@@ -121,6 +120,8 @@ function App() {
     currentLight?.classList.add("light");
     allArrows[0].style.marginTop = `${randomLeft}px`;
     allArrows[1].style.marginTop = `${randomRight}px`;
+    allFluids[0].style.height = `${tubeHeight - randomLeft + arrowBorder}px`;
+    allFluids[1].style.height = `${tubeHeight - randomRight + arrowBorder}px`;
   }
 
   return (
@@ -338,53 +339,64 @@ function App() {
                     <div className="experience__light shadow experience__light--2"></div>
                     <div className="experience__light shadow experience__light--3"></div>
                     <div className="experience__light shadow experience__light--4"></div>
-                    <div className="experience__knob shadow"></div>
+                    <div className="experience__logo">NASA</div>
                   </div>
-                  <div className="experience__fluids">
-                    <div className="experience__fluid shadow">
+                  <div className="experience__tubes">
+                    <div className="experience__tube shadow">
                       <div className="experience__arrow">
                         <p>Oct</p>
                         <p>2020</p>
                       </div>
+                      <div className="experience__fluid shadow"></div>
                     </div>
-                    <div className="experience__fluid shadow">
-                      <div className="experience__arrow"></div>
+                    <div className="experience__tube shadow">
+                      <div className="experience__arrow">
+                        <p>Oct</p>
+                        <p>2020</p>
+                      </div>
+                      <div className="experience__fluid shadow"></div>
                     </div>
                   </div>
                   <div className="experience__screen shadow experience__screen--0">
-                    <h1>Title 1</h1>
-                    <h3>Title 1</h3>
-                    <p>Bullet 1</p>
-                    <p>Bullet 2</p>
-                    <p>Bullet 3</p>
+                    <h1 className="experience__employer">Title 1</h1>
+                    <h3 className="experience__position">Title 1</h3>
+                    <p className="experience__bullet">Bullet 1</p>
+                    <p className="experience__bullet">Bullet 2</p>
+                    <p className="experience__bullet">Bullet 3</p>
                   </div>
                   <div className="experience__screen shadow experience__screen--1">
-                    <h1>Title 2</h1>
-                    <h3>Title 2</h3>
-                    <p>Bullet 1</p>
-                    <p>Bullet 2</p>
-                    <p>Bullet 3</p>
+                    <h1 className="experience__employer">Title 2</h1>
+                    <h3 className="experience__position">Title 2</h3>
+                    <p className="experience__bullet">Bullet 1</p>
+                    <p className="experience__bullet">Bullet 2</p>
+                    <p className="experience__bullet">Bullet 3</p>
                   </div>
                   <div className="experience__screen shadow experience__screen--2">
-                    <h1>Biz4Group</h1>
-                    <h3>Frontend Developer Intern</h3>
-                    <p>Bullet 1</p>
-                    <p>Bullet 2</p>
-                    <p>Bullet 3</p>
+                    <h1 className="experience__employer">Biz4Group</h1>
+                    <h3 className="experience__position">
+                      Frontend Developer Intern
+                    </h3>
+                    <p className="experience__bullet">Bullet 1</p>
+                    <p className="experience__bullet">Bullet 2</p>
+                    <p className="experience__bullet">Bullet 3</p>
                   </div>
                   <div className="experience__screen shadow experience__screen--3">
-                    <h1>Orlando Science Schools</h1>
-                    <h3>Volunteer</h3>
-                    <p>Bullet 1</p>
-                    <p>Bullet 2</p>
-                    <p>Bullet 3</p>
+                    <h1 className="experience__employer">
+                      Orlando Science Schools
+                    </h1>
+                    <h3 className="experience__position">Volunteer</h3>
+                    <p className="experience__bullet">Bullet 1</p>
+                    <p className="experience__bullet">Bullet 2</p>
+                    <p className="experience__bullet">Bullet 3</p>
                   </div>
                   <div className="experience__screen shadow experience__screen--4">
-                    <h1>Orange Technical College</h1>
-                    <h3>Intern</h3>
-                    <p>Bullet 1</p>
-                    <p>Bullet 2</p>
-                    <p>Bullet 3</p>
+                    <h1 className="experience__employer">
+                      Orange Technical College
+                    </h1>
+                    <h3 className="experience__position">Intern</h3>
+                    <p className="experience__bullet">Bullet 1</p>
+                    <p className="experience__bullet">Bullet 2</p>
+                    <p className="experience__bullet">Bullet 3</p>
                   </div>
                   <button
                     className="experience__left"
