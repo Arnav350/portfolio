@@ -4,21 +4,8 @@ import constellation2 from "./assets/constellation2.png";
 import constellation3 from "./assets/constellation3.png";
 import constellation4 from "./assets/constellation4.png";
 import constellation5 from "./assets/constellation5.png";
-import language_bem from "./assets/language_bem.png";
-import language_bootstrap from "./assets/language_bootstrap.png";
-import language_c from "./assets/language_c.png";
-import language_css from "./assets/language_css.png";
-import language_git from "./assets/language_git.png";
-import language_html from "./assets/language_html.png";
-import language_java from "./assets/language_java.png";
-import language_js from "./assets/language_js.png";
-import language_json from "./assets/language_json.png";
-import language_node from "./assets/language_node.png";
-import language_npm from "./assets/language_npm.png";
-import language_python from "./assets/language_python.png";
-import language_react from "./assets/language_react.png";
-import language_redux from "./assets/language_redux.png";
-import language_ts from "./assets/language_ts.png";
+import ProjectsPlanet from "./components/ProjectsPlanet";
+import ExperienceLanguages from "./components/ExperienceLanguages";
 import {
   FaHome,
   FaCode,
@@ -80,13 +67,17 @@ function App() {
     navigator.clipboard.writeText(socials.email);
   }
 
+  useEffect(() => {
+    switchScreen("right");
+  }, []);
+
   function switchScreen(direction: string) {
     const screenNumber =
       direction === "right" ? (screen + 1) % jobs : (screen + jobs - 1) % jobs;
 
     setScreen(screenNumber);
 
-    const tubeHeight: number = 168;
+    const tubeHeight: number = 208;
     const arrowBorder: number = 8;
     const randomLeft: number = Math.floor(
       ((Math.random() + screenNumber) * tubeHeight) / jobs
@@ -96,16 +87,16 @@ function App() {
     );
 
     const previousScreen = document.querySelector<HTMLDivElement>(
-      ".experience__screen--" + screen
+      `.experience__screen--${screen}`
     );
     const currentScreen = document.querySelector<HTMLDivElement>(
-      ".experience__screen--" + screenNumber
+      `.experience__screen--${screenNumber}`
     );
     const previousLight = document.querySelector<HTMLDivElement>(
-      ".experience__light--" + screen
+      `.experience__light--${screen}`
     );
     const currentLight = document.querySelector<HTMLDivElement>(
-      ".experience__light--" + screenNumber
+      `.experience__light--${screenNumber}`
     );
     const allArrows =
       document.querySelectorAll<HTMLDivElement>(".experience__arrow");
@@ -240,91 +231,56 @@ function App() {
                     <FaPause className="projects__pause" />
                   )}
                 </div>
-                <div className="projects__planet projects__planet--purple">
-                  <h3 className="projects__heading">Temporary Title</h3>
-                  <p className="projects__description">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                <ProjectsPlanet
+                  color="purple"
+                  heading="Temporary Title"
+                  description="Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                     Ducimus error laborum eveniet, distinctio beatae nihil
                     expedita explicabo totam dolorum iusto. Ratione et sint
-                    fugit? Quia illum debitis accusamus voluptatem distinctio?
-                  </p>
-                  <div className="projects__link__wrapper">
-                    <a href="" className="projects__link">
-                      <FaGithub className="projects__icon" />
-                    </a>
-                    <a href="" className="projects__link">
-                      <FaExternalLinkAlt className="projects__icon" />
-                    </a>
-                  </div>
-                </div>
-                <div className="projects__planet projects__planet--red">
-                  <h3 className="projects__heading">Temporary Title</h3>
-                  <p className="projects__description">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    fugit? Quia illum debitis accusamus voluptatem distinctio?"
+                  github=""
+                  link=""
+                />
+                <ProjectsPlanet
+                  color="red"
+                  heading="Temporary Title"
+                  description="Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                     Ducimus error laborum eveniet, distinctio beatae nihil
                     expedita explicabo totam dolorum iusto. Ratione et sint
-                    fugit? Quia illum debitis accusamus voluptatem distinctio?
-                  </p>
-                  <div className="projects__link__wrapper">
-                    <a href="" className="projects__link">
-                      <FaGithub className="projects__icon" />
-                    </a>
-                    <a href="" className="projects__link">
-                      <FaExternalLinkAlt className="projects__icon" />
-                    </a>
-                  </div>
-                </div>
-                <div className="projects__planet projects__planet--green">
-                  <h3 className="projects__heading">Temporary Title</h3>
-                  <p className="projects__description">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    fugit? Quia illum debitis accusamus voluptatem distinctio?"
+                  github=""
+                  link=""
+                />
+                <ProjectsPlanet
+                  color="green"
+                  heading="Temporary Title"
+                  description="Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                     Ducimus error laborum eveniet, distinctio beatae nihil
                     expedita explicabo totam dolorum iusto. Ratione et sint
-                    fugit? Quia illum debitis accusamus voluptatem distinctio?
-                  </p>
-                  <div className="projects__link__wrapper">
-                    <a href="" className="projects__link">
-                      <FaGithub className="projects__icon" />
-                    </a>
-                    <a href="" className="projects__link">
-                      <FaExternalLinkAlt className="projects__icon" />
-                    </a>
-                  </div>
-                </div>
-                <div className="projects__planet projects__planet--orange">
-                  <h3 className="projects__heading">Temporary Title</h3>
-                  <p className="projects__description">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    fugit? Quia illum debitis accusamus voluptatem distinctio?"
+                  github=""
+                  link=""
+                />
+                <ProjectsPlanet
+                  color="orange"
+                  heading="Temporary Title"
+                  description="Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                     Ducimus error laborum eveniet, distinctio beatae nihil
                     expedita explicabo totam dolorum iusto. Ratione et sint
-                    fugit? Quia illum debitis accusamus voluptatem distinctio?
-                  </p>
-                  <div className="projects__link__wrapper">
-                    <a href="" className="projects__link">
-                      <FaGithub className="projects__icon" />
-                    </a>
-                    <a href="" className="projects__link">
-                      <FaExternalLinkAlt className="projects__icon" />
-                    </a>
-                  </div>
-                </div>
-                <div className="projects__planet projects__planet--blue">
-                  <h3 className="projects__heading">Temporary Title</h3>
-                  <p className="projects__description">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    fugit? Quia illum debitis accusamus voluptatem distinctio?"
+                  github=""
+                  link=""
+                />
+                <ProjectsPlanet
+                  color="blue"
+                  heading="Temporary Title"
+                  description="Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                     Ducimus error laborum eveniet, distinctio beatae nihil
                     expedita explicabo totam dolorum iusto. Ratione et sint
-                    fugit? Quia illum debitis accusamus voluptatem distinctio?
-                  </p>
-                  <div className="projects__link__wrapper">
-                    <a href="" className="projects__link">
-                      <FaGithub className="projects__icon" />
-                    </a>
-                    <a href="" className="projects__link">
-                      <FaExternalLinkAlt className="projects__icon" />
-                    </a>
-                  </div>
-                </div>
+                    fugit? Quia illum debitis accusamus voluptatem distinctio?"
+                  github=""
+                  link=""
+                />
               </button>
             </div>
           </section>
@@ -332,7 +288,7 @@ function App() {
             <div className="temp container">
               <h1 className="experience__title secondary">Experience</h1>
               <div className="experience__box">
-                <div className="experience--jobs">
+                <div className="experience--jobs shadow">
                   <div className="experience__top">
                     <div className="experience__light shadow experience__light--0 light"></div>
                     <div className="experience__light shadow experience__light--1"></div>
@@ -347,14 +303,14 @@ function App() {
                         <p>Oct</p>
                         <p>2020</p>
                       </div>
-                      <div className="experience__fluid shadow"></div>
+                      <div className="experience__fluid"></div>
                     </div>
                     <div className="experience__tube shadow">
                       <div className="experience__arrow">
                         <p>Oct</p>
                         <p>2020</p>
                       </div>
-                      <div className="experience__fluid shadow"></div>
+                      <div className="experience__fluid"></div>
                     </div>
                   </div>
                   <div className="experience__screen shadow experience__screen--0">
@@ -407,53 +363,7 @@ function App() {
                     onClick={() => switchScreen("right")}
                   ></button>
                 </div>
-                <div className="experience--languages">
-                  <figure className="experience__language">
-                    <img src={language_css} alt="" />
-                  </figure>
-                  <figure className="experience__language">
-                    <img src={language_html} alt="" />
-                  </figure>
-                  <figure className="experience__language">
-                    <img src={language_npm} alt="" />
-                  </figure>
-                  <figure className="experience__language">
-                    <img src={language_js} alt="" />
-                  </figure>
-                  <figure className="experience__language">
-                    <img src={language_ts} alt="" />
-                  </figure>
-                  <figure className="experience__language">
-                    <img src={language_react} alt="" />
-                  </figure>
-                  <figure className="experience__language">
-                    <img src={language_node} alt="" />
-                  </figure>
-                  <figure className="experience__language">
-                    <img src={language_bootstrap} alt="" />
-                  </figure>
-                  <figure className="experience__language">
-                    <img src={language_git} alt="" />
-                  </figure>
-                  <figure className="experience__language">
-                    <img src={language_bem} alt="" />
-                  </figure>
-                  <figure className="experience__language">
-                    <img src={language_redux} alt="" />
-                  </figure>
-                  <figure className="experience__language">
-                    <img src={language_json} alt="" />
-                  </figure>
-                  <figure className="experience__language">
-                    <img src={language_python} alt="" />
-                  </figure>
-                  <figure className="experience__language">
-                    <img src={language_java} alt="" />
-                  </figure>
-                  <figure className="experience__language">
-                    <img src={language_c} alt="" />
-                  </figure>
-                </div>
+                <ExperienceLanguages />
               </div>
             </div>
           </section>
