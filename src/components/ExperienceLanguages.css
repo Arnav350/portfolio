@@ -1,10 +1,47 @@
 .experience--languages {
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+}
+
+.left {
+  animation: conveyor 15s linear infinite;
+}
+
+.right {
+  flex-direction: row-reverse;
+  animation: conveyor 15s linear infinite reverse;
+}
+
+.test1 {
+  position: relative;
+  display: flex;
   padding-top: 80px;
-  width: 700px;
+  width: 1000px;
+  background-color: #222222;
+}
+
+.experience__start,
+.experience__end {
+  position: absolute;
+  top: 80px;
+  height: 128px;
+  width: 40px;
+  background-color: black;
+  z-index: 1;
+}
+
+.experience__end {
+  right: 0;
+}
+
+.test3 {
+  position: absolute;
+  top: 80px;
+  right: 0;
+  height: 128px;
+  color: #fff;
+  background-color: black;
 }
 
 .experience__language {
@@ -17,4 +54,14 @@
 .experience__language:hover {
   scale: 0.9;
   opacity: 0.7;
+}
+
+@keyframes conveyor {
+  0% {
+    translate: 0 0;
+  }
+
+  100% {
+    translate: -2048px 0;
+  }
 }

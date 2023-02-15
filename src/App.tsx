@@ -363,7 +363,8 @@ function App() {
                     onClick={() => switchScreen("right")}
                   ></button>
                 </div>
-                <ExperienceLanguages />
+                <ExperienceLanguages direction="left" />
+                <ExperienceLanguages direction="right" />
               </div>
             </div>
           </section>
