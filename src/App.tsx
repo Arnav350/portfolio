@@ -67,10 +67,6 @@ function App() {
     navigator.clipboard.writeText(socials.email);
   }
 
-  useEffect(() => {
-    switchScreen("right");
-  }, []);
-
   function switchScreen(direction: string) {
     const screenNumber =
       direction === "right" ? (screen + 1) % jobs : (screen + jobs - 1) % jobs;

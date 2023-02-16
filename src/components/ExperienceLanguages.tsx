@@ -24,107 +24,111 @@ function ExperienceLanguages(props: prop) {
   const languagesClass: string = `experience--languages ${props.direction}`;
 
   return (
-    <div className="test1">
-      <div className="experience__start"></div>
-      <div className={languagesClass}>
-        <figure className="experience__language">
-          <img src={language_css} alt="" />
-        </figure>
-        <figure className="experience__language">
-          <img src={language_java} alt="" />
-        </figure>
-        <figure className="experience__language">
-          <img src={language_json} alt="" />
-        </figure>
-        <figure className="experience__language">
-          <img src={language_git} alt="" />
-        </figure>
-        <figure className="experience__language">
-          <img src={language_npm} alt="" />
-        </figure>
-        <figure className="experience__language">
-          <img src={language_sass} alt="" />
-        </figure>
-        <figure className="experience__language">
-          <img src={language_python} alt="" />
-        </figure>
-        <figure className="experience__language">
-          <img src={language_react} alt="" />
-        </figure>
-        <figure className="experience__language">
-          <img src={language_node} alt="" />
-        </figure>
-        <figure className="experience__language">
-          <img src={language_html} alt="" />
-        </figure>
-        <figure className="experience__language">
-          <img src={language_js} alt="" />
-        </figure>
-        <figure className="experience__language">
-          <img src={language_bem} alt="" />
-        </figure>
-        <figure className="experience__language">
-          <img src={language_redux} alt="" />
-        </figure>
-        <figure className="experience__language">
-          <img src={language_bootstrap} alt="" />
-        </figure>
-        <figure className="experience__language">
-          <img src={language_ts} alt="" />
-        </figure>
-        <figure className="experience__language">
-          <img src={language_c} alt="" />
-        </figure>
-        <figure className="experience__language">
-          <img src={language_css} alt="" />
-        </figure>
-        <figure className="experience__language">
-          <img src={language_java} alt="" />
-        </figure>
-        <figure className="experience__language">
-          <img src={language_json} alt="" />
-        </figure>
-        <figure className="experience__language">
-          <img src={language_git} alt="" />
-        </figure>
-        <figure className="experience__language">
-          <img src={language_npm} alt="" />
-        </figure>
-        <figure className="experience__language">
-          <img src={language_sass} alt="" />
-        </figure>
-        <figure className="experience__language">
-          <img src={language_python} alt="" />
-        </figure>
-        <figure className="experience__language">
-          <img src={language_react} alt="" />
-        </figure>
-        <figure className="experience__language">
-          <img src={language_node} alt="" />
-        </figure>
-        <figure className="experience__language">
-          <img src={language_html} alt="" />
-        </figure>
-        <figure className="experience__language">
-          <img src={language_js} alt="" />
-        </figure>
-        <figure className="experience__language">
-          <img src={language_bem} alt="" />
-        </figure>
-        <figure className="experience__language">
-          <img src={language_redux} alt="" />
-        </figure>
-        <figure className="experience__language">
-          <img src={language_bootstrap} alt="" />
-        </figure>
-        <figure className="experience__language">
-          <img src={language_ts} alt="" />
-        </figure>
-        <figure className="experience__language">
-          <img src={language_c} alt="" />
-        </figure>
+    <div className="experience__container">
+      <div className="experience__background"></div>
+      <div className="experience__conveyor">
+        <div className="experience__start"></div>
+        <div className={languagesClass}>
+          <figure className="experience__language">
+            <img src={language_css} alt="" />
+          </figure>
+          <figure className="experience__language">
+            <img src={language_java} alt="" />
+          </figure>
+          <figure className="experience__language">
+            <img src={language_json} alt="" />
+          </figure>
+          <figure className="experience__language">
+            <img src={language_git} alt="" />
+          </figure>
+          <figure className="experience__language">
+            <img src={language_npm} alt="" />
+          </figure>
+          <figure className="experience__language">
+            <img src={language_sass} alt="" />
+          </figure>
+          <figure className="experience__language">
+            <img src={language_python} alt="" />
+          </figure>
+          <figure className="experience__language">
+            <img src={language_react} alt="" />
+          </figure>
+          <figure className="experience__language">
+            <img src={language_node} alt="" />
+          </figure>
+          <figure className="experience__language">
+            <img src={language_html} alt="" />
+          </figure>
+          <figure className="experience__language">
+            <img src={language_js} alt="" />
+          </figure>
+          <figure className="experience__language">
+            <img src={language_bem} alt="" />
+          </figure>
+          <figure className="experience__language">
+            <img src={language_redux} alt="" />
+          </figure>
+          <figure className="experience__language">
+            <img src={language_bootstrap} alt="" />
+          </figure>
+          <figure className="experience__language">
+            <img src={language_ts} alt="" />
+          </figure>
+          <figure className="experience__language">
+            <img src={language_c} alt="" />
+          </figure>
+          <figure className="experience__language">
+            <img src={language_css} alt="" />
+          </figure>
+          <figure className="experience__language">
+            <img src={language_java} alt="" />
+          </figure>
+          <figure className="experience__language">
+            <img src={language_json} alt="" />
+          </figure>
+          <figure className="experience__language">
+            <img src={language_git} alt="" />
+          </figure>
+          <figure className="experience__language">
+            <img src={language_npm} alt="" />
+          </figure>
+          <figure className="experience__language">
+            <img src={language_sass} alt="" />
+          </figure>
+          <figure className="experience__language">
+            <img src={language_python} alt="" />
+          </figure>
+          <figure className="experience__language">
+            <img src={language_react} alt="" />
+          </figure>
+          <figure className="experience__language">
+            <img src={language_node} alt="" />
+          </figure>
+          <figure className="experience__language">
+            <img src={language_html} alt="" />
+          </figure>
+          <figure className="experience__language">
+            <img src={language_js} alt="" />
+          </figure>
+          <figure className="experience__language">
+            <img src={language_bem} alt="" />
+          </figure>
+          <figure className="experience__language">
+            <img src={language_redux} alt="" />
+          </figure>
+          <figure className="experience__language">
+            <img src={language_bootstrap} alt="" />
+          </figure>
+          <figure className="experience__language">
+            <img src={language_ts} alt="" />
+          </figure>
+          <figure className="experience__language">
+            <img src={language_c} alt="" />
+          </figure>
+        </div>
+        <div className="experience__end"></div>
       </div>
-      <div className="experience__end"></div>
+      <div className="experience__background"></div>
     </div>
   );
 }
