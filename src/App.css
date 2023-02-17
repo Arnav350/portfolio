@@ -852,15 +852,11 @@ section {
   animation-play-state: paused;
 }
 
-/* scale */
-
-.scale {
-  scale: 1;
-}
+/* hidden */
 
 .hidden {
   opacity: 0;
-  transition: opacity 1000ms 200ms ease;
+  transition: opacity 500ms 100ms;
 }
 
 .show {

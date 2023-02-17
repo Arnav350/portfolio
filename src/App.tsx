@@ -26,7 +26,7 @@ import "./App.css";
 
 function App() {
   const [pause, setPause] = useState(false);
-  const [screen, setScreen] = useState(0);
+  const [screen, setScreen] = useState(-1);
 
   const page = useRef<HTMLDivElement>(null!);
   const intro = useRef<HTMLButtonElement>(null!);
@@ -111,28 +111,11 @@ function App() {
     allFluids[1].style.height = `${tubeHeight - randomRight + arrowBorder}px`;
   }
 
-  // function reveal() {
-  //   const main = document.querySelector<HTMLDivElement>(".main");
-  //   const projectsSystem =
-  //     document.querySelector<HTMLDivElement>(".projects__system");
-  //   const mainHeight: number | undefined = main?.clientHeight;
-  //   const projectsSystemTop: number | undefined =
-  //     projectsSystem?.getBoundingClientRect().top;
-  //   const projectsSystemBuffer: number = 200;
-
-  //   if (projectsSystemTop && mainHeight) {
-  //     if (projectsSystemTop < mainHeight - projectsSystemBuffer) {
-  //       projectsSystem?.classList.add("scale");
-  //     } else {
-  //       projectsSystem?.classList.remove("scale");
-  //     }
-  //   }
-  // }
-
   useEffect(() => {
+    switchScreen("right");
+
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
-        console.log(entry);
         if (entry.isIntersecting) {
           entry.target.classList.add("show");
         } else {
@@ -248,7 +231,7 @@ function App() {
           </section>
           <section className="projects" ref={projects}>
             <div className="temp container">
-              <h1 className="projects__title secondary">Projects</h1>
+              <h1 className="projects__title secondary hidden">Projects</h1>
               <button
                 className="projects__system hidden"
                 ref={system}
@@ -316,7 +299,7 @@ function App() {
           </section>
           <section className="experience" ref={experience}>
             <div className="temp container">
-              <h1 className="experience__title secondary">Experience</h1>
+              <h1 className="experience__title secondary hidden">Experience</h1>
               <div className="experience__box">
                 <div className="experience--jobs shadow hidden">
                   <div className="experience__top">
@@ -393,15 +376,17 @@ function App() {
                     onClick={() => switchScreen("right")}
                   ></button>
                 </div>
-                <ExperienceLanguages direction="left" />
-                <ExperienceLanguages direction="right" />
+                <div className="experience__conveyors hidden">
+                  <ExperienceLanguages direction="left" />
+                  <ExperienceLanguages direction="right" />
+                </div>
               </div>
             </div>
           </section>
           <section className="contact" ref={contact}>
             <div className="temp container">
-              <h1 className="contact__title secondary">Contact</h1>
-              <div className="contact__ufo">
+              <h1 className="contact__title secondary hidden">Contact</h1>
+              <div className="contact__ufo hidden">
                 <div className="contact__top">
                   <div className="contact__glass"></div>
                   <div className="contact__belt"></div>
