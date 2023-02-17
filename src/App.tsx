@@ -111,23 +111,39 @@ function App() {
     allFluids[1].style.height = `${tubeHeight - randomRight + arrowBorder}px`;
   }
 
-  function reveal() {
-    const main = document.querySelector<HTMLDivElement>(".main");
-    const projectsSystem =
-      document.querySelector<HTMLDivElement>(".projects__system");
-    const mainHeight: number | undefined = main?.clientHeight;
-    const projectsSystemTop: number | undefined =
-      projectsSystem?.getBoundingClientRect().top;
-    const projectsSystemBuffer: number = 200;
+  // function reveal() {
+  //   const main = document.querySelector<HTMLDivElement>(".main");
+  //   const projectsSystem =
+  //     document.querySelector<HTMLDivElement>(".projects__system");
+  //   const mainHeight: number | undefined = main?.clientHeight;
+  //   const projectsSystemTop: number | undefined =
+  //     projectsSystem?.getBoundingClientRect().top;
+  //   const projectsSystemBuffer: number = 200;
 
-    if (projectsSystemTop && mainHeight) {
-      if (projectsSystemTop < mainHeight - projectsSystemBuffer) {
-        projectsSystem?.classList.add("scale");
-      } else {
-        projectsSystem?.classList.remove("scale");
-      }
-    }
-  }
+  //   if (projectsSystemTop && mainHeight) {
+  //     if (projectsSystemTop < mainHeight - projectsSystemBuffer) {
+  //       projectsSystem?.classList.add("scale");
+  //     } else {
+  //       projectsSystem?.classList.remove("scale");
+  //     }
+  //   }
+  // }
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        console.log(entry);
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+        } else {
+          entry.target.classList.remove("show");
+        }
+      });
+    });
+
+    const hidden = document.querySelectorAll(".hidden");
+    hidden.forEach((elem) => observer.observe(elem));
+  }, []);
 
   return (
     <div className="page" ref={page}>
@@ -196,7 +212,7 @@ function App() {
         </div>
       </nav>
       <div className="main__wrapper">
-        <main className="main" onScroll={reveal}>
+        <main className="main">
           <section className="intro" ref={intro}>
             <figure className="intro__constellation intro__constellation--1">
               <img src={constellation1} />
@@ -215,16 +231,16 @@ function App() {
             </figure>
             <FaLightbulb className="intro__dark click" onClick={toggleDark} />
             <div className="intro__text container">
-              <h1 className="intro__title">Hello,</h1>
-              <h1 className="intro__title">
+              <h1 className="intro__title hidden">Hello,</h1>
+              <h1 className="intro__title hidden">
                 <span className="secondary">I'm Arnav</span>
               </h1>
-              <h3 className="intro__sub">
+              <h3 className="intro__sub hidden">
                 I am a <b className="secondary">frontend</b> software developer
                 based in the United States, specializing in the creation of{" "}
                 <b className="secondary">remarkable</b> online journies!
               </h3>
-              <h3 className="intro__sub">
+              <h3 className="intro__sub hidden">
                 Interested in working together? Let's have a{" "}
                 <b className="secondary">talk.</b>
               </h3>
@@ -234,7 +250,7 @@ function App() {
             <div className="temp container">
               <h1 className="projects__title secondary">Projects</h1>
               <button
-                className="projects__system"
+                className="projects__system hidden"
                 ref={system}
                 onClick={toggleOrbit}
               >
@@ -302,7 +318,7 @@ function App() {
             <div className="temp container">
               <h1 className="experience__title secondary">Experience</h1>
               <div className="experience__box">
-                <div className="experience--jobs shadow">
+                <div className="experience--jobs shadow hidden">
                   <div className="experience__top">
                     <div className="experience__light shadow experience__light--0 light"></div>
                     <div className="experience__light shadow experience__light--1"></div>
