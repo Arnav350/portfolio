@@ -18,10 +18,10 @@ function ProjectsPlanet(props: planet) {
       <p className="projects__description">{props.description}</p>
       <div className="projects__link__wrapper">
         <a href={props.github} className="projects__link">
-          <FaGithub className="projects__icon" />
+          <FaGithub className="projects__icon click" />
         </a>
         <a href={props.link} className="projects__link">
-          <FaExternalLinkAlt className="projects__icon" />
+          <FaExternalLinkAlt className="projects__icon click" />
         </a>
       </div>
     </div>

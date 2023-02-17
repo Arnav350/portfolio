@@ -111,6 +111,24 @@ function App() {
     allFluids[1].style.height = `${tubeHeight - randomRight + arrowBorder}px`;
   }
 
+  function reveal() {
+    const main = document.querySelector<HTMLDivElement>(".main");
+    const projectsSystem =
+      document.querySelector<HTMLDivElement>(".projects__system");
+    const mainHeight: number | undefined = main?.clientHeight;
+    const projectsSystemTop: number | undefined =
+      projectsSystem?.getBoundingClientRect().top;
+    const projectsSystemBuffer: number = 200;
+
+    if (projectsSystemTop && mainHeight) {
+      if (projectsSystemTop < mainHeight - projectsSystemBuffer) {
+        projectsSystem?.classList.add("scale");
+      } else {
+        projectsSystem?.classList.remove("scale");
+      }
+    }
+  }
+
   return (
     <div className="page" ref={page}>
       <nav className="nav-bar">
@@ -178,7 +196,7 @@ function App() {
         </div>
       </nav>
       <div className="main__wrapper">
-        <main className="main">
+        <main className="main" onScroll={reveal}>
           <section className="intro" ref={intro}>
             <figure className="intro__constellation intro__constellation--1">
               <img src={constellation1} />
