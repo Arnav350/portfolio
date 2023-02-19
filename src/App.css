@@ -724,6 +724,7 @@ section {
 
 .experience__arrow {
   height: 0;
+  width: 0;
   border-left: 8px solid gray;
   border-top: 8px solid transparent;
   border-bottom: 8px solid #88bacb60;
@@ -859,6 +860,6 @@ section {
   transition: opacity 500ms 100ms;
 }
 
-.show {
+.shown {
   opacity: 1;
 }

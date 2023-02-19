@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import resume from "./assets/resume.pdf";
 import constellation1 from "./assets/constellation1.png";
 import constellation2 from "./assets/constellation2.png";
 import constellation3 from "./assets/constellation3.png";
@@ -24,6 +25,13 @@ import {
 } from "react-icons/fa";
 import "./App.css";
 
+interface ISocials {
+  linkedIn: string;
+  github: string;
+  email: string;
+  resume: string;
+}
+
 function App() {
   const [pause, setPause] = useState(false);
   const [screen, setScreen] = useState(-1);
@@ -37,10 +45,11 @@ function App() {
 
   const jobs: number = 5;
 
-  const socials = {
-    linkedIn: "www.linkedin.com/in/patel-arnav",
+  const socials: ISocials = {
+    linkedIn: "https://www.linkedin.com/in/patel-arnav",
     github: "https://github.com/Arnav350",
     email: "patelarnavm+impt@gmail.com",
+    resume: resume,
   };
 
   function toggleNav() {
@@ -117,9 +126,9 @@ function App() {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add("show");
+          entry.target.classList.add("shown");
         } else {
-          entry.target.classList.remove("show");
+          entry.target.classList.remove("shown");
         }
       });
     });
@@ -143,7 +152,11 @@ function App() {
                 LinkedIn
               </h4>
             </a>
-            <a href={socials.github} className="nav--github nav__link">
+            <a
+              href={socials.github}
+              target="_blank"
+              className="nav--github nav__link"
+            >
               <FaGithub className="nav__social__icon" />
               <h4 className="nav__social__name nav__name--github">GitHub</h4>
             </a>
@@ -153,7 +166,11 @@ function App() {
                 Copy to Clipboard
               </h4>
             </a>
-            <a href="" className="nav--resume nav__link">
+            <a
+              href={socials.resume}
+              target="blank"
+              className="nav--resume nav__link"
+            >
               <FaRegNewspaper className="nav__social__icon" />
               <h4 className="nav__social__name nav__name--resume">Resume</h4>
             </a>
