@@ -16,23 +16,61 @@
   position: relative;
   display: flex;
   padding-top: 80px;
-  width: 1000px;
-  background-color: #222222;
+  width: 100%;
+  max-width: 1000px;
+  background-color: transparent;
 }
 
 .experience__start,
 .experience__end {
   position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
   top: 80px;
   height: 128px;
-  width: 80px;
-  background: linear-gradient(270deg, black, #222222);
+  width: 128px;
+  background-color: gray;
   z-index: 1;
 }
 
 .experience__end {
-  background: linear-gradient(90deg, black, #222222);
   right: 0;
+}
+
+.experience__red,
+.experience__green {
+  margin: 16px 0;
+  height: 16px;
+  width: 16px;
+}
+
+@keyframes glow {
+  0% {
+    filter: brightness(1);
+  }
+
+  80% {
+    filter: brightness(1);
+  }
+
+  90% {
+    filter: brightness(2);
+  }
+
+  100% {
+    filter: brightness(1);
+  }
+}
+
+.experience__red {
+  background-color: rgb(120, 0, 0);
+  animation: glow 2s infinite;
+}
+
+.experience__green {
+  background-color: rgb(64, 142, 64);
+  animation: glow 2s -1s infinite;
 }
 
 .experience--languages {
@@ -42,20 +80,20 @@
 }
 
 .left {
-  animation: conveyor 15s linear infinite;
+  animation: conveyor 32s linear infinite;
 }
 
 .right {
   flex-direction: row-reverse;
-  animation: conveyor 15s linear infinite reverse;
+  animation: conveyor 32s linear infinite reverse;
 }
 
 @keyframes conveyor {
-  0% {
+  from {
     translate: 0 0;
   }
 
-  100% {
+  to {
     translate: -2048px 0;
   }
 }

@@ -394,46 +394,6 @@ section {
 
 /* projects */
 
-@keyframes orbit {
-  0% {
-    left: 8%;
-    scale: 1;
-    z-index: var(--planet-index, 3);
-    box-shadow: inset 16px 0 16px #00000080;
-  }
-
-  25% {
-    scale: 1.2;
-    box-shadow: inset 0 0 32px #00000080;
-  }
-
-  50% {
-    left: 92%;
-    scale: 1;
-    z-index: var(--planet-index, 3);
-    box-shadow: inset -16px 0 16px #00000080;
-  }
-
-  50.01% {
-    left: 92%;
-    scale: 1;
-    z-index: var(--planet-index, 1);
-    box-shadow: inset -16px 0 16px #00000080;
-  }
-
-  75% {
-    scale: 0.8;
-    box-shadow: inset 0 0 0 #00000080;
-  }
-
-  100% {
-    left: 8%;
-    scale: 1;
-    z-index: var(--planet-index, 1);
-    box-shadow: inset 16px 0 16px #00000080;
-  }
-}
-
 .projects {
   height: 120vh;
 }
@@ -485,118 +445,6 @@ section {
   color: rgb(255, 162, 0);
 }
 
-.projects__planet {
-  height: 128px;
-  width: 128px;
-  transition: width 400ms,
-    height 400ms,
-    border-radius 600ms,
-    background-image 400ms,
-    background-color 800ms,
-    opacity 300ms;
-  animation: orbit 20s infinite ease-in-out;
-  overflow: hidden;
-  background-size: cover;
-  background-blend-mode: darken;
-}
-
-.projects__planet:hover {
-  width: 384px;
-  height: 384px;
-  border-radius: 16px;
-  background-color: #00000080;
-  cursor: default;
-  --planet-index: 4;
-}
-
-.projects__system:has(.projects__planet:hover) .projects__planet:not(:hover),
-.projects__system:has(.projects__planet:hover) .projects__star {
-  opacity: 0.7;
-}
-
-.projects__planet--red {
-  background-image: url("./assets/planet1.png");
-  background-color: #ed422d;
-}
-
-.projects__planet--red:hover {
-  background-image: url("./assets/project1.png");
-}
-
-.projects__planet--purple {
-  background-image: url("./assets/planet2.png");
-  background-color: #6f53c5;
-  animation-delay: -4s;
-}
-
-.projects__planet--purple:hover {
-  background-image: url("./assets/project2.png");
-}
-
-.projects__planet--green {
-  background-image: url("./assets/planet3.png");
-  background-color: #65be58;
-  animation-delay: -7s;
-}
-
-.projects__planet--green:hover {
-  background-image: url("./assets/project3.png");
-}
-
-.projects__planet--orange {
-  background-image: url("./assets/planet4.png");
-  background-color: #ed952d;
-  animation-delay: -11s;
-}
-
-.projects__planet--orange:hover {
-  background-image: url("./assets/project4.png");
-}
-
-.projects__planet--blue {
-  background-image: url("./assets/planet5.png");
-  background-color: #1cc2d8;
-  animation-delay: -16s;
-}
-
-.projects__planet--blue:hover {
-  background-image: url("./assets/project5.png");
-}
-
-.projects__heading {
-  padding: 248px 0 8px 0;
-  color: #f8f8f8;
-  font-size: 14px;
-  font-weight: 400;
-  transition: padding-top 300ms, font-size 300ms;
-}
-
-.projects__description,
-.projects__link {
-  width: 256px;
-  color: #f8f8f8;
-  font-size: 18px;
-  opacity: 0;
-  transition: opacity 300ms;
-}
-
-.projects__icon {
-  margin: 16px 8px 0 8px;
-  font-size: 24px;
-  cursor: pointer;
-}
-
-.projects__planet:hover .projects__heading {
-  padding-top: 0;
-  font-size: 40px;
-}
-
-.projects__planet:hover .projects__description,
-.projects__planet:hover .projects__link {
-  opacity: 1;
-}
-
-
 /* experience */
 
 .experience {
@@ -626,7 +474,7 @@ section {
     "tube tube screen screen screen screen"
     ". . . left right .";
   padding: 32px;
-  background-color: rgb(86, 86, 86);
+  background-color: #555;
   border-radius: 24px;
 }
 
@@ -722,9 +570,20 @@ section {
   color: white;
 }
 
+.experience__date {
+  height: 12px;
+  padding-left: 8px;
+}
+
+.experience__date--1,
+.experience__date--2,
+.experience__date--3,
+.experience__date--4 {
+  display: none;
+}
+
 .experience__arrow {
   height: 0;
-  width: 0;
   border-left: 8px solid gray;
   border-top: 8px solid transparent;
   border-bottom: 8px solid #88bacb60;

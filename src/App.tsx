@@ -21,7 +21,7 @@ import {
   FaLightbulb,
   FaPause,
   FaPlay,
-  FaExternalLinkAlt,
+  // FaExternalLinkAlt,
 } from "react-icons/fa";
 import "./App.css";
 
@@ -37,13 +37,14 @@ function App() {
   const [screen, setScreen] = useState(-1);
 
   const page = useRef<HTMLDivElement>(null!);
-  const intro = useRef<HTMLButtonElement>(null!);
-  const projects = useRef<HTMLButtonElement>(null!);
-  const experience = useRef<HTMLButtonElement>(null!);
-  const contact = useRef<HTMLButtonElement>(null!);
+  const intro = useRef<HTMLElement>(null!);
+  const projects = useRef<HTMLElement>(null!);
+  const experience = useRef<HTMLElement>(null!);
+  const contact = useRef<HTMLElement>(null!);
+  const footer = useRef<HTMLElement>(null!);
   const system = useRef<HTMLButtonElement>(null!);
 
-  const jobs: number = 5;
+  const jobs: number = 3;
 
   const socials: ISocials = {
     linkedIn: "https://www.linkedin.com/in/patel-arnav",
@@ -56,24 +57,16 @@ function App() {
     page.current?.classList.toggle("open");
   }
 
-  function toggleDark() {
-    page.current?.classList.toggle("dark");
-  }
-
   function toggleOrbit() {
     system.current?.classList.toggle("pause");
     setPause(!pause);
   }
 
-  function navScroll(nameClass: React.MutableRefObject<HTMLButtonElement>) {
-    nameClass.current.scrollIntoView({ behavior: "smooth" }); //false instead of { behavior: "smooth" }
+  function navScroll(nameClass: React.MutableRefObject<HTMLElement>) {
+    nameClass.current.scrollIntoView({ behavior: "smooth" });
     setTimeout(() => {
       toggleNav();
     }, 300);
-  }
-
-  function clipboardEmail() {
-    navigator.clipboard.writeText(socials.email);
   }
 
   function switchScreen(direction: string) {
@@ -82,7 +75,7 @@ function App() {
 
     setScreen(screenNumber);
 
-    const tubeHeight: number = 208;
+    const tubeHeight: number = 202;
     const arrowBorder: number = 8;
     const randomLeft: number = Math.floor(
       ((Math.random() + screenNumber) * tubeHeight) / jobs
@@ -103,19 +96,29 @@ function App() {
     const currentLight = document.querySelector<HTMLDivElement>(
       `.experience__light--${screenNumber}`
     );
-    const allArrows =
-      document.querySelectorAll<HTMLDivElement>(".experience__arrow");
+    const previousDates = document.querySelectorAll<HTMLDivElement>(
+      `.experience__date--${screen}`
+    );
+    const currentDates = document.querySelectorAll<HTMLDivElement>(
+      `.experience__date--${screenNumber}`
+    );
+    const allTubes =
+      document.querySelectorAll<HTMLDivElement>(".experience__tube");
     const allFluids =
       document.querySelectorAll<HTMLDivElement>(".experience__fluid");
 
-    if (previousScreen && currentScreen) {
+    if (previousScreen && currentScreen && previousDates && currentDates) {
       previousScreen.style.display = "none";
       currentScreen.style.display = "block";
+      previousDates[0].style.display = "none";
+      currentDates[0].style.display = "block";
+      previousDates[1].style.display = "none";
+      currentDates[1].style.display = "block";
     }
     previousLight?.classList.remove("light");
     currentLight?.classList.add("light");
-    allArrows[0].style.marginTop = `${randomLeft}px`;
-    allArrows[1].style.marginTop = `${randomRight}px`;
+    allTubes[0].style.paddingTop = `${randomLeft}px`;
+    allTubes[1].style.paddingTop = `${randomRight}px`;
     allFluids[0].style.height = `${tubeHeight - randomLeft + arrowBorder}px`;
     allFluids[1].style.height = `${tubeHeight - randomRight + arrowBorder}px`;
   }
@@ -145,6 +148,7 @@ function App() {
             <a
               href={socials.linkedIn}
               target="_blank"
+              rel="noreferrer"
               className="nav--linkedin nav__link"
             >
               <FaLinkedinIn className="nav__social__icon" />
@@ -155,20 +159,25 @@ function App() {
             <a
               href={socials.github}
               target="_blank"
+              rel="noreferrer"
               className="nav--github nav__link"
             >
               <FaGithub className="nav__social__icon" />
               <h4 className="nav__social__name nav__name--github">GitHub</h4>
             </a>
-            <a className="nav--email nav__link" onClick={clipboardEmail}>
+            <button
+              className="nav--email nav__link"
+              onClick={() => navigator.clipboard.writeText(socials.email)}
+            >
               <FaEnvelope className="nav__social__icon" />
               <h4 className="nav__social__name nav__name--email">
                 Copy to Clipboard
               </h4>
-            </a>
+            </button>
             <a
               href={socials.resume}
               target="blank"
+              rel="noreferrer"
               className="nav--resume nav__link"
             >
               <FaRegNewspaper className="nav__social__icon" />
@@ -178,28 +187,28 @@ function App() {
           <div className="nav--links">
             <button
               className="nav--home nav__button"
-              onClick={() => navScroll(intro)}
+              onClick={() => navScroll(projects)}
             >
               <FaHome className="nav__link__icon" />
               <h3 className="nav__link__name">Home</h3>
             </button>
             <button
               className="nav--projects nav__button"
-              onClick={() => navScroll(projects)}
+              onClick={() => navScroll(experience)}
             >
               <FaCode className="nav__link__icon" />
               <h3 className="nav__link__name">Projects</h3>
             </button>
             <button
               className="nav--experience nav__button"
-              onClick={() => navScroll(experience)}
+              onClick={() => navScroll(contact)}
             >
               <FaLaptop className="nav__link__icon" />
               <h3 className="nav__link__name">Experience</h3>
             </button>
             <button
               className="nav--contact nav__button"
-              onClick={() => navScroll(contact)}
+              onClick={() => navScroll(footer)}
             >
               <FaPhoneAlt className="nav__link__icon" />
               <h3 className="nav__link__name">Contact</h3>
@@ -215,21 +224,24 @@ function App() {
         <main className="main">
           <section className="intro" ref={intro}>
             <figure className="intro__constellation intro__constellation--1">
-              <img src={constellation1} />
+              <img src={constellation1} alt="" />
             </figure>
             <figure className="intro__constellation intro__constellation--2">
-              <img src={constellation2} />
+              <img src={constellation2} alt="" />
             </figure>
             <figure className="intro__constellation intro__constellation--3">
-              <img src={constellation3} />
+              <img src={constellation3} alt="" />
             </figure>
             <figure className="intro__constellation intro__constellation--4">
-              <img src={constellation4} />
+              <img src={constellation4} alt="" />
             </figure>
             <figure className="intro__constellation intro__constellation--5">
-              <img src={constellation5} />
+              <img src={constellation5} alt="" />
             </figure>
-            <FaLightbulb className="intro__dark click" onClick={toggleDark} />
+            <FaLightbulb
+              className="intro__dark click"
+              onClick={() => page.current?.classList.toggle("dark")}
+            />
             <div className="intro__text container">
               <h1 className="intro__title hidden">Hello,</h1>
               <h1 className="intro__title hidden">
@@ -323,73 +335,96 @@ function App() {
                     <div className="experience__light shadow experience__light--0 light"></div>
                     <div className="experience__light shadow experience__light--1"></div>
                     <div className="experience__light shadow experience__light--2"></div>
-                    <div className="experience__light shadow experience__light--3"></div>
-                    <div className="experience__light shadow experience__light--4"></div>
+                    {/* <div className="experience__light shadow experience__light--3"></div> */}
+                    {/* <div className="experience__light shadow experience__light--4"></div> */}
                     <div className="experience__logo">NASA</div>
                   </div>
                   <div className="experience__tubes">
                     <div className="experience__tube shadow">
-                      <div className="experience__arrow">
-                        <p>Oct</p>
-                        <p>2020</p>
-                      </div>
+                      <p className="experience__date experience__date--0">
+                        Aug 2022
+                      </p>
+                      <p className="experience__date experience__date--1">
+                        Aug 2021
+                      </p>
+                      <p className="experience__date experience__date--2">
+                        Jun 2019
+                      </p>
+                      <div className="experience__arrow"></div>
                       <div className="experience__fluid"></div>
                     </div>
                     <div className="experience__tube shadow">
-                      <div className="experience__arrow">
-                        <p>Oct</p>
-                        <p>2020</p>
-                      </div>
+                      <p className="experience__date experience__date--0">
+                        Jan 2023
+                      </p>
+                      <p className="experience__date experience__date--1">
+                        May 2022
+                      </p>
+                      <p className="experience__date experience__date--2">
+                        Jul 2019
+                      </p>
+                      <div className="experience__arrow"></div>
                       <div className="experience__fluid"></div>
                     </div>
                   </div>
                   <div className="experience__screen shadow experience__screen--0">
-                    <h1 className="experience__employer">Title 1</h1>
-                    <h3 className="experience__position">Title 1</h3>
-                    <p className="experience__bullet">Bullet 1</p>
-                    <p className="experience__bullet">Bullet 2</p>
-                    <p className="experience__bullet">Bullet 3</p>
-                  </div>
-                  <div className="experience__screen shadow experience__screen--1">
-                    <h1 className="experience__employer">Title 2</h1>
-                    <h3 className="experience__position">Title 2</h3>
-                    <p className="experience__bullet">Bullet 1</p>
-                    <p className="experience__bullet">Bullet 2</p>
-                    <p className="experience__bullet">Bullet 3</p>
-                  </div>
-                  <div className="experience__screen shadow experience__screen--2">
                     <h1 className="experience__employer">Biz4Group</h1>
                     <h3 className="experience__position">
                       Frontend Developer Intern
                     </h3>
-                    <p className="experience__bullet">Bullet 1</p>
-                    <p className="experience__bullet">Bullet 2</p>
-                    <p className="experience__bullet">Bullet 3</p>
+                    <p className="experience__bullet">
+                      Designed e-commerce platforms for clients using React, TS,
+                      and Redux
+                    </p>
+                    <p className="experience__bullet">
+                      Created digital marketing strategies to increase brand
+                      awareness for clients
+                    </p>
                   </div>
-                  <div className="experience__screen shadow experience__screen--3">
+                  <div className="experience__screen shadow experience__screen--1">
                     <h1 className="experience__employer">
                       Orlando Science Schools
                     </h1>
                     <h3 className="experience__position">Volunteer</h3>
-                    <p className="experience__bullet">Bullet 1</p>
-                    <p className="experience__bullet">Bullet 2</p>
-                    <p className="experience__bullet">Bullet 3</p>
+                    <p className="experience__bullet">
+                      Year long teaching experience
+                    </p>
+                    <p className="experience__bullet">
+                      Mentored over 50 elementary school students in school
+                      subjects and created React program to assist in teaching
+                    </p>
                   </div>
-                  <div className="experience__screen shadow experience__screen--4">
+                  <div className="experience__screen shadow experience__screen--2">
                     <h1 className="experience__employer">
                       Orange Technical College
                     </h1>
                     <h3 className="experience__position">Intern</h3>
+                    <p className="experience__bullet">
+                      6 week robotics program
+                    </p>
+                    <p className="experience__bullet">
+                      Worked with team to create robots utilizing AI and present
+                      results to senior management
+                    </p>
+                  </div>
+                  {/* <div className="experience__screen shadow experience__screen--3">
+                    <h1 className="experience__employer">Title 1</h1>
+                    <h3 className="experience__position">Title 1</h3>
                     <p className="experience__bullet">Bullet 1</p>
                     <p className="experience__bullet">Bullet 2</p>
-                    <p className="experience__bullet">Bullet 3</p>
                   </div>
+                  <div className="experience__screen shadow experience__screen--4">
+                    <h1 className="experience__employer">Title 2</h1>
+                    <h3 className="experience__position">Title 2</h3>
+                    <p className="experience__bullet">Bullet 1</p>
+                    <p className="experience__bullet">Bullet 2</p>
+                  </div> */}
                   <button
-                    className="experience__left"
+                    className="experience__left click"
                     onClick={() => switchScreen("left")}
                   ></button>
                   <button
-                    className="experience__right"
+                    className="experience__right click"
                     onClick={() => switchScreen("right")}
                   ></button>
                 </div>
@@ -415,6 +450,10 @@ function App() {
               </div>
             </div>
           </section>
+          <footer className="footer" ref={footer}>
+            <div>Hello</div>
+          </footer>
+          <div></div>
         </main>
       </div>
     </div>

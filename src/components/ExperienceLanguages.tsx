@@ -27,7 +27,10 @@ function ExperienceLanguages(props: prop) {
     <div className="experience__container">
       <div className="experience__background"></div>
       <div className="experience__conveyor">
-        <div className="experience__start"></div>
+        <div className="experience__start shadow">
+          <div className="experience__red"></div>
+          <div className="experience__green"></div>
+        </div>
         <div className={languagesClass}>
           <figure className="experience__language">
             <img src={language_css} alt="" />
@@ -126,7 +129,10 @@ function ExperienceLanguages(props: prop) {
             <img src={language_c} alt="" />
           </figure>
         </div>
-        <div className="experience__end"></div>
+        <div className="experience__end shadow">
+          <div className="experience__red"></div>
+          <div className="experience__green"></div>
+        </div>
       </div>
       <div className="experience__background"></div>
     </div>
