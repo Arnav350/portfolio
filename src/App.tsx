@@ -439,14 +439,14 @@ function App() {
             <div className="temp container">
               <h1 className="contact__title secondary hidden">Contact</h1>
               <div className="contact__ufo hidden">
-                <div className="contact__top">
-                  <div className="contact__glass"></div>
-                  <div className="contact__belt"></div>
-                </div>
-                <div className="contact__bottom">
-                  <div className="contact__light"></div>
-                  {/* <div className="contact__belt"></div> */}
-                </div>
+                <div className="contact__glass"></div>
+                <div className="contact__belt"></div>
+                <div className="contact__top"></div>
+                <div className="contact__line"></div>
+                <div className="contact__bottom"></div>
+                <div className="contact__belt"></div>
+                <div className="contact__light"></div>
+                <div className="contact__circle"></div>
               </div>
             </div>
           </section>

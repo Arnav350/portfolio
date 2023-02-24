@@ -611,7 +611,7 @@ section {
 /* contact */
 
 .contact {
-  height: 100vh;
+  height: 120vh;
 }
 
 .temp {
@@ -625,46 +625,71 @@ section {
 }
 
 .contact__ufo {
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 400px;
-  height: 100px;
-  background-color: gray;
-  border-radius: 50%;
-}
-
-.contact__ufo::before {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 4px;
-  background-color: black;
-  top: 50%;
-  translate: 0 -50%;
-}
-
-.contact__top {
-  position: relative;
-  width: 150px;
-  top: -8px;
-  left: 50%;
-  translate: -50% 0;
+  height: 600px;
 }
 
 .contact__glass {
-  position: absolute;
-  width: 100%;
+  width: 160px;
   height: 72px;
-  top: -62px;
-  background-color: #ffffff80;
-  border-radius: 100px 100px 0 0;
+  background-color: #f8f8f840;
+  border-top: 2px solid #f8f8f8;
+  border-radius: 50% / 100% 100% 0 0;
+  box-shadow: inset -4px -4px 20px #222;
 }
 
 .contact__belt {
-  position: absolute;
-  width: 100%;
-  height: 15px;
-  background-color: gray;
+  margin: -5px 0;
+  width: 160px;
+  height: 12px;
+  background: linear-gradient(90deg, #777, #aaa, #777);
+  z-index: 0;
 }
+
+
+.contact__top,
+.contact__bottom {
+  width: 400px;
+  height: 56px;
+}
+
+.contact__top {
+  border-radius: 50% / 100% 100% 0 0;
+  background: linear-gradient(#afafaf, #777);
+}
+
+.contact__bottom {
+  border-radius: 50% / 0 0 100% 100%;
+  background: linear-gradient(#777, #afafaf);
+}
+
+.contact__line {
+  margin: -2px 0;
+  width: 400px;
+  height: 4px;
+  background-color: #111;
+}
+
+.contact__light {
+  margin-top: 5px;
+  height: 0;
+  width: 400px;
+  border-bottom: 320px solid #66ff66;
+  border-left: 144px solid transparent;
+  border-right: 144px solid transparent;
+}
+
+.contact__circle {
+  margin-top: -32px;
+  width: 400px;
+  height: 64px;
+  background-color: #44aa44;
+  border-radius: 50%;
+}
+
 
 /* 
 .contact__bottom {
