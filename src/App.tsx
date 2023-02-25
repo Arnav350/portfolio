@@ -446,8 +446,31 @@ function App() {
                 <div className="contact__bottom"></div>
                 <div className="contact__belt"></div>
                 <div className="contact__light"></div>
-                <div className="contact__circle"></div>
               </div>
+              <form action="" className="contact__form">
+                <div className="contact__box">
+                  <input
+                    type="text"
+                    placeholder="Name"
+                    className="contact__name"
+                  />
+                  <input
+                    type="text"
+                    placeholder="Email"
+                    className="contact__email"
+                  />
+                </div>
+                <input
+                  type="text"
+                  placeholder="Subject"
+                  className="contact__subject"
+                />
+                <textarea
+                  name=""
+                  placeholder="Message"
+                  className="contact__message"
+                ></textarea>
+              </form>
             </div>
           </section>
           <footer className="footer" ref={footer}>
