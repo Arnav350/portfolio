@@ -26,6 +26,7 @@ import {
 import "./App.css";
 
 interface ISocials {
+  portfolio: string;
   linkedIn: string;
   github: string;
   email: string;
@@ -47,6 +48,7 @@ function App() {
   const jobs: number = 3;
 
   const socials: ISocials = {
+    portfolio: "https://github.com/Arnav350/portfolio",
     linkedIn: "https://www.linkedin.com/in/patel-arnav",
     github: "https://github.com/Arnav350",
     email: "patelarnavm+impt@gmail.com",
@@ -242,24 +244,27 @@ function App() {
               className="intro__dark click"
               onClick={() => page.current?.classList.toggle("dark")}
             />
-            <div className="intro__text container">
-              <h1 className="intro__title hidden">Hello,</h1>
-              <h1 className="intro__title hidden">
-                <span className="secondary">I'm Arnav</span>
-              </h1>
-              <h3 className="intro__sub hidden">
-                I am a <b className="secondary">frontend</b> software developer
-                based in the United States, specializing in the creation of{" "}
-                <b className="secondary">remarkable</b> online journies!
-              </h3>
-              <h3 className="intro__sub hidden">
-                Interested in working together? Let's have a{" "}
-                <b className="secondary">talk.</b>
-              </h3>
+            <div className="container">
+              <div className="intro__text">
+                <h1 className="intro__title hidden">Hello,</h1>
+                <h1 className="intro__title hidden">
+                  <span className="secondary">I'm Arnav</span>
+                </h1>
+                <h3 className="intro__sub hidden">
+                  I am a <b className="secondary">frontend</b> software
+                  developer based in the United States, specializing in the
+                  creation of <b className="secondary">remarkable</b> online
+                  journies!
+                </h3>
+                <h3 className="intro__sub hidden">
+                  Interested in working together? Let's have a{" "}
+                  <b className="secondary">talk.</b>
+                </h3>
+              </div>
             </div>
           </section>
           <section className="projects" ref={projects}>
-            <div className="temp container">
+            <div className="container">
               <h1 className="projects__title secondary hidden">Projects</h1>
               <button
                 className="projects__system hidden"
@@ -327,7 +332,7 @@ function App() {
             </div>
           </section>
           <section className="experience" ref={experience}>
-            <div className="temp container">
+            <div className="container">
               <h1 className="experience__title secondary hidden">Experience</h1>
               <div className="experience__box">
                 <div className="experience--jobs shadow hidden">
@@ -367,53 +372,54 @@ function App() {
                       <div className="experience__fluid"></div>
                     </div>
                   </div>
-                  <div className="experience__screen shadow experience__screen--0">
+                  <div className="experience__screen experience__screen--0">
                     <h1 className="experience__employer">Biz4Group</h1>
                     <h3 className="experience__position">
                       Frontend Developer Intern
                     </h3>
                     <p className="experience__bullet">
-                      Designed e-commerce platforms for clients using React, TS,
-                      and Redux
+                      {">"} Designed e-commerce platforms for clients using
+                      React, TS, and Redux
                     </p>
                     <p className="experience__bullet">
-                      Created digital marketing strategies to increase brand
-                      awareness for clients
+                      {">"} Created digital marketing strategies to increase
+                      brand awareness for clients
                     </p>
                   </div>
-                  <div className="experience__screen shadow experience__screen--1">
+                  <div className="experience__screen experience__screen--1">
                     <h1 className="experience__employer">
                       Orlando Science Schools
                     </h1>
                     <h3 className="experience__position">Volunteer</h3>
                     <p className="experience__bullet">
-                      Year long teaching experience
+                      {">"} Year long teaching experience
                     </p>
                     <p className="experience__bullet">
-                      Mentored over 50 elementary school students in school
-                      subjects and created React program to assist in teaching
+                      {">"} Mentored over 50 elementary school students in
+                      school subjects and created React program to assist in
+                      teaching
                     </p>
                   </div>
-                  <div className="experience__screen shadow experience__screen--2">
+                  <div className="experience__screen experience__screen--2">
                     <h1 className="experience__employer">
                       Orange Technical College
                     </h1>
                     <h3 className="experience__position">Intern</h3>
                     <p className="experience__bullet">
-                      6 week robotics program
+                      {">"} 6 week robotics program
                     </p>
                     <p className="experience__bullet">
-                      Worked with team to create robots utilizing AI and present
-                      results to senior management
+                      {">"} Worked with team to create robots utilizing AI and
+                      present results to senior management
                     </p>
                   </div>
-                  {/* <div className="experience__screen shadow experience__screen--3">
+                  {/* <div className="experience__screen experience__screen--3">
                     <h1 className="experience__employer">Title 1</h1>
                     <h3 className="experience__position">Title 1</h3>
                     <p className="experience__bullet">Bullet 1</p>
                     <p className="experience__bullet">Bullet 2</p>
                   </div>
-                  <div className="experience__screen shadow experience__screen--4">
+                  <div className="experience__screen experience__screen--4">
                     <h1 className="experience__employer">Title 2</h1>
                     <h3 className="experience__position">Title 2</h3>
                     <p className="experience__bullet">Bullet 1</p>
@@ -436,7 +442,7 @@ function App() {
             </div>
           </section>
           <section className="contact" ref={contact}>
-            <div className="temp container">
+            <div className="container">
               <h1 className="contact__title secondary hidden">Contact</h1>
               <div className="contact__ufo hidden">
                 <div className="contact__glass"></div>
@@ -447,22 +453,25 @@ function App() {
                 <div className="contact__belt"></div>
                 <div className="contact__light"></div>
               </div>
-              <form action="" className="contact__form">
+              <form action="" className="contact__form hidden">
                 <div className="contact__box">
                   <input
                     type="text"
                     placeholder="Name"
+                    required
                     className="contact__name"
                   />
                   <input
                     type="text"
                     placeholder="Email"
+                    required
                     className="contact__email"
                   />
                 </div>
                 <input
                   type="text"
                   placeholder="Subject"
+                  required
                   className="contact__subject"
                 />
                 <textarea
@@ -470,11 +479,51 @@ function App() {
                   placeholder="Message"
                   className="contact__message"
                 ></textarea>
+                <input type="submit" className="contact__submit" />
               </form>
             </div>
           </section>
-          <footer className="footer" ref={footer}>
-            <div>Hello</div>
+          <footer className="footer container hidden" ref={footer}>
+            <a
+              href={socials.portfolio}
+              target="_blank"
+              rel="noreferrer"
+              className="footer__name"
+            >
+              Built by Arnav Patel
+            </a>
+            <div className="footer__socials">
+              <a
+                href={socials.linkedIn}
+                target="_blank"
+                rel="noreferrer"
+                className="footer__social"
+              >
+                <FaLinkedinIn />
+              </a>
+              <a
+                href={socials.github}
+                target="_blank"
+                rel="noreferrer"
+                className="footer__social"
+              >
+                <FaGithub />
+              </a>
+              <button
+                className="footer__social"
+                onClick={() => navigator.clipboard.writeText(socials.email)}
+              >
+                <FaEnvelope />
+              </button>
+              <a
+                href={socials.resume}
+                target="_blank"
+                rel="noreferrer"
+                className="footer__social"
+              >
+                <FaRegNewspaper />
+              </a>
+            </div>
           </footer>
           <div></div>
         </main>
