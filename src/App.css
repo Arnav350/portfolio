@@ -494,7 +494,7 @@ section {
 
 .experience__logo {
   background-color: blue;
-  color: white;
+  color: #f8f8f8;
   padding: 12px 2px;
 }
 
@@ -506,11 +506,12 @@ section {
 }
 
 .experience__tube {
+  position: relative;
   margin: 8px;
   padding-top: 8px;
-  width: 64px;
   height: 240px;
-  background-color: lightblue;
+  width: 64px;
+  background-color: #f8f8f840;
   background-repeat: no-repeat;
   background-size: 12px 2px,
     12px 2px,
@@ -520,16 +521,70 @@ section {
     left 40%,
     left 60%,
     left 80%;
-  background-image: linear-gradient(gray, gray),
-    linear-gradient(gray, gray),
-    linear-gradient(gray, gray),
-    linear-gradient(gray, gray);
+  background-image: linear-gradient(#272822, #272822),
+    linear-gradient(#272822, #272822),
+    linear-gradient(#272822, #272822),
+    linear-gradient(#272822, #272822);
+  /* border: 3px solid transparent; */
+  border-radius: 8px;
+  overflow: hidden;
+  transition: padding-top 300ms;
+}
+
+@keyframes liquid {
+  0% {
+    rotate: 0deg;
+  }
+
+  100% {
+    rotate: 360deg;
+  }
 }
 
 .experience__fluid {
-  background-color: #88bacb60;
+  position: absolute;
+  height: 50%;
   width: 100%;
-  height: 100px;
+}
+
+.experience__fluid::after,
+.experience__fluid::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  translate: -50% 0;
+  width: 224px;
+  height: 224px;
+  background: lightblue;
+  animation: liquid 4s infinite linear;
+}
+
+.experience__fluid::before {
+  border-radius: 72px;
+  opacity: 0.7;
+}
+
+.experience__fluid::after {
+  border-radius: 56px;
+  opacity: 0.3;
+  animation-direction: reverse;
+}
+
+.experience__arrow {
+  position: relative;
+  height: 0;
+  border-left: 8px solid #272822;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  z-index: 1;
+}
+
+.experience__date {
+  position: relative;
+  height: 12px;
+  padding-left: 12px;
+  z-index: 1;
 }
 
 .experience__screen {
@@ -544,6 +599,7 @@ section {
       black 120%);
   border: 16px solid;
   border-image: linear-gradient(-16deg, #555, #222) 64;
+  border-radius: 4px;
   color: white;
   font-family: Inconsolata, monospace;
   text-shadow: 0 0 4px #C8C8C8;
@@ -579,23 +635,11 @@ section {
   color: white;
 }
 
-.experience__date {
-  height: 12px;
-  padding-left: 8px;
-}
-
 .experience__date--1,
 .experience__date--2,
 .experience__date--3,
 .experience__date--4 {
   display: none;
-}
-
-.experience__arrow {
-  height: 0;
-  border-left: 8px solid gray;
-  border-top: 8px solid transparent;
-  border-bottom: 8px solid #88bacb60;
 }
 
 .experience__left,
