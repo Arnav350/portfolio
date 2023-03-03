@@ -335,17 +335,17 @@ function App() {
             <div className="container">
               <h1 className="experience__title secondary hidden">Experience</h1>
               <div className="experience__box">
-                <div className="experience--jobs shadow hidden">
+                <div className="experience--jobs hidden">
                   <div className="experience__top">
-                    <div className="experience__light shadow experience__light--0 light"></div>
-                    <div className="experience__light shadow experience__light--1"></div>
-                    <div className="experience__light shadow experience__light--2"></div>
-                    {/* <div className="experience__light shadow experience__light--3"></div> */}
-                    {/* <div className="experience__light shadow experience__light--4"></div> */}
-                    <div className="experience__logo">NASA</div>
+                    <div className="experience__light experience__light--0 light"></div>
+                    <div className="experience__light experience__light--1"></div>
+                    <div className="experience__light experience__light--2"></div>
+                    {/* <div className="experience__light experience__light--3"></div> */}
+                    {/* <div className="experience__light experience__light--4"></div> */}
+                    <div className="experience__blue"></div>
                   </div>
                   <div className="experience__tubes">
-                    <div className="experience__tube shadow">
+                    <div className="experience__tube">
                       <p className="experience__date experience__date--0">
                         Aug 2022
                       </p>
@@ -358,7 +358,7 @@ function App() {
                       <div className="experience__arrow"></div>
                       <div className="experience__fluid"></div>
                     </div>
-                    <div className="experience__tube shadow">
+                    <div className="experience__tube">
                       <p className="experience__date experience__date--0">
                         Jan 2023
                       </p>
@@ -462,7 +462,7 @@ function App() {
                     className="contact__name"
                   />
                   <input
-                    type="text"
+                    type="email"
                     placeholder="Email"
                     required
                     className="contact__email"
@@ -475,7 +475,6 @@ function App() {
                   className="contact__subject"
                 />
                 <textarea
-                  name=""
                   placeholder="Message"
                   className="contact__message"
                 ></textarea>

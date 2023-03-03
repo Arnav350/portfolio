@@ -8,7 +8,7 @@
 .experience__background {
   height: 128px;
   width: calc((100% - 1000px)/2);
-  background-color: #222222;
+  background-color: #222;
   z-index: 1;
 }
 
@@ -30,19 +30,13 @@
   top: 80px;
   height: 128px;
   width: 128px;
-  background-color: gray;
+  background-color: #444;
+  border-radius: 8px;
   z-index: 1;
 }
 
 .experience__end {
   right: 0;
-}
-
-.experience__red,
-.experience__green {
-  margin: 16px 0;
-  height: 16px;
-  width: 16px;
 }
 
 @keyframes glow {
@@ -52,24 +46,35 @@
 
   80% {
     filter: brightness(1);
+    box-shadow: none;
   }
 
   90% {
     filter: brightness(2);
+    box-shadow: 0 0 24px #f8f8f830;
   }
 
   100% {
     filter: brightness(1);
+    box-shadow: none;
   }
 }
 
+.experience__red,
+.experience__green {
+  margin: 16px 0;
+  height: 16px;
+  width: 16px;
+  border-radius: 2px;
+}
+
 .experience__red {
-  background-color: rgb(120, 0, 0);
+  background-color: #800000;
   animation: glow 2s infinite;
 }
 
 .experience__green {
-  background-color: rgb(64, 142, 64);
+  background-color: #008000;
   animation: glow 2s -1s infinite;
 }
 
@@ -77,15 +82,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.left {
-  animation: conveyor 32s linear infinite;
-}
-
-.right {
-  flex-direction: row-reverse;
-  animation: conveyor 32s linear infinite reverse;
 }
 
 @keyframes conveyor {
@@ -96,6 +92,15 @@
   to {
     translate: -2048px 0;
   }
+}
+
+.left {
+  animation: conveyor 32s linear infinite;
+}
+
+.right {
+  flex-direction: row-reverse;
+  animation: conveyor 32s linear infinite reverse;
 }
 
 .experience__language {

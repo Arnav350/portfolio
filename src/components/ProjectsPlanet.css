@@ -41,12 +41,12 @@
 .projects__planet {
   height: 128px;
   width: 128px;
-  transition: width 400ms,
-    height 400ms,
-    border-radius 600ms,
+  transition: width 300ms,
+    height 300ms,
+    border-radius 400ms ease-out,
     background-image 400ms,
     background-color 800ms,
-    opacity 300ms;
+    opacity 200ms;
   animation: orbit 20s infinite ease-in-out;
   overflow: hidden;
   background-size: cover;

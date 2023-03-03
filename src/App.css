@@ -68,11 +68,6 @@ section {
   color: #d1405f;
 }
 
-.shadow {
-  box-shadow: inset 4px 4px 8px -4px #ffffff80,
-    inset -4px -4px 8px 0 #00000080;
-}
-
 .click {
   transition: scale 100ms ease;
 }
@@ -428,16 +423,16 @@ section {
   left: 50%;
   height: 384px;
   width: 384px;
-  background-color: orange;
+  background-color: #fb0;
   z-index: 2;
-  box-shadow: 0 0 8px orange, 0 0 40px orange, 0 0 160px yellow, inset 0 0 80px yellow;
+  box-shadow: 0 0 16px #fb0, 0 0 64px #fb0, 0 0 160px yellow, inset 0 0 80px yellow;
   transition: opacity 300ms;
 }
 
 .projects__pause {
   width: 200px;
   height: 200px;
-  color: rgb(255, 162, 0);
+  color: #ffc000;
 }
 
 /* experience */
@@ -464,7 +459,7 @@ section {
     "tube tube screen screen screen screen"
     ". . . left right .";
   padding: 32px;
-  background-color: #555;
+  background-color: #333;
   border-radius: 24px;
 }
 
@@ -476,7 +471,7 @@ section {
 }
 
 .experience__light,
-.experience__logo {
+.experience__blue {
   margin: 8px 16px;
   width: 64px;
   height: 64px;
@@ -484,18 +479,23 @@ section {
 }
 
 .experience__light {
-  background-color: rgb(155, 0, 0);
+  background-color: #a00;
+  box-shadow: 0 -2px 14px 2px #00000033,
+    inset 0 -2px 18px #441313;
 }
 
 .light {
-  filter: brightness(2);
-  box-shadow: 0 0 8px 2px red;
+  background-color: #f00;
+  box-shadow: 0 -1px 7px 1px #00000033,
+    inset 0 -1px 9px #441313,
+    0 0 24px #ff000080;
 }
 
-.experience__logo {
-  background-color: blue;
-  color: #f8f8f8;
-  padding: 12px 2px;
+.experience__blue {
+  background-color: #00f;
+  box-shadow: 0 -1px 7px 1px #00000033,
+    inset 0 -1px 9px #131355,
+    0 0 24px #0000ff80;
 }
 
 .experience__tubes {
@@ -525,7 +525,6 @@ section {
     linear-gradient(#272822, #272822),
     linear-gradient(#272822, #272822),
     linear-gradient(#272822, #272822);
-  /* border: 3px solid transparent; */
   border-radius: 8px;
   overflow: hidden;
   transition: padding-top 300ms;
@@ -556,7 +555,8 @@ section {
   translate: -50% 0;
   width: 224px;
   height: 224px;
-  background: lightblue;
+  background: #9de;
+  box-shadow: 0 0 24px #99ddee80;
   animation: liquid 4s infinite linear;
 }
 
@@ -594,15 +594,15 @@ section {
   padding: 20px;
   width: 400px;
   height: 240px;
-  background-color: black;
-  background-image: radial-gradient(rgba(0, 144, 0, 0.5),
-      black 120%);
+  background-color: #000;
+  background-image: radial-gradient(#00900080,
+      #000 120%);
   border: 16px solid;
-  border-image: linear-gradient(-16deg, #555, #222) 64;
+  border-image: linear-gradient(-16deg, #333, #222) 64;
   border-radius: 4px;
   color: white;
   font-family: Inconsolata, monospace;
-  text-shadow: 0 0 4px #C8C8C8;
+  text-shadow: 0 0 4px #c8c8c8;
 }
 
 .experience__screen::after {
@@ -627,12 +627,12 @@ section {
 
 .experience__employer,
 .experience__position {
-  color: white;
+  color: #efe;
   font-family: 'Nunito Sans';
 }
 
 .experience__bullet {
-  color: white;
+  color: #efe;
 }
 
 .experience__date--1,
@@ -646,7 +646,7 @@ section {
 .experience__right {
   margin: 12px;
   padding: 16px;
-  border: solid gray;
+  border: solid #444;
   border-width: 0 12px 12px 0;
   cursor: pointer;
 }
@@ -825,7 +825,10 @@ section {
 
 .contact__message {
   height: 200px;
+  max-height: 520px;
+  min-height: 64px;
   max-width: calc(100% - 8px);
+  resize: vertical;
 }
 
 .contact__name:hover,
