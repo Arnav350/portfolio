@@ -83,12 +83,12 @@ section {
 }
 
 .page {
-  background-color: #444444;
+  background-color: #444;
 }
 
 .main__wrapper {
   height: 200vh;
-  background-color: #222222;
+  background-color: #222;
   transform-origin: top left;
   transition: rotate 500ms cubic-bezier(1, 0, 0.25, 1), filter 700ms ease;
 }
@@ -108,7 +108,7 @@ section {
 }
 
 .main::-webkit-scrollbar-track {
-  background-color: #222222;
+  background-color: #222;
 }
 
 .main::-webkit-scrollbar-thumb {
@@ -128,7 +128,7 @@ section {
   position: absolute;
   height: 100%;
   width: 412px;
-  background: linear-gradient(to top right, #444444 0%, #444444 50%, transparent 50%, transparent 100%);
+  background: linear-gradient(to top right, #333 0%, #333 50%, transparent 50%, transparent 100%);
   transform-origin: top left;
   rotate: 30deg;
   transition: rotate 500ms cubic-bezier(1, 0, 0.25, 1);
@@ -257,7 +257,6 @@ section {
 .nav--contact {
   padding-left: 32px;
 }
-
 
 /* nav__circle */
 
@@ -453,214 +452,6 @@ section {
   align-items: center;
 }
 
-.experience--jobs {
-  display: grid;
-  grid-template-areas: "top top top top top top"
-    "tube tube screen screen screen screen"
-    ". . . left right .";
-  padding: 32px;
-  background-color: #333;
-  border-radius: 24px;
-}
-
-.experience__top {
-  grid-area: top;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.experience__light,
-.experience__blue {
-  margin: 8px 16px;
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-}
-
-.experience__light {
-  background-color: #a00;
-  box-shadow: 0 -2px 14px 2px #00000033,
-    inset 0 -2px 18px #441313;
-}
-
-.light {
-  background-color: #f00;
-  box-shadow: 0 -1px 7px 1px #00000033,
-    inset 0 -1px 9px #441313,
-    0 0 24px #ff000080;
-}
-
-.experience__blue {
-  background-color: #00f;
-  box-shadow: 0 -1px 7px 1px #00000033,
-    inset 0 -1px 9px #131355,
-    0 0 24px #0000ff80;
-}
-
-.experience__tubes {
-  grid-area: tube;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.experience__tube {
-  position: relative;
-  margin: 8px;
-  padding-top: 8px;
-  height: 240px;
-  width: 64px;
-  background-color: #f8f8f840;
-  background-repeat: no-repeat;
-  background-size: 12px 2px,
-    12px 2px,
-    12px 2px,
-    12px 2px;
-  background-position: left 20%,
-    left 40%,
-    left 60%,
-    left 80%;
-  background-image: linear-gradient(#272822, #272822),
-    linear-gradient(#272822, #272822),
-    linear-gradient(#272822, #272822),
-    linear-gradient(#272822, #272822);
-  border-radius: 8px;
-  overflow: hidden;
-  transition: padding-top 300ms;
-}
-
-@keyframes liquid {
-  0% {
-    rotate: 0deg;
-  }
-
-  100% {
-    rotate: 360deg;
-  }
-}
-
-.experience__fluid {
-  position: absolute;
-  height: 50%;
-  width: 100%;
-}
-
-.experience__fluid::after,
-.experience__fluid::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 50%;
-  translate: -50% 0;
-  width: 224px;
-  height: 224px;
-  background: #9de;
-  box-shadow: 0 0 24px #99ddee80;
-  animation: liquid 4s infinite linear;
-}
-
-.experience__fluid::before {
-  border-radius: 72px;
-  opacity: 0.7;
-}
-
-.experience__fluid::after {
-  border-radius: 56px;
-  opacity: 0.3;
-  animation-direction: reverse;
-}
-
-.experience__arrow {
-  position: relative;
-  height: 0;
-  border-left: 8px solid #272822;
-  border-top: 8px solid transparent;
-  border-bottom: 8px solid transparent;
-  z-index: 1;
-}
-
-.experience__date {
-  position: relative;
-  height: 12px;
-  padding-left: 12px;
-  z-index: 1;
-}
-
-.experience__screen {
-  position: relative;
-  grid-area: screen;
-  margin: 8px;
-  padding: 20px;
-  width: 400px;
-  height: 240px;
-  background-color: #000;
-  background-image: radial-gradient(#00900080,
-      #000 120%);
-  border: 16px solid;
-  border-image: linear-gradient(-16deg, #333, #222) 64;
-  border-radius: 4px;
-  color: white;
-  font-family: Inconsolata, monospace;
-  text-shadow: 0 0 4px #c8c8c8;
-}
-
-.experience__screen::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: repeating-linear-gradient(rgba(0, 0, 0, 0.15),
-      rgba(0, 0, 0, 0.15) 1px,
-      transparent 1px,
-      transparent 2px);
-}
-
-.experience__screen--1,
-.experience__screen--2,
-.experience__screen--3,
-.experience__screen--4 {
-  display: none;
-}
-
-.experience__employer,
-.experience__position {
-  color: #efe;
-  font-family: 'Nunito Sans';
-}
-
-.experience__bullet {
-  color: #efe;
-}
-
-.experience__date--1,
-.experience__date--2,
-.experience__date--3,
-.experience__date--4 {
-  display: none;
-}
-
-.experience__left,
-.experience__right {
-  margin: 12px;
-  padding: 16px;
-  border: solid #444;
-  border-width: 0 12px 12px 0;
-  cursor: pointer;
-}
-
-.experience__left {
-  grid-area: left;
-  rotate: 135deg;
-}
-
-.experience__right {
-  grid-area: right;
-  rotate: -45deg;
-}
-
 /* contact */
 
 .contact {
@@ -847,11 +638,11 @@ section {
 .contact__email:focus,
 .contact__subject:focus,
 .contact__message:focus {
-  border-bottom: 4px solid #66ff66dd;
+  border-bottom: 4px solid #66ff6688;
 }
 
 .contact__submit:active {
-  border-bottom: 4px solid #66ff66dd;
+  border-bottom: 4px solid #66ff6688;
 }
 
 /* footer */
