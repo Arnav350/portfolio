@@ -81,6 +81,37 @@ function App() {
 
     const hidden = document.querySelectorAll(".hidden");
     hidden.forEach((elem) => observer.observe(elem));
+
+    function randomNumber(min: number, max: number) {
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    const stars = document.querySelectorAll<HTMLElement>(".stars");
+    const count: number =
+      (page.current.clientWidth * page.current.clientHeight) / 50000;
+    let result: string[] = ["", ""];
+
+    for (let i: number = 0; i < count; i++) {
+      result[0] += `${randomNumber(-48, 48)}vw ${randomNumber(
+        -38,
+        110
+      )}vh ${randomNumber(3, 4)}px ${randomNumber(-1, 0)}px #fff${randomNumber(
+        1,
+        3
+      )},`;
+      result[1] += `${randomNumber(-48, 48)}vw ${randomNumber(
+        -38,
+        95
+      )}vh ${randomNumber(2, 3)}px ${randomNumber(-3, -2)}px #fff${randomNumber(
+        1,
+        3
+      )},`;
+    }
+
+    if (stars) {
+      stars[0].style.boxShadow = result[0].substring(0, result[0].length - 1);
+      stars[1].style.boxShadow = result[1].substring(0, result[1].length - 1);
+    }
   }, []);
 
   return (
@@ -165,6 +196,10 @@ function App() {
       </nav>
       <div className="main__wrapper">
         <main className="main">
+          <section className="stars__container">
+            <aside className="stars stars--1"></aside>
+            <aside className="stars stars--2"></aside>
+          </section>
           <section className="intro" ref={intro}>
             <figure className="intro__constellation intro__constellation--1">
               <img src={constellation1} alt="" />
@@ -212,7 +247,7 @@ function App() {
                 ref={system}
                 onClick={toggleOrbit}
               >
-                <div className="projects__star">
+                <div className="projects__sun">
                   {pause ? (
                     <FaPlay className="projects__pause" />
                   ) : (

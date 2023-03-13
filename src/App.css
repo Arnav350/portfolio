@@ -83,12 +83,12 @@ section {
 }
 
 .page {
-  background-color: #444;
+  background-color: #161616;
 }
 
 .main__wrapper {
   height: 200vh;
-  background-color: #222;
+  background-color: #161616;
   transform-origin: top left;
   transition: rotate 500ms cubic-bezier(1, 0, 0.25, 1), filter 700ms ease;
 }
@@ -112,15 +112,15 @@ section {
 }
 
 .main::-webkit-scrollbar-thumb {
-  background-color: #484848;
+  background-color: #333;
   border-radius: 4px;
 }
 
-/* body {
+.main {
   -ms-overflow-style: none;
   scrollbar-width: 8px;
-  scrollbar-color: red black;
-} */
+  scrollbar-color: #222 #333;
+}
 
 /* nav_background */
 
@@ -128,7 +128,7 @@ section {
   position: absolute;
   height: 100%;
   width: 412px;
-  background: linear-gradient(to top right, #333 0%, #333 50%, transparent 50%, transparent 100%);
+  background: linear-gradient(to top right, #222 0%, #222 50%, transparent 50%, transparent 100%);
   transform-origin: top left;
   rotate: 30deg;
   transition: rotate 500ms cubic-bezier(1, 0, 0.25, 1);
@@ -313,6 +313,28 @@ section {
   rotate: 75deg;
 }
 
+/* stars */
+
+.stars {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+}
+
+.stars__container {
+  transform-style: preserve-3d;
+}
+
+.stars--1 {
+  transform: translateZ(-8px) scale(10.4);
+}
+
+.stars--2 {
+  transform: translateZ(-10px) scale(13.6);
+}
 
 /* intro */
 
@@ -323,8 +345,8 @@ section {
 
 .intro__constellation {
   position: absolute;
-  opacity: 0.3;
-  filter: blur(3px);
+  opacity: 0.5;
+  filter: blur(2px);
   transition: opacity 100ms ease;
   transform: translateZ(-0.5px) scale(1.7);
 }
@@ -405,7 +427,7 @@ section {
   height: 600px;
 }
 
-.projects__star,
+.projects__sun,
 .projects__planet {
   position: absolute;
   top: 50%;
@@ -418,7 +440,7 @@ section {
   cursor: pointer;
 }
 
-.projects__star {
+.projects__sun {
   left: 50%;
   height: 384px;
   width: 384px;
