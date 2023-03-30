@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import resume from "./assets/resume.pdf";
 import constellation1 from "./assets/constellation1.png";
 import constellation2 from "./assets/constellation2.png";

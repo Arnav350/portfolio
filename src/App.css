@@ -160,7 +160,8 @@ section {
     ". bottom .";
   width: 96px;
   height: 96px;
-  margin: 200px 0 0 16px;
+  margin: 200px 0 0 -96px;
+  transition: margin 500ms cubic-bezier(1, 0, 0.25, 1) 50ms;
 }
 
 .nav__social__icon {
@@ -243,19 +244,23 @@ section {
 }
 
 .nav--home {
-  padding-left: 8px;
+  margin-left: -208px;
+  transition: margin 500ms cubic-bezier(1, 0, 0.25, 1) 100ms;
 }
 
 .nav--projects {
-  padding-left: 16px;
+  margin-left: -216px;
+  transition: margin 500ms cubic-bezier(1, 0, 0.25, 1) 150ms;
 }
 
 .nav--experience {
-  padding-left: 24px;
+  margin-left: -224px;
+  transition: margin 500ms cubic-bezier(1, 0, 0.25, 1) 200ms;
 }
 
 .nav--contact {
-  padding-left: 32px;
+  margin-left: -232px;
+  transition: margin 500ms cubic-bezier(1, 0, 0.25, 1) 250ms;
 }
 
 /* nav__circle */
@@ -814,6 +819,26 @@ section {
 
 .open .nav__background {
   rotate: 0deg;
+}
+
+.open .nav--socials {
+  margin-left: 16px;
+}
+
+.open .nav--home {
+  margin-left: 4px;
+}
+
+.open .nav--projects {
+  margin-left: 12px;
+}
+
+.open .nav--experience {
+  margin-left: 20px;
+}
+
+.open .nav--contact {
+  margin-left: 28px;
 }
 
 /* hidden */
