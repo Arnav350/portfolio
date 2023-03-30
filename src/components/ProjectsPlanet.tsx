@@ -7,13 +7,17 @@ interface planet {
   description: string;
   github: string;
   link: string;
+  pause: boolean;
 }
 
 function ProjectsPlanet(props: planet) {
   const planetClass: string = `projects__planet projects__planet--${props.color}`;
 
   return (
-    <div className={planetClass}>
+    <div
+      className={planetClass}
+      style={props.pause ? { animationPlayState: "paused" } : {}}
+    >
       <h3 className="projects__heading">{props.heading}</h3>
       <p className="projects__description">{props.description}</p>
       <div className="projects__link__wrapper">

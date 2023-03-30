@@ -34,15 +34,8 @@ interface ISocials {
 }
 
 function App() {
+  const [open, setOpen] = useState(false);
   const [pause, setPause] = useState(false);
-
-  const page = useRef<HTMLDivElement>(null!);
-  const intro = useRef<HTMLElement>(null!);
-  const projects = useRef<HTMLElement>(null!);
-  const experience = useRef<HTMLElement>(null!);
-  const contact = useRef<HTMLElement>(null!);
-  const footer = useRef<HTMLElement>(null!);
-  const system = useRef<HTMLButtonElement>(null!);
 
   const socials: ISocials = {
     portfolio: "https://github.com/Arnav350/portfolio",
@@ -52,70 +45,25 @@ function App() {
     resume: resume,
   };
 
-  function toggleNav() {
-    page.current?.classList.toggle("open");
-  }
-
-  function toggleOrbit() {
-    system.current?.classList.toggle("pause");
-    setPause(!pause);
-  }
-
-  function navScroll(nameClass: React.MutableRefObject<HTMLElement>) {
-    nameClass.current.scrollIntoView({ behavior: "smooth" });
-    setTimeout(() => {
-      toggleNav();
-    }, 300);
-  }
-
   useEffect(() => {
+    const hidden = document.querySelectorAll(".hidden");
+
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
+      entries.forEach((entry, i: number) => {
         if (entry.isIntersecting) {
           entry.target.classList.add("shown");
-        } else {
-          entry.target.classList.remove("shown");
+          observer.unobserve(hidden[i]);
         }
       });
     });
 
-    const hidden = document.querySelectorAll(".hidden");
     hidden.forEach((elem) => observer.observe(elem));
 
-    function randomNumber(min: number, max: number) {
-      return Math.floor(Math.random() * (max - min + 1)) + min;
-    }
-
-    const stars = document.querySelectorAll<HTMLElement>(".stars");
-    const count: number =
-      (page.current.clientWidth * page.current.clientHeight) / 50000;
-    let result: string[] = ["", ""];
-
-    for (let i: number = 0; i < count; i++) {
-      result[0] += `${randomNumber(-48, 48)}vw ${randomNumber(
-        -38,
-        110
-      )}vh ${randomNumber(3, 4)}px ${randomNumber(-1, 0)}px #fff${randomNumber(
-        1,
-        3
-      )},`;
-      result[1] += `${randomNumber(-48, 48)}vw ${randomNumber(
-        -38,
-        95
-      )}vh ${randomNumber(2, 3)}px ${randomNumber(-3, -2)}px #fff${randomNumber(
-        1,
-        3
-      )},`;
-    }
-
-    if (stars) {
-      stars[0].style.boxShadow = result[0].substring(0, result[0].length - 1);
-      stars[1].style.boxShadow = result[1].substring(0, result[1].length - 1);
-    }
+    return () => observer.disconnect();
   }, []);
 
   return (
-    <div className="page" ref={page}>
+    <div className={`page ${open ? "open" : ""}`}>
       <nav className="nav-bar">
         <div className="nav__background">
           <div className="nav--socials">
@@ -159,37 +107,25 @@ function App() {
             </a>
           </div>
           <div className="nav--links">
-            <button
-              className="nav--home nav__button"
-              onClick={() => navScroll(projects)}
-            >
+            <button className="nav--home nav__button">
               <FaHome className="nav__link__icon" />
               <h3 className="nav__link__name">Home</h3>
             </button>
-            <button
-              className="nav--projects nav__button"
-              onClick={() => navScroll(experience)}
-            >
+            <button className="nav--projects nav__button">
               <FaCode className="nav__link__icon" />
               <h3 className="nav__link__name">Projects</h3>
             </button>
-            <button
-              className="nav--experience nav__button"
-              onClick={() => navScroll(contact)}
-            >
+            <button className="nav--experience nav__button">
               <FaLaptop className="nav__link__icon" />
               <h3 className="nav__link__name">Experience</h3>
             </button>
-            <button
-              className="nav--contact nav__button"
-              onClick={() => navScroll(footer)}
-            >
+            <button className="nav--contact nav__button">
               <FaPhoneAlt className="nav__link__icon" />
               <h3 className="nav__link__name">Contact</h3>
             </button>
           </div>
         </div>
-        <div className="nav__circle" onClick={toggleNav}>
+        <div className="nav__circle" onClick={() => setOpen(!open)}>
           <FaBars className="nav--bars click" />
           <FaTimes className="nav--times click" />
         </div>
@@ -200,7 +136,7 @@ function App() {
             <aside className="stars stars--1"></aside>
             <aside className="stars stars--2"></aside>
           </section>
-          <section className="intro" ref={intro}>
+          <section className="intro">
             <figure className="intro__constellation intro__constellation--1">
               <img src={constellation1} alt="" />
             </figure>
@@ -216,10 +152,7 @@ function App() {
             <figure className="intro__constellation intro__constellation--5">
               <img src={constellation5} alt="" />
             </figure>
-            <FaLightbulb
-              className="intro__dark click"
-              onClick={() => page.current?.classList.toggle("dark")}
-            />
+            <FaLightbulb className="intro__dark click" />
             <div className="container">
               <div className="intro__text">
                 <h1 className="intro__title hidden">Hello,</h1>
@@ -239,13 +172,12 @@ function App() {
               </div>
             </div>
           </section>
-          <section className="projects" ref={projects}>
+          <section className="projects">
             <div className="container">
               <h1 className="projects__title secondary hidden">Projects</h1>
               <button
                 className="projects__system hidden"
-                ref={system}
-                onClick={toggleOrbit}
+                onClick={() => setPause(!pause)}
               >
                 <div className="projects__sun">
                   {pause ? (
@@ -263,6 +195,7 @@ function App() {
                     fugit? Quia illum debitis accusamus voluptatem distinctio?"
                   github=""
                   link=""
+                  pause={pause}
                 />
                 <ProjectsPlanet
                   color="red"
@@ -273,6 +206,7 @@ function App() {
                     fugit? Quia illum debitis accusamus voluptatem distinctio?"
                   github=""
                   link=""
+                  pause={pause}
                 />
                 <ProjectsPlanet
                   color="green"
@@ -283,6 +217,7 @@ function App() {
                     fugit? Quia illum debitis accusamus voluptatem distinctio?"
                   github=""
                   link=""
+                  pause={pause}
                 />
                 <ProjectsPlanet
                   color="orange"
@@ -293,6 +228,7 @@ function App() {
                     fugit? Quia illum debitis accusamus voluptatem distinctio?"
                   github=""
                   link=""
+                  pause={pause}
                 />
                 <ProjectsPlanet
                   color="blue"
@@ -303,11 +239,12 @@ function App() {
                     fugit? Quia illum debitis accusamus voluptatem distinctio?"
                   github=""
                   link=""
+                  pause={pause}
                 />
               </button>
             </div>
           </section>
-          <section className="experience" ref={experience}>
+          <section className="experience">
             <div className="container">
               <h1 className="experience__title secondary hidden">Experience</h1>
               <div className="experience__box">
@@ -319,7 +256,7 @@ function App() {
               </div>
             </div>
           </section>
-          <section className="contact" ref={contact}>
+          <section className="contact">
             <div className="container">
               <h1 className="contact__title secondary hidden">Contact</h1>
               <div className="contact__ufo hidden">
@@ -360,7 +297,7 @@ function App() {
               </form>
             </div>
           </section>
-          <footer className="footer container hidden" ref={footer}>
+          <footer className="footer container hidden">
             <a
               href={socials.portfolio}
               target="_blank"
