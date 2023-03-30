@@ -1,4 +1,5 @@
 .experience--jobs {
+  position: relative;
   display: grid;
   grid-template-areas: "top top top top top top"
     "tube tube screen screen screen screen"
@@ -75,6 +76,26 @@
   transition: padding-top 300ms;
 }
 
+.experience__tube::before,
+.experience__tube::after {
+  content: '';
+  position: absolute;
+  left: 8px;
+  width: 4px;
+  background-color: #f8f8f840;
+  border-radius: 4px;
+}
+
+.experience__tube::before {
+  top: 8px;
+  height: 56px;
+}
+
+.experience__tube::after {
+  top: 72px;
+  height: 154px;
+}
+
 @keyframes liquid {
   0% {
     rotate: 0deg;
@@ -128,7 +149,7 @@
 .experience__date {
   position: relative;
   height: 12px;
-  padding-left: 12px;
+  padding-left: 16px;
   z-index: 1;
 }
 
@@ -163,13 +184,6 @@
       transparent 2px);
 }
 
-.experience__screen--1,
-.experience__screen--2,
-.experience__screen--3,
-.experience__screen--4 {
-  display: none;
-}
-
 .experience__employer,
 .experience__position {
   color: #efe;
@@ -178,13 +192,6 @@
 
 .experience__bullet {
   color: #efe;
-}
-
-.experience__date--1,
-.experience__date--2,
-.experience__date--3,
-.experience__date--4 {
-  display: none;
 }
 
 .experience__left,

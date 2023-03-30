@@ -41,29 +41,31 @@ function App() {
     portfolio: "https://github.com/Arnav350/portfolio",
     linkedIn: "https://www.linkedin.com/in/patel-arnav",
     github: "https://github.com/Arnav350",
-    email: "patelarnavm+impt@gmail.com",
+    email: "patelarnavm@gmail.com",
     resume: resume,
   };
 
   useEffect(() => {
-    const hidden = document.querySelectorAll(".hidden");
+    const hidden = document.querySelectorAll<HTMLElement>(".hidden");
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry, i: number) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("shown");
-          observer.unobserve(hidden[i]);
-        }
-      });
-    });
+    const observer: IntersectionObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry, i: number) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("shown");
+            observer.unobserve(hidden[i]);
+          }
+        });
+      }
+    );
 
-    hidden.forEach((elem) => observer.observe(elem));
+    hidden.forEach((elem: HTMLElement) => observer.observe(elem));
 
     return () => observer.disconnect();
   }, []);
 
   return (
-    <div className={`page ${open ? "open" : ""}`}>
+    <div className={`page${open ? " open" : ""}`}>
       <nav className="nav-bar">
         <div className="nav__background">
           <div className="nav--socials">

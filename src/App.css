@@ -629,34 +629,32 @@ section {
 
 @keyframes beam-top {
   0% {
-    border-bottom: 400px solid #66ff6644;
+    width: 400px;
   }
 
   50% {
-    width: 200px;
-    border-bottom: 200px solid #66ff6644;
-    border-left: 44px solid transparent;
-    border-right: 44px solid transparent;
+    border-left: 244px solid transparent;
+    border-right: 244px solid transparent;
+    width: 600px;
   }
 
   100% {
-    border-bottom: 400px solid #66ff6644;
+    width: 400px;
   }
 }
 
 @keyframes beam-bottom {
   0% {
-    bottom: -432px;
+    width: 400px;
   }
 
   50% {
-    bottom: -232px;
-    left: -44px;
-    width: 200px;
+    width: 600px;
+    left: -244px;
   }
 
   100% {
-    bottom: -432px;
+    width: 400px;
   }
 }
 

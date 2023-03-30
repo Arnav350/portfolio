@@ -14,15 +14,14 @@ import language_react from "../assets/language_react.png";
 import language_redux from "../assets/language_redux.png";
 import language_sass from "../assets/language_sass.png";
 import language_ts from "../assets/language_ts.png";
+import "../App.css";
 import "./ExperienceLanguages.css";
 
-interface prop {
+interface IProps {
   direction: "left" | "right";
 }
 
-function ExperienceLanguages(props: prop) {
-  const languagesClass: string = `experience--languages ${props.direction}`;
-
+function ExperienceLanguages(props: IProps) {
   return (
     <div className="experience__container">
       <div className="experience__background"></div>
@@ -31,7 +30,7 @@ function ExperienceLanguages(props: prop) {
           <div className="experience__red"></div>
           <div className="experience__green"></div>
         </div>
-        <div className={languagesClass}>
+        <div className={`experience--languages ${props.direction}`}>
           <figure className="experience__language">
             <img src={language_css} alt="" />
           </figure>

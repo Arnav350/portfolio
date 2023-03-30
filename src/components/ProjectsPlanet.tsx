@@ -1,7 +1,8 @@
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+import "../App.css";
 import "./ProjectsPlanet.css";
 
-interface planet {
+interface IProps {
   color: string;
   heading: string;
   description: string;
@@ -10,12 +11,10 @@ interface planet {
   pause: boolean;
 }
 
-function ProjectsPlanet(props: planet) {
-  const planetClass: string = `projects__planet projects__planet--${props.color}`;
-
+function ProjectsPlanet(props: IProps) {
   return (
     <div
-      className={planetClass}
+      className={`projects__planet projects__planet--${props.color}`}
       style={props.pause ? { animationPlayState: "paused" } : {}}
     >
       <h3 className="projects__heading">{props.heading}</h3>
