@@ -172,7 +172,6 @@ section {
   border: solid 2px #f8f8f8;
   border-radius: 50%;
   transition: opacity 100ms, translate 100ms;
-  ;
 }
 
 .nav__social__name {
@@ -238,7 +237,8 @@ section {
 }
 
 .nav__button:focus .nav__link__icon,
-.nav__button:focus .nav__link__name {
+.nav__button:focus .nav__link__name,
+.nav__link:focus .nav__social__icon {
   color: #d1405f;
   border-color: #d1405f;
 }
@@ -539,8 +539,12 @@ section {
   width: 384px;
   background-color: #fb0;
   z-index: 2;
+  box-shadow: 0 0 12px #fb0, 0 0 48px #fb0, 0 0 120px yellow, inset 0 0 60px yellow;
+  transition: opacity 300ms, box-shadow 300ms;
+}
+
+.projects__sun:hover {
   box-shadow: 0 0 16px #fb0, 0 0 64px #fb0, 0 0 160px yellow, inset 0 0 80px yellow;
-  transition: opacity 300ms;
 }
 
 .projects__pause {

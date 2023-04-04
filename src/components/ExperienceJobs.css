@@ -167,7 +167,6 @@
   border-image: linear-gradient(-16deg, #333, #222) 64;
   border-radius: 4px;
   color: white;
-  font-family: Inconsolata, monospace;
   text-shadow: 0 0 4px #c8c8c8;
 }
 
@@ -187,11 +186,12 @@
 .experience__employer,
 .experience__position {
   color: #efe;
-  font-family: 'Nunito Sans';
+  font-family: Inconsolata, monospace;
 }
 
 .experience__bullet {
   color: #efe;
+  font-family: Inconsolata, monospace;
 }
 
 .experience__left,
