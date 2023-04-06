@@ -68,52 +68,52 @@
 }
 
 .projects__planet--red {
-  background-image: url("../assets/planet1.png");
+  background-image: url("../../assets/planet1.png");
   background-color: #ed422d;
 }
 
 .projects__planet--red:hover {
-  background-image: url("../assets/project1.png");
+  background-image: url("../../assets/project1.png");
 }
 
 .projects__planet--purple {
-  background-image: url("../assets/planet2.png");
+  background-image: url("../../assets/planet2.png");
   background-color: #6f53c5;
   animation-delay: -4s;
 }
 
 .projects__planet--purple:hover {
-  background-image: url("../assets/project2.png");
+  background-image: url("../../assets/project2.png");
 }
 
 .projects__planet--green {
-  background-image: url("../assets/planet3.png");
+  background-image: url("../../assets/planet3.png");
   background-color: #65be58;
   animation-delay: -7s;
 }
 
 .projects__planet--green:hover {
-  background-image: url("../assets/project3.png");
+  background-image: url("../../assets/project3.png");
 }
 
 .projects__planet--orange {
-  background-image: url("../assets/planet4.png");
+  background-image: url("../../assets/planet4.png");
   background-color: #ed952d;
   animation-delay: -11s;
 }
 
 .projects__planet--orange:hover {
-  background-image: url("../assets/project4.png");
+  background-image: url("../../assets/project4.png");
 }
 
 .projects__planet--blue {
-  background-image: url("../assets/planet5.png");
+  background-image: url("../../assets/planet5.png");
   background-color: #1cc2d8;
   animation-delay: -16s;
 }
 
 .projects__planet--blue:hover {
-  background-image: url("../assets/project5.png");
+  background-image: url("../../assets/project5.png");
 }
 
 .projects__heading {

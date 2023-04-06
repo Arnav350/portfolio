@@ -1,20 +1,20 @@
-import language_bem from "../assets/language_bem.png";
-import language_bootstrap from "../assets/language_bootstrap.png";
-import language_c from "../assets/language_c.png";
-import language_css from "../assets/language_css.png";
-import language_git from "../assets/language_git.png";
-import language_html from "../assets/language_html.png";
-import language_java from "../assets/language_java.png";
-import language_js from "../assets/language_js.png";
-import language_json from "../assets/language_json.png";
-import language_node from "../assets/language_node.png";
-import language_npm from "../assets/language_npm.png";
-import language_python from "../assets/language_python.png";
-import language_react from "../assets/language_react.png";
-import language_redux from "../assets/language_redux.png";
-import language_sass from "../assets/language_sass.png";
-import language_ts from "../assets/language_ts.png";
-import "../App.css";
+import language_bem from "../../../assets/language_bem.png";
+import language_bootstrap from "../../../assets/language_bootstrap.png";
+import language_c from "../../../assets/language_c.png";
+import language_css from "../../../assets/language_css.png";
+import language_git from "../../../assets/language_git.png";
+import language_html from "../../../assets/language_html.png";
+import language_java from "../../../assets/language_java.png";
+import language_js from "../../../assets/language_js.png";
+import language_json from "../../../assets/language_json.png";
+import language_node from "../../../assets/language_node.png";
+import language_npm from "../../../assets/language_npm.png";
+import language_python from "../../../assets/language_python.png";
+import language_react from "../../../assets/language_react.png";
+import language_redux from "../../../assets/language_redux.png";
+import language_sass from "../../../assets/language_sass.png";
+import language_ts from "../../../assets/language_ts.png";
+import "../../../App.css";
 import "./ExperienceLanguages.css";
 
 interface IProps {

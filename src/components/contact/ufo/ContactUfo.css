@@ -1,0 +1,114 @@
+.contact__ufo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 400px;
+  height: 600px;
+}
+
+.contact__glass {
+  width: 160px;
+  height: 72px;
+  background-color: #f8f8f840;
+  border-top: 2px solid #f8f8f8;
+  border-radius: 50% / 100% 100% 0 0;
+  box-shadow: inset -4px -4px 20px #222;
+}
+
+.contact__belt {
+  margin: -5px 0;
+  width: 160px;
+  height: 12px;
+  background: linear-gradient(90deg, #777, #aaa, #777);
+  z-index: 0;
+}
+
+
+.contact__top,
+.contact__bottom {
+  width: 400px;
+  height: 56px;
+}
+
+.contact__top {
+  border-radius: 50% / 100% 100% 0 0;
+  background: linear-gradient(#afafaf, #777);
+}
+
+.contact__bottom {
+  border-radius: 50% / 0 0 100% 100%;
+  background: linear-gradient(#777, #afafaf);
+}
+
+.contact__line {
+  margin: -2px 0;
+  width: 400px;
+  height: 4px;
+  background-color: #111;
+}
+
+@keyframes beam-top {
+  0% {
+    width: 400px;
+  }
+
+  50% {
+    border-left: 244px solid transparent;
+    border-right: 244px solid transparent;
+    width: 600px;
+  }
+
+  100% {
+    width: 400px;
+  }
+}
+
+@keyframes beam-bottom {
+  0% {
+    width: 400px;
+  }
+
+  50% {
+    width: 600px;
+    left: -244px;
+  }
+
+  100% {
+    width: 400px;
+  }
+}
+
+.contact__light {
+  position: relative;
+  margin-top: 5px;
+  height: 0;
+  width: 400px;
+  border-bottom: 400px solid #66ff6644;
+  border-left: 144px solid transparent;
+  border-right: 144px solid transparent;
+  animation: beam-top 20s infinite;
+}
+
+.contact__light::after {
+  content: '';
+  position: absolute;
+  bottom: -432px;
+  left: -144px;
+  width: 400px;
+  height: 64px;
+  background-color: #44aa4444;
+  border-radius: 50%;
+  animation: beam-bottom 20s infinite;
+}
+
+.contact__light::before {
+  content: '';
+  position: absolute;
+  bottom: -432px;
+  left: -144px;
+  width: 400px;
+  height: 32px;
+  background-color: #66ff6644;
+  border-radius: 50% / 0 0 100% 100%;
+  animation: beam-bottom 20s infinite;
+}

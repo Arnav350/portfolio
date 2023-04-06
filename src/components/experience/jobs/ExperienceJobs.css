@@ -96,7 +96,7 @@
   height: 154px;
 }
 
-@keyframes liquid {
+@keyframes fluid {
   0% {
     rotate: 0deg;
   }
@@ -123,7 +123,7 @@
   height: 224px;
   background: #9de;
   box-shadow: 0 0 24px #99ddee80;
-  animation: liquid 4s infinite linear;
+  animation: fluid 4s infinite linear;
 }
 
 .experience__fluid::before {

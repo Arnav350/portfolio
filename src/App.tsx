@@ -5,9 +5,11 @@ import constellation2 from "./assets/constellation2.png";
 import constellation3 from "./assets/constellation3.png";
 import constellation4 from "./assets/constellation4.png";
 import constellation5 from "./assets/constellation5.png";
-import ProjectsPlanet from "./components/ProjectsPlanet";
-import ExperienceJobs from "./components/ExperienceJobs";
-import ExperienceLanguages from "./components/ExperienceLanguages";
+import ProjectsPlanet from "./components/projects/ProjectsPlanet";
+import ExperienceJobs from "./components/experience/jobs/ExperienceJobs";
+import ExperienceLanguages from "./components/experience/languages/ExperienceLanguages";
+import ContactUfo from "./components/contact/ufo/ContactUfo";
+import ContactForm from "./components/contact/form/ContactForm";
 import {
   FaHome,
   FaCode,
@@ -33,17 +35,17 @@ interface ISocials {
   resume: string;
 }
 
+const socials: ISocials = {
+  portfolio: "https://github.com/Arnav350/portfolio",
+  linkedIn: "https://www.linkedin.com/in/patel-arnav",
+  github: "https://github.com/Arnav350",
+  email: "patelarnavm@gmail.com",
+  resume: resume,
+};
+
 function App() {
   const [open, setOpen] = useState(false);
   const [pause, setPause] = useState(false);
-
-  const socials: ISocials = {
-    portfolio: "https://github.com/Arnav350/portfolio",
-    linkedIn: "https://www.linkedin.com/in/patel-arnav",
-    github: "https://github.com/Arnav350",
-    email: "patelarnavm@gmail.com",
-    resume: resume,
-  };
 
   useEffect(() => {
     const hidden = document.querySelectorAll<HTMLElement>(".hidden");
@@ -261,42 +263,8 @@ function App() {
           <section className="contact">
             <div className="container">
               <h1 className="contact__title secondary hidden">Contact</h1>
-              <div className="contact__ufo hidden">
-                <div className="contact__glass"></div>
-                <div className="contact__belt"></div>
-                <div className="contact__top"></div>
-                <div className="contact__line"></div>
-                <div className="contact__bottom"></div>
-                <div className="contact__belt"></div>
-                <div className="contact__light"></div>
-              </div>
-              <form action="" className="contact__form hidden">
-                <div className="contact__box">
-                  <input
-                    type="text"
-                    placeholder="Name"
-                    required
-                    className="contact__name"
-                  />
-                  <input
-                    type="email"
-                    placeholder="Email"
-                    required
-                    className="contact__email"
-                  />
-                </div>
-                <input
-                  type="text"
-                  placeholder="Subject"
-                  required
-                  className="contact__subject"
-                />
-                <textarea
-                  placeholder="Message"
-                  className="contact__message"
-                ></textarea>
-                <input type="submit" className="contact__submit" />
-              </form>
+              <ContactUfo />
+              <ContactForm />
             </div>
           </section>
           <footer className="footer container hidden">

@@ -1,0 +1,64 @@
+.contact__form {
+  margin-top: -384px;
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  z-index: 1;
+}
+
+.contact__box {
+  width: 100%;
+}
+
+.contact__name,
+.contact__email,
+.contact__subject,
+.contact__message,
+.contact__submit {
+  margin: 4px;
+  padding: 16px;
+  background-color: #333333dd;
+  border: none;
+  border-bottom: 4px solid transparent;
+  border-radius: 8px;
+  outline: none;
+  color: #f8f8f8;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.contact__name,
+.contact__email {
+  width: calc(50% - 8px);
+}
+
+.contact__message {
+  height: 200px;
+  max-height: 520px;
+  min-height: 64px;
+  max-width: calc(100% - 8px);
+  resize: vertical;
+}
+
+.contact__name:hover,
+.contact__email:hover,
+.contact__subject:hover,
+.contact__message:hover,
+.contact__submit:hover {
+  border-bottom: 4px solid #44aa4444;
+}
+
+.contact__submit:hover {
+  cursor: pointer;
+}
+
+.contact__name:focus,
+.contact__email:focus,
+.contact__subject:focus,
+.contact__message:focus {
+  border-bottom: 4px solid #66ff6688;
+}
+
+.contact__submit:active {
+  border-bottom: 4px solid #66ff6688;
+}

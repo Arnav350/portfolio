@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../App.css";
+import "../../../App.css";
 import "./ExperienceJobs.css";
 
 const jobs: number = 3;
