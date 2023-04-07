@@ -28,19 +28,27 @@
   background-color: #a00;
   box-shadow: 0 -2px 14px 2px #00000033,
     inset 0 -2px 18px #441313;
+  transition: background-color 150ms, box-shadow 150ms;
 }
 
 .light {
   background-color: #f00;
-  box-shadow: 0 -1px 7px 1px #00000033,
-    inset 0 -1px 9px #441313,
+  box-shadow: 0 -2px 14px 2px #00000033,
+    inset 0 -2px 18px #441313,
     0 0 24px #ff000080;
 }
 
 .experience__blue {
+  background-color: #00a;
+  box-shadow: 0 -2px 14px 2px #00000033,
+    inset 0 -2px 18px #131355;
+  transition: background-color 150ms, box-shadow 150ms;
+}
+
+.experience--jobs:hover .experience__blue {
   background-color: #00f;
-  box-shadow: 0 -1px 7px 1px #00000033,
-    inset 0 -1px 9px #131355,
+  box-shadow: 0 -2px 14px 2px #00000033,
+    inset 0 -2px 18px #131355,
     0 0 24px #0000ff80;
 }
 

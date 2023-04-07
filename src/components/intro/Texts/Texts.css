@@ -1,0 +1,18 @@
+.intro__text {
+  width: 600px;
+  margin-top: 18%;
+  margin-right: 10%;
+}
+
+.intro__title,
+.intro__sub {
+  color: #dbdbdb;
+}
+
+.intro__title {
+  font-size: 64px;
+}
+
+.intro__sub {
+  font-weight: 300;
+}

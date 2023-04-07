@@ -1,0 +1,48 @@
+.nav--links {
+  margin-top: 80px;
+}
+
+.nav__link__icon {
+  height: 64px;
+  width: 64px;
+  padding: 16px;
+  color: #f8f8f8;
+  border: solid 2px #f8f8f8;
+  border-radius: 50%;
+  transition: opacity 100ms, translate 100ms;
+}
+
+.nav__link__name {
+  padding: 8px;
+  font-size: 28px;
+  font-weight: 300;
+  color: #f8f8f8;
+  transition: opacity 100ms, translate 100ms;
+}
+
+.nav__button:focus .nav__link__icon,
+.nav__button:focus .nav__link__name,
+.nav__link:focus .nav__social__icon {
+  color: #d1405f;
+  border-color: #d1405f;
+}
+
+.nav--home {
+  margin-left: -208px;
+  transition: margin 500ms cubic-bezier(1, 0, 0.25, 1) 100ms;
+}
+
+.nav--projects {
+  margin-left: -216px;
+  transition: margin 500ms cubic-bezier(1, 0, 0.25, 1) 150ms;
+}
+
+.nav--experience {
+  margin-left: -224px;
+  transition: margin 500ms cubic-bezier(1, 0, 0.25, 1) 200ms;
+}
+
+.nav--contact {
+  margin-left: -232px;
+  transition: margin 500ms cubic-bezier(1, 0, 0.25, 1) 250ms;
+}

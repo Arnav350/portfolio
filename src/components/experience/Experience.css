@@ -1,0 +1,15 @@
+.experience {
+  height: 180vh;
+}
+
+.experience__title {
+  padding: 64px;
+  font-size: 64px;
+}
+
+.experience__box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

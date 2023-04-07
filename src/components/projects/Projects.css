@@ -1,0 +1,47 @@
+.projects {
+  height: 120vh;
+}
+
+.projects__title {
+  padding: 64px;
+  font-size: 64px;
+}
+
+.projects__system {
+  position: relative;
+  width: 100%;
+  height: 600px;
+}
+
+.projects__sun,
+.projects__planet {
+  position: absolute;
+  top: 50%;
+  translate: -50% -50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.projects__sun {
+  left: 50%;
+  height: 384px;
+  width: 384px;
+  background-color: #fb0;
+  z-index: 2;
+  box-shadow: 0 0 12px #fb0, 0 0 48px #fb0, 0 0 120px yellow, inset 0 0 60px yellow;
+  transition: opacity 300ms, box-shadow 300ms;
+}
+
+.projects__sun:hover {
+  box-shadow: 0 0 16px #fb0, 0 0 64px #fb0, 0 0 160px yellow, inset 0 0 80px yellow;
+}
+
+.projects__pause {
+  width: 200px;
+  height: 200px;
+  color: #ffc000;
+}

@@ -1,5 +1,5 @@
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
-import "../../App.css";
+import "../../../App.css";
 import "./ProjectsPlanet.css";
 
 interface IProps {
