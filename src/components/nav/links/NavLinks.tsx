@@ -1,9 +1,23 @@
-import React from "react";
+import React, { Dispatch, SetStateAction } from "react";
 import { FaHome, FaCode, FaLaptop, FaPhoneAlt } from "react-icons/fa";
 import "../../../App.css";
 import "./NavLinks.css";
 
-function NavLinks() {
+interface IProps {
+  setOpen: Dispatch<SetStateAction<boolean>>;
+}
+
+function NavLinks(props: IProps) {
+  // function handleClick() {
+  //   props.setOpen(false);
+
+  //   setTimeout(() => {
+  //     const projects = document.querySelector(".projects");
+  //     if (projects) {
+  //       projects.scrollIntoView({ behavior: "smooth" });
+  //     }
+  //   }, 500);
+  // }
   return (
     <div className="nav--links">
       <button className="nav--home nav__button">

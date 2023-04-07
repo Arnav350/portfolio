@@ -10,23 +10,26 @@ function ContactForm() {
           type="text"
           placeholder="Name"
           required
-          className="contact__name"
+          className="contact__name contact__input"
         />
         <input
           type="email"
           placeholder="Email"
           required
-          className="contact__email"
+          className="contact__email contact__input"
         />
       </div>
       <input
         type="text"
         placeholder="Subject"
         required
-        className="contact__subject"
+        className="contact__subject contact__input"
       />
-      <textarea placeholder="Message" className="contact__message"></textarea>
-      <input type="submit" className="contact__submit" />
+      <textarea
+        placeholder="Message"
+        className="contact__message contact__input"
+      ></textarea>
+      <input type="submit" className="contact__submit contact__input" />
     </form>
   );
 }

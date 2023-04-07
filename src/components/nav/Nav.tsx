@@ -24,7 +24,7 @@ function Nav(props: IProps) {
     <nav className="nav-bar">
       <div className="nav__background">
         <NavSocials socials={props.socials} />
-        <NavLinks />
+        <NavLinks setOpen={props.setOpen} />
       </div>
       <div className="nav__circle" onClick={() => props.setOpen(!props.open)}>
         <FaBars className="nav--bars click" />
