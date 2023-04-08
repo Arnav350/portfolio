@@ -1,10 +1,8 @@
-import React from "react";
 import constellation1 from "../../../assets/constellation1.png";
 import constellation2 from "../../../assets/constellation2.png";
 import constellation3 from "../../../assets/constellation3.png";
 import constellation4 from "../../../assets/constellation4.png";
 import constellation5 from "../../../assets/constellation5.png";
-import "../../../App.css";
 import "./Constellations.css";
 
 function Constellations() {

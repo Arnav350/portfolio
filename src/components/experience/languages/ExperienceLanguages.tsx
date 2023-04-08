@@ -14,7 +14,6 @@ import language_react from "../../../assets/language_react.png";
 import language_redux from "../../../assets/language_redux.png";
 import language_sass from "../../../assets/language_sass.png";
 import language_ts from "../../../assets/language_ts.png";
-import "../../../App.css";
 import "./ExperienceLanguages.css";
 
 interface IProps {

@@ -1,11 +1,9 @@
-import React from "react";
 import {
   FaLinkedinIn,
   FaGithub,
   FaEnvelope,
   FaRegNewspaper,
 } from "react-icons/fa";
-import "../../../App.css";
 import "./NavSocials.css";
 
 interface ISocials {

@@ -1,7 +1,5 @@
-import React from "react";
 import ContactUfo from "./ufo/ContactUfo";
 import ContactForm from "./form/ContactForm";
-import "../../App.css";
 import "./Contact.css";
 
 function Contact() {

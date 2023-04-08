@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import ProjectsPlanet from "./planet/ProjectsPlanet";
 import { FaPlay, FaPause } from "react-icons/fa";
-import "../../App.css";
 import "./Projects.css";
 
 function Projects() {

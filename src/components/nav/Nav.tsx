@@ -1,8 +1,7 @@
-import React, { Dispatch, SetStateAction } from "react";
+import { Dispatch, SetStateAction } from "react";
 import NavSocials from "./socials/NavSocials";
 import NavLinks from "./links/NavLinks";
 import { FaBars, FaTimes } from "react-icons/fa";
-import "../../App.css";
 import "./Nav.css";
 
 interface ISocials {

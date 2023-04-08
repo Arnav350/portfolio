@@ -1,7 +1,5 @@
-import React from "react";
 import ExperienceJobs from "./jobs/ExperienceJobs";
 import ExperienceLanguages from "./languages/ExperienceLanguages";
-import "../../App.css";
 import "./Experience.css";
 
 function Experience() {

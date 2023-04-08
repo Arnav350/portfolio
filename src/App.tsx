@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import resume from "./assets/resume.pdf";
 import Nav from "./components/nav/Nav";
 import Stars from "./components/stars/Stars";
