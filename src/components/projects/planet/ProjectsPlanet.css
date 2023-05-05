@@ -148,3 +148,19 @@
 .projects__planet:hover .projects__link {
   opacity: 1;
 }
+
+@media (max-width: 768px) {
+  .projects__planet {
+    height: 112px;
+    width: 112px;
+  }
+
+  .projects__planet:hover {
+    width: 304px;
+    height: 304px;
+  }
+
+  .projects__planet:hover .projects__heading {
+    font-size: 28px;
+  }
+}

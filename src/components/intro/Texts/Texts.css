@@ -1,7 +1,9 @@
 .intro__text {
-  width: 600px;
-  margin-top: 18%;
+  padding-right: 48px;
+  max-width: 600px;
+  margin-top: calc(108px + 18%);
   margin-right: 10%;
+  margin-right: calc(8% - 80px);
 }
 
 .intro__title,
@@ -19,4 +21,10 @@
 
 .intro__talk {
   cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .intro__title {
+    font-size: 48px;
+  }
 }

@@ -220,3 +220,18 @@
   grid-area: right;
   rotate: -45deg;
 }
+
+@media (max-width: 768px) {
+  .experience__screen {
+    height: 280px;
+    width: 320px;
+  }
+
+  .experience__tube {
+    width: 48px;
+  }
+
+  .experience__date {
+    padding-left: 8px;
+  }
+}

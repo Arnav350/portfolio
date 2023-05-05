@@ -33,7 +33,7 @@
   background-color: #fb0;
   z-index: 2;
   box-shadow: 0 0 12px #fb0, 0 0 48px #fb0, 0 0 120px yellow, inset 0 0 60px yellow;
-  transition: opacity 300ms, box-shadow 300ms;
+  transition: opacity 300ms, box-shadow 300ms, height 300ms, width 300ms;
 }
 
 .projects__sun:hover {
@@ -44,4 +44,11 @@
   width: 200px;
   height: 200px;
   color: #ffc600;
+}
+
+@media (max-width: 768px) {
+  .projects__sun {
+    height: 304px;
+    width: 304px;
+  }
 }

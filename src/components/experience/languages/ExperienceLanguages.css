@@ -119,3 +119,13 @@
   scale: 0.9;
   opacity: 0.7;
 }
+
+@media (max-width: 768px) {
+
+  .experience__start,
+  .experience__end,
+  .experience__language {
+    height: 96px;
+    width: 96px;
+  }
+}
