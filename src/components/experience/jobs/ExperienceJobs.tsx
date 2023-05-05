@@ -44,7 +44,7 @@ function ExperienceJobs() {
             className="experience__date"
             style={screen === 2 ? {} : { display: "none" }}
           >
-            Jun 2019
+            Jun 2020
           </p>
           <div className="experience__arrow"></div>
           <div className="experience__fluid"></div>
@@ -66,7 +66,7 @@ function ExperienceJobs() {
             className="experience__date"
             style={screen === 2 ? {} : { display: "none" }}
           >
-            Jul 2019
+            Jul 2020
           </p>
           <div className="experience__arrow"></div>
           <div className="experience__fluid"></div>
