@@ -1,6 +1,11 @@
 import "./Texts.css";
 
 function Texts() {
+  function handleClick() {
+    const element = document.querySelector<HTMLDivElement>(".contact");
+    element?.scrollIntoView({ behavior: "smooth" });
+  }
+
   return (
     <div className="intro--texts container">
       <div className="intro__text">
@@ -15,7 +20,9 @@ function Texts() {
         </h3>
         <h3 className="intro__sub hidden">
           Interested in working together? Let's have a{" "}
-          <b className="secondary">talk.</b>
+          <b className="intro__talk secondary" onClick={handleClick}>
+            talk.
+          </b>
         </h3>
       </div>
     </div>

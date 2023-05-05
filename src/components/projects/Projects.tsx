@@ -21,7 +21,7 @@ function Projects() {
           <ProjectsPlanet
             color="red"
             heading="1. Whispree"
-            description="A chat app that utilizes Firebase for its authentication, database, and storage functionalities. Users can sign up for an account, send messages, including texts and images, to other users, and even customize their own UI."
+            description="A chat app that utilizes Firebase for its authentication, database, and storage functionalities. Users can sign up for an account using zod validation, send text and images, and even customize their own UI."
             github="https://github.com/Arnav350/whispree"
             link="https://tourmaline-lokum-48d4d3.netlify.app"
             pause={pause}
@@ -52,7 +52,7 @@ function Projects() {
           />
           <ProjectsPlanet
             color="blue"
-            heading="5. V-Keyboard"
+            heading="5. Virutal Keyboard"
             description="A virtual keyboard app that can be used via touch or click, mimicking the experience of using a physical keyboard. The app also features caps lock and shift functionality, so you can type in all caps or access symbols and special characters."
             github="https://github.com/Arnav350/virtual-keyboard"
             link="https://willowy-sopapillas-ed16a6.netlify.app"

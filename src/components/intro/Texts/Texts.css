@@ -16,3 +16,7 @@
 .intro__sub {
   font-weight: 300;
 }
+
+.intro__talk {
+  cursor: pointer;
+}

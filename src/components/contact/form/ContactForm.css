@@ -1,5 +1,5 @@
 .contact__form {
-  margin-top: -384px;
+  margin-top: -460px;
   display: flex;
   flex-direction: column;
   width: 60%;
@@ -10,7 +10,8 @@
   width: 100%;
 }
 
-.contact__input {
+.contact__input,
+.contact__error {
   margin: 4px;
   padding: 16px;
   background-color: #333333dd;
@@ -22,6 +23,11 @@
   font-size: 16px;
   font-weight: 300;
   transition: border-bottom 150ms;
+}
+
+.contact__error {
+  background-color: #ff000088;
+  transition: opacity 150ms;
 }
 
 .contact__name,
