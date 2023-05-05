@@ -19,10 +19,20 @@ function ProjectsPlanet(props: IProps) {
       <h3 className="projects__heading">{props.heading}</h3>
       <p className="projects__description">{props.description}</p>
       <div className="projects__link__wrapper">
-        <a href={props.github} className="projects__link">
+        <a
+          href={props.github}
+          target="_blank"
+          rel="noreferrer"
+          className="projects__link"
+        >
           <FaGithub className="projects__icon click" />
         </a>
-        <a href={props.link} className="projects__link">
+        <a
+          href={props.link}
+          target="_blank"
+          rel="noreferrer"
+          className="projects__link"
+        >
           <FaExternalLinkAlt className="projects__icon click" />
         </a>
       </div>
