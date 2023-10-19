@@ -14,8 +14,8 @@ function Texts() {
           <span className="secondary">I'm Arnav</span>
         </h1>
         <h3 className="intro__sub hidden">
-          I am a <b className="secondary">frontend</b> software developer based in the United States, currently
-          attending <b className="secondary">Georgia Tech</b>, specializing in the creation of{" "}
+          I am a <b className="secondary">frontend</b> software developer based in the United States, currently a
+          sophomore at <b className="secondary">Georgia Tech</b>, specializing in the creation of{" "}
           <b className="secondary">remarkable</b> online journies!
         </h3>
         <h3 className="intro__sub hidden">
