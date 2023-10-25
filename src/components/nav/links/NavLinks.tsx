@@ -25,19 +25,13 @@ function NavLinks(props: IProps) {
       </button>
       <button className="nav--projects nav__button">
         <FaCode className="nav__link__icon" />
-        <h3
-          className="nav__link__name"
-          onClick={() => handleClick(".projects")}
-        >
+        <h3 className="nav__link__name" onClick={() => handleClick(".projects")}>
           Projects
         </h3>
       </button>
       <button className="nav--experience nav__button">
         <FaLaptop className="nav__link__icon" />
-        <h3
-          className="nav__link__name"
-          onClick={() => handleClick(".experience")}
-        >
+        <h3 className="nav__link__name" onClick={() => handleClick(".experience")}>
           Experience
         </h3>
       </button>

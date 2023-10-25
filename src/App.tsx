@@ -31,16 +31,14 @@ function App() {
   useEffect(() => {
     const hidden = document.querySelectorAll<HTMLElement>(".hidden");
 
-    const observer: IntersectionObserver = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry, i: number) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("shown");
-            observer.unobserve(hidden[i]);
-          }
-        });
-      }
-    );
+    const observer: IntersectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i: number) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("shown");
+          observer.unobserve(hidden[i]);
+        }
+      });
+    });
 
     hidden.forEach((elem: HTMLElement) => observer.observe(elem));
 

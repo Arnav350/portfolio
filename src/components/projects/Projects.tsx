@@ -12,11 +12,7 @@ function Projects() {
         <h1 className="projects__title secondary hidden">Projects</h1>
         <button className="projects__system hidden">
           <div className="projects__sun" onClick={() => setPause(!pause)}>
-            {pause ? (
-              <FaPlay className="projects__pause" />
-            ) : (
-              <FaPause className="projects__pause" />
-            )}
+            {pause ? <FaPlay className="projects__pause" /> : <FaPause className="projects__pause" />}
           </div>
           <ProjectsPlanet
             color="red"
@@ -58,6 +54,21 @@ function Projects() {
             link="https://willowy-sopapillas-ed16a6.netlify.app"
             pause={pause}
           />
+          {/* <ProjectsPlanet
+            color="yellow"
+            heading="6. Titanic Survivors"
+            description="A virtual keyboard app that can be used via touch or click, mimicking the experience of using a physical keyboard. The app also features caps lock and shift functionality, so you can type in all caps or access symbols and special characters."
+            github="https://github.com/Arnav350/titanic-survivors"
+            link="https://willowy-sopapillas-ed16a6.netlify.app"
+            pause={pause}
+          />
+          <ProjectsPlanet
+            color="pink"
+            heading="7. Lightweight (IP)"
+            description="A virtual keyboard app that can be used via touch or click, mimicking the experience of using a physical keyboard. The app also features caps lock and shift functionality, so you can type in all caps or access symbols and special characters."
+            github="https://github.com/Arnav350/pumppeak"
+            pause={pause}
+          /> */}
         </button>
       </div>
     </section>

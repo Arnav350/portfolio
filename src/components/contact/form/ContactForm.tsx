@@ -23,30 +23,19 @@ function ContactForm() {
       setSubject("");
       setMessage("");
 
-      emailjs
-        .sendForm(
-          "service_2huaien",
-          "template_ee9psqq",
-          contactForm.current,
-          "2hvV9SMMYfDlNPLDE"
-        )
-        .then(
-          (result) => {
-            console.log(result.text);
-          },
-          (error) => {
-            console.log(error.text);
-          }
-        );
+      emailjs.sendForm("service_2huaien", "template_ee9psqq", contactForm.current, "2hvV9SMMYfDlNPLDE").then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
     }
   }
 
   return (
-    <form
-      ref={contactForm}
-      className="contact__form hidden"
-      onClick={handleSubmit}
-    >
+    <form ref={contactForm} className="contact__form hidden" onClick={handleSubmit}>
       <p className="contact__error" style={err ? {} : { opacity: 0 }}>
         Make sure to fill out name, email, and subject.
       </p>

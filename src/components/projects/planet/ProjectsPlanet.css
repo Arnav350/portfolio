@@ -114,7 +114,27 @@
 
 .projects__planet--blue:hover {
   background-image: url("../../../assets/project5.png");
+  /* background-image: url("../../../assets/project4.png"); */
 }
+
+.projects__planet--yellow {
+  background-image: url("../../../assets/planet6.png");
+  animation-delay: -17s;
+}
+
+/* .projects__planet--yellow:hover {
+  background-image: url("../../../assets/project5.png");
+} */
+
+.projects__planet--pink {
+  background-image: url("../../../assets/planet7.png");
+  background-color: #b22e7d;
+  animation-delay: -18s;
+}
+
+/* .projects__planet--pink:hover {
+  background-image: url("../../../assets/project5.png");
+} */
 
 .projects__heading {
   padding: 248px 0 8px 0;
