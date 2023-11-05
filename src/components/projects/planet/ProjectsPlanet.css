@@ -79,7 +79,7 @@
 .projects__planet--purple {
   background-image: url("../../../assets/planet2.png");
   background-color: #6f53c5;
-  animation-delay: -4s;
+  animation-delay: -2.8s;
 }
 
 .projects__planet--purple:hover {
@@ -89,7 +89,7 @@
 .projects__planet--green {
   background-image: url("../../../assets/planet3.png");
   background-color: #65be58;
-  animation-delay: -7s;
+  animation-delay: -5.6s;
 }
 
 .projects__planet--green:hover {
@@ -99,7 +99,7 @@
 .projects__planet--orange {
   background-image: url("../../../assets/planet4.png");
   background-color: #ed952d;
-  animation-delay: -11s;
+  animation-delay: -8.4s;
 }
 
 .projects__planet--orange:hover {
@@ -108,33 +108,33 @@
 
 .projects__planet--blue {
   background-image: url("../../../assets/planet5.png");
-  background-color: #1cc2d8;
-  animation-delay: -16s;
+  background-color: #21c7dd;
+  animation-delay: -11.2s;
 }
 
 .projects__planet--blue:hover {
   background-image: url("../../../assets/project5.png");
-  /* background-image: url("../../../assets/project4.png"); */
 }
 
 .projects__planet--yellow {
   background-image: url("../../../assets/planet6.png");
-  animation-delay: -17s;
+  background-color: #d0c802;
+  animation-delay: -14s;
 }
 
-/* .projects__planet--yellow:hover {
-  background-image: url("../../../assets/project5.png");
-} */
+.projects__planet--yellow:hover {
+  background-image: url("../../../assets/project6.png");
+}
 
 .projects__planet--pink {
   background-image: url("../../../assets/planet7.png");
-  background-color: #b22e7d;
-  animation-delay: -18s;
+  background-color: #c5538b;
+  animation-delay: -16.8s;
 }
 
-/* .projects__planet--pink:hover {
-  background-image: url("../../../assets/project5.png");
-} */
+.projects__planet--pink:hover {
+  background-image: url("../../../assets/project4.png");
+}
 
 .projects__heading {
   padding: 248px 0 8px 0;

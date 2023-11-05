@@ -54,7 +54,7 @@ function Projects() {
             link="https://willowy-sopapillas-ed16a6.netlify.app"
             pause={pause}
           />
-          {/* <ProjectsPlanet
+          <ProjectsPlanet
             color="yellow"
             heading="6. Titanic Survivors"
             description="A virtual keyboard app that can be used via touch or click, mimicking the experience of using a physical keyboard. The app also features caps lock and shift functionality, so you can type in all caps or access symbols and special characters."
@@ -68,7 +68,7 @@ function Projects() {
             description="A virtual keyboard app that can be used via touch or click, mimicking the experience of using a physical keyboard. The app also features caps lock and shift functionality, so you can type in all caps or access symbols and special characters."
             github="https://github.com/Arnav350/pumppeak"
             pause={pause}
-          /> */}
+          />
         </button>
       </div>
     </section>
