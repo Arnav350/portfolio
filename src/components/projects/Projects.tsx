@@ -11,6 +11,7 @@ function Projects() {
       <div className="container">
         <h1 className="projects__title secondary hidden">Projects</h1>
         <button className="projects__system hidden">
+          <div className="projects__corona"></div>
           <div className="projects__sun" onClick={() => setPause(!pause)}>
             {pause ? <FaPlay className="projects__pause" /> : <FaPause className="projects__pause" />}
           </div>
@@ -41,7 +42,7 @@ function Projects() {
           <ProjectsPlanet
             color="orange"
             heading="4. Google-Clone"
-            description="A Google home and search page clone that leverages the power of the Google API to fetch the top 10 search results. You can enter a query into the search bar and receive the same results as the official engine."
+            description="A Google home and search page clone that leverages the power of the Google API to fetch the top 10 search results. You can enter a query into the search bar and you will receive the same results as the official engine."
             github="https://github.com/Arnav350/google-clone"
             link="https://jovial-crostata-0bd4fd.netlify.app"
             pause={pause}
@@ -49,7 +50,7 @@ function Projects() {
           <ProjectsPlanet
             color="blue"
             heading="5. Virutal Keyboard"
-            description="A virtual keyboard app that can be used via touch or click, mimicking the experience of using a physical keyboard. The app also features caps lock and shift functionality, so you can type in all caps or access symbols and special characters."
+            description="A virtual keyboard app that can be used via touch or click, to mimic the use of a physical keyboard. The app also features caps lock and shift functionality, so you can type in all caps or access symbols and special characters."
             github="https://github.com/Arnav350/virtual-keyboard"
             link="https://willowy-sopapillas-ed16a6.netlify.app"
             pause={pause}
@@ -57,7 +58,7 @@ function Projects() {
           <ProjectsPlanet
             color="yellow"
             heading="6. Titanic Survivors"
-            description="A virtual keyboard app that can be used via touch or click, mimicking the experience of using a physical keyboard. The app also features caps lock and shift functionality, so you can type in all caps or access symbols and special characters."
+            description="A virtual keyboard app that can be used via touch or click, to mimic the use of a physical keyboard. The app also features caps lock and shift functionality, so you can type in all caps or access symbols and special characters."
             github="https://github.com/Arnav350/titanic-survivors"
             link="https://willowy-sopapillas-ed16a6.netlify.app"
             pause={pause}
@@ -65,7 +66,7 @@ function Projects() {
           <ProjectsPlanet
             color="pink"
             heading="7. Lightweight (IP)"
-            description="A virtual keyboard app that can be used via touch or click, mimicking the experience of using a physical keyboard. The app also features caps lock and shift functionality, so you can type in all caps or access symbols and special characters."
+            description="A virtual keyboard app that can be used via touch or click, to mimic the use of a physical keyboard. The app also features caps lock and shift functionality, so you can type in all caps or access symbols and special characters."
             github="https://github.com/Arnav350/pumppeak"
             pause={pause}
           />

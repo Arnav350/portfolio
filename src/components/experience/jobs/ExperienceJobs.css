@@ -233,5 +233,18 @@
 
   .experience__date {
     padding-left: 8px;
+    font-size: 14px;
+  }
+
+  .experience__employer {
+    font-size: 18px;
+  }
+
+  .experience__position {
+    font-size: 16px;
+  }
+
+  .experience__bullet {
+    font-size: 14px;
   }
 }

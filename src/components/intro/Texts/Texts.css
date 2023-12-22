@@ -13,6 +13,7 @@
 
 .intro__title {
   font-size: 64px;
+  transition: font-size 300ms;
 }
 
 .intro__sub {
