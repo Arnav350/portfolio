@@ -112,3 +112,27 @@
   border-radius: 50% / 0 0 100% 100%;
   animation: beam-bottom 20s infinite;
 }
+
+@media (max-width: 480px) {
+
+  .contact__ufo,
+  .contact__line {
+    width: 320px;
+  }
+
+  .contact__glass {
+    height: 56px;
+    width: 120px;
+  }
+
+  .contact__belt {
+    width: 120px;
+  }
+
+  .contact__top,
+  .contact__bottom {
+    height: 48px;
+    width: 320px;
+  }
+
+}

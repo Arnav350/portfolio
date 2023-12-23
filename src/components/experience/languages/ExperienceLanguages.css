@@ -129,3 +129,19 @@
     width: 96px;
   }
 }
+
+@media (max-width: 480px) {
+
+  .experience__start,
+  .experience__end,
+  .experience__language {
+    height: 64px;
+    width: 64px;
+  }
+
+  .experience__red,
+  .experience__green {
+    height: 12px;
+    width: 12px;
+  }
+}
