@@ -21,6 +21,7 @@
   width: calc(100% - 32px);
   max-width: 1000px;
   background-color: transparent;
+  transition: padding 300ms;
 }
 
 .experience__start,
@@ -35,6 +36,7 @@
   background-color: #444;
   border-radius: 8px;
   z-index: 1;
+  transition: top 300ms, height 300ms, width 300ms;
 }
 
 .experience__end {
@@ -68,6 +70,7 @@
   height: 16px;
   width: 16px;
   border-radius: 2px;
+  transition: height 300ms, width 300ms;
 }
 
 .experience__red {
@@ -112,7 +115,7 @@
   width: 128px;
   padding: 16px;
   cursor: pointer;
-  transition: scale 200ms, opacity 200ms;
+  transition: height 300ms, width 300ms, scale 200ms, opacity 200ms;
 }
 
 .experience__language:hover {
@@ -121,6 +124,14 @@
 }
 
 @media (max-width: 768px) {
+  .experience__conveyor {
+    padding-top: 64px;
+  }
+
+  .experience__start,
+  .experience__end {
+    top: 64px
+  }
 
   .experience__start,
   .experience__end,

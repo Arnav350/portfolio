@@ -35,7 +35,7 @@ function ContactForm() {
   }
 
   return (
-    <form ref={contactForm} className="contact__form hidden" onClick={handleSubmit}>
+    <form ref={contactForm} className="contact__form hidden" onSubmit={handleSubmit}>
       <p className="contact__error" style={err ? {} : { opacity: 0 }}>
         Make sure to fill out name, email, and subject.
       </p>

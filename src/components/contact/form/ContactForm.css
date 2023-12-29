@@ -2,7 +2,6 @@
   margin-top: -460px;
   display: flex;
   flex-direction: column;
-  width: 60%;
   z-index: 1;
 }
 
@@ -22,12 +21,12 @@
   color: #f8f8f8;
   font-size: 16px;
   font-weight: 300;
-  transition: border-bottom 150ms;
+  transition: font-size 300ms, border-bottom 150ms;
 }
 
 .contact__error {
   background-color: #ff000088;
-  transition: opacity 150ms;
+  transition: font-size 300ms, border-bottom 150ms, opacity 150ms;
 }
 
 .contact__name,
@@ -53,4 +52,20 @@
 
 .contact__input:focus {
   border-bottom: 4px solid #66ff6688;
+}
+
+@media (max-width: 768px) {
+
+  .contact__input,
+  .contact__error {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .contact__input,
+  .contact__error {
+    font-size: 12px;
+  }
 }

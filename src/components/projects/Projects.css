@@ -3,8 +3,9 @@
 }
 
 .projects__title {
-  padding: 64px;
+  padding: 64px 0;
   font-size: 64px;
+  transition: padding 300ms;
 }
 
 .projects__system {
@@ -54,6 +55,9 @@
 }
 
 @media (max-width: 768px) {
+  .projects__title {
+    padding-bottom: 0;
+  }
 
   .projects__corona,
   .projects__sun {
@@ -68,6 +72,9 @@
 }
 
 @media (max-width: 480px) {
+  .projects__title {
+    padding: 0;
+  }
 
   .projects__corona,
   .projects__sun {

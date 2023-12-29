@@ -3,6 +3,19 @@
 }
 
 .contact__title {
-  padding: 64px;
+  padding: 64px 0;
   font-size: 64px;
+  transition: padding 300ms;
+}
+
+@media (max-width: 768px) {
+  .contact__title {
+    padding: 32px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact__title {
+    padding-top: 0;
+  }
 }

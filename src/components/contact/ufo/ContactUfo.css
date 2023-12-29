@@ -4,6 +4,7 @@
   align-items: center;
   width: 400px;
   height: 658px;
+  transition: width 300ms;
 }
 
 .contact__glass {
@@ -13,6 +14,7 @@
   border-top: 2px solid #f8f8f8;
   border-radius: 50% / 100% 100% 0 0;
   box-shadow: inset -4px -4px 20px #222;
+  transition: height 300ms, width 300ms;
 }
 
 .contact__belt {
@@ -21,6 +23,7 @@
   height: 12px;
   background: linear-gradient(90deg, #777, #aaa, #777);
   z-index: 0;
+  transition: width 300ms;
 }
 
 
@@ -28,6 +31,7 @@
 .contact__bottom {
   width: 400px;
   height: 56px;
+  transition: height 300ms, width 300ms;
 }
 
 .contact__top {
