@@ -10,7 +10,7 @@
 }
 
 .contact__input,
-.contact__error {
+.contact__err {
   margin: 4px;
   padding: 16px;
   background-color: #333333dd;
@@ -24,7 +24,15 @@
   transition: font-size 300ms, border-bottom 150ms;
 }
 
-.contact__error {
+.contact__input:hover {
+  border-bottom: 4px solid #44aa4444;
+}
+
+.contact__input:focus {
+  border-bottom: 4px solid #66ff6688;
+}
+
+.contact__err {
   background-color: #ff000088;
   transition: font-size 300ms, border-bottom 150ms, opacity 150ms;
 }
@@ -42,21 +50,84 @@
   resize: vertical;
 }
 
+.contact__last {
+  position: relative;
+}
+
 .contact__submit {
+  width: calc(100% - 8px);
   cursor: pointer;
+  transition: font-size 300ms, border-bottom 150ms, opacity 200ms;
 }
 
-.contact__input:hover {
-  border-bottom: 4px solid #44aa4444;
-}
-
-.contact__input:focus {
+.contact__sents {
+  flex: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 4px;
+  padding: 16px;
+  width: calc(100% - 8px);
+  background-color: #333333dd;
   border-bottom: 4px solid #66ff6688;
+  border-radius: 8px;
+  color: #f8f8f8;
+  overflow: hidden;
+  z-index: -1;
+  transition: font-size 300ms, opacity 200ms;
+}
+
+.contact__sent {
+  margin-right: 8px;
+  color: #f8f8f8;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+@keyframes shuttle {
+  0% {
+    left: -32px;
+  }
+
+  100% {
+    left: 100%
+  }
+}
+
+.contact__shuttle {
+  position: absolute;
+  left: -32px;
+  color: #888;
+  font-size: 32px;
+  animation: shuttle 1500ms ease-in-out 1;
+}
+
+.contact__error {
+  flex: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 4px;
+  padding: 16px;
+  width: calc(100% - 8px);
+  background-color: #ff000088;
+  border-bottom: 4px solid transparent;
+  border-radius: 8px;
+  color: #f8f8f8;
+  font-size: 16px;
+  font-weight: 300;
+  z-index: -1;
+  transition: font-size 300ms, opacity 200ms;
 }
 
 @media (max-width: 768px) {
 
   .contact__input,
+  .contact__err,
+  .contact__sent,
   .contact__error {
     font-size: 14px;
   }
@@ -65,6 +136,8 @@
 @media (max-width: 480px) {
 
   .contact__input,
+  .contact__err,
+  .contact__sent,
   .contact__error {
     font-size: 12px;
   }

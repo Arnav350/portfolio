@@ -40,8 +40,7 @@
     6px 1px 0 12px #f8f8f80f,
     6px 1px 0 18px #f8f8f80f,
     inset -12px -2px 4px 8px #eeeee0;
-  transition: rotate 500ms cubic-bezier(1, 0, 0.25, 1);
-  transition: top 300ms, left 300ms;
+  transition: top 300ms, left 300ms, rotate 500ms cubic-bezier(1, 0, 0.25, 1);
 }
 
 .nav__circle:hover {

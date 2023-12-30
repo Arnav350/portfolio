@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
+import { FaSpaceShuttle } from "react-icons/fa";
 import "./ContactForm.css";
 
 function ContactForm() {
@@ -8,6 +9,8 @@ function ContactForm() {
   const [subject, setSubject] = useState<string>("");
   const [message, setMessage] = useState<string>("");
   const [err, setErr] = useState<boolean>(false);
+  const [sent, setSent] = useState<boolean>(false);
+  const [emailjsErr, setEmailjsErr] = useState<boolean>(false);
 
   const contactForm = useRef(null!);
 
@@ -25,10 +28,12 @@ function ContactForm() {
 
       emailjs.sendForm("service_2huaien", "template_ee9psqq", contactForm.current, "2hvV9SMMYfDlNPLDE").then(
         (result) => {
-          console.log(result.text);
+          setSent(true);
+          setTimeout(() => setSent(false), 2500);
         },
         (error) => {
-          console.log(error.text);
+          setEmailjsErr(true);
+          setTimeout(() => setEmailjsErr(false), 2500);
         }
       );
     }
@@ -36,9 +41,9 @@ function ContactForm() {
 
   return (
     <form ref={contactForm} className="contact__form hidden" onSubmit={handleSubmit}>
-      <p className="contact__error" style={err ? {} : { opacity: 0 }}>
+      <h4 className="contact__err" style={err ? {} : { opacity: 0 }}>
         Make sure to fill out name, email, and subject.
-      </p>
+      </h4>
       <div className="contact__box">
         <input
           type="text"
@@ -64,7 +69,7 @@ function ContactForm() {
         value={subject}
         placeholder="Subject"
         name="contact__subject"
-        className="contact__subject contact__input"
+        className="contact__input"
         style={err && !subject ? { borderBottomColor: "#ff000088" } : {}}
         onChange={(event) => setSubject(event.target.value)}
       />
@@ -75,7 +80,20 @@ function ContactForm() {
         className="contact__message contact__input"
         onChange={(event) => setMessage(event.target.value)}
       ></textarea>
-      <input type="submit" className="contact__submit contact__input" />
+      <div className="contact__last">
+        <input
+          type="submit"
+          className="contact__submit contact__input"
+          style={sent || emailjsErr ? { opacity: 0 } : {}}
+        />
+        <div className="contact__sents" style={sent ? {} : { opacity: 0 }}>
+          <h4 className="contact__sent">Message Sent</h4>
+          <FaSpaceShuttle className="contact__shuttle" style={sent ? {} : { display: "none" }} />
+        </div>
+        <h4 className="contact__error" style={emailjsErr ? {} : { opacity: 0 }}>
+          Error! Please try again
+        </h4>
+      </div>
     </form>
   );
 }
