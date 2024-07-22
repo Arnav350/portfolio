@@ -111,7 +111,7 @@ function Planet({ title, description, image, github, website, orbiting, position
     >
       <sphereGeometry args={[radius, 24, 24]} />
       <meshStandardMaterial map={texture} />
-      {characters.map(({ char, position, rotation }, i) => (
+      {/* {characters.map(({ char, position, rotation }, i) => (
         <Text
           key={i}
           font="/src/assets/AnonymousPro.ttf"
@@ -156,7 +156,7 @@ function Planet({ title, description, image, github, website, orbiting, position
           <planeGeometry args={[0.5, 0.5]} />
           <meshBasicMaterial map={linkIcon} transparent opacity={hovered ? 1 : 0} />
         </mesh>
-      </mesh>
+      </mesh> */}
       {hovered && <Decal position={[radius, 0, 0]} rotation={[0, Math.PI / 2, 0]} scale={8.1} map={test} depthTest />}
     </animated.mesh>
   );

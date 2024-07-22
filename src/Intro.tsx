@@ -23,11 +23,10 @@ function Intro() {
   useEffect(() => {
     gltf.scene.traverse((child) => {
       if (child instanceof Mesh) {
-        if (["Object_4", "Object_6"].includes(child.name)) {
+        if (["Object_4", "Object_6", "Object_8", "Object_10"].includes(child.name)) {
+          // child.material.transparent = true;
+          // child.material.opacity = 0.5;
           child.visible = false;
-        } else if (["Object_8", "Object_10"].includes(child.name)) {
-          child.material.transparent = true;
-          child.material.opacity = 0.5;
         }
       }
     });
@@ -55,7 +54,7 @@ function Intro() {
 
   return (
     <mesh>
-      <directionalLight position={[10, 12, -5]} intensity={3} color="#adf" />
+      <pointLight position={[14, 0, 0]} intensity={1000} color="#adf" />
       <mesh position={[0, 0, 0]} rotation={[0, 0.5, Math.PI / 2.5]} scale={6}>
         <primitive object={gltf.scene} />
       </mesh>

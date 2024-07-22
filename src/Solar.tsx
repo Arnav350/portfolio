@@ -41,7 +41,7 @@ function Solar() {
 
   return (
     <mesh position={[0, -60, 0]}>
-      <pointLight decay={0} intensity={0.8} />
+      <pointLight intensity={80} />
       <mesh
         position={[0, 0, 0]}
         onPointerOver={() => (document.body.style.cursor = "pointer")}

@@ -45,7 +45,7 @@ function Ufo() {
     composerRef.current.setSize(size.width, size.height);
   }, [scene, camera, gl, size]);
 
-  const clippingPlane = new Plane(new Vector3(0, -1, 0), 9.8);
+  const clippingPlane = new Plane(new Vector3(0, -1, 0), -5);
 
   function handleInput(event: React.FormEvent<HTMLTextAreaElement>) {
     const textarea = event.currentTarget;
@@ -54,10 +54,9 @@ function Ufo() {
   }
 
   return (
-    <>
-      <ambientLight intensity={0.5} />
-      <pointLight position={[0, 0, 0]} intensity={8} decay={1} />
-      <directionalLight position={[1, 1, -5]} intensity={1} color="#ffaa6b" />
+    <group position={[0, -240, 0]}>
+      <pointLight position={[0, 0, 0]} intensity={80} />
+      {/* <directionalLight position={[1, 1, -5]} intensity={1} color="#ffaa6b" /> */}
       <mesh position={[0, 12, 0]}>
         <mesh position={[0, 1, 0]} rotation={[-Math.PI / 2, 0, 0]} scale={7.5}>
           <sphereGeometry args={[1, 16, 16, 0, Math.PI]} />
@@ -94,7 +93,7 @@ function Ufo() {
           />
         </mesh>
       </mesh>
-      <Html position={[0, 4, 0]}>
+      <Html position={[0, -920, 0]}>
         <div style={{ display: "flex", flexDirection: "column", gap: 8, translate: "-50%" }}>
           <input
             type="text"
@@ -189,7 +188,7 @@ function Ufo() {
           </button>
         </div>
       </Html>
-    </>
+    </group>
   );
 }
 

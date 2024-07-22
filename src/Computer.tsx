@@ -72,25 +72,26 @@ function Computer() {
   });
 
   return (
-    <>
-      <ambientLight intensity={0.5} />
-      <directionalLight position={[10, 12, -5]} intensity={5} color="#e3813b" />
-      <rectAreaLight
-        width={28}
-        height={18}
-        color={"#1fff1f"}
-        intensity={20}
-        position={[-4, 8, 0]}
-        rotation={[0, Math.PI / 2, 0]}
-      />
-      <rectAreaLight
-        width={10}
-        height={5}
-        color={"#1fff1f"}
-        intensity={20}
-        position={[-8, 8, 0]}
-        rotation={[0, Math.PI / 2, 0]}
-      />
+    <group position={[0, -120, 0]}>
+      {/* <pointLight position={[-12, 10, -10]} intensity={1000} color="#ff9142" /> */}
+      <mesh rotation={[0, 0, Math.PI / 26]}>
+        <rectAreaLight
+          width={30}
+          height={20}
+          color={"#1fff1f"}
+          intensity={10}
+          position={[-9, 10, 0]}
+          rotation={[0, Math.PI / 2, 0]}
+        />
+        <rectAreaLight
+          width={30}
+          height={15}
+          color={"#1fff1f"}
+          intensity={5}
+          position={[-9, 10, 0]}
+          rotation={[0, (3 * Math.PI) / 2, 0]}
+        />
+      </mesh>
       <mesh position={[-30, -18, 0]} rotation={[0, Math.PI / 2, 0]} scale={20}>
         <primitive object={gltf.scene} />
       </mesh>
@@ -150,7 +151,7 @@ function Computer() {
           <Text fontSize={4}>{currentScreen === 2 ? "◎" : "○"}</Text>
         </animated.mesh>
       </mesh>
-    </>
+    </group>
   );
 }
 
