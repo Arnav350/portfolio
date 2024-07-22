@@ -55,8 +55,7 @@ function Intro() {
 
   return (
     <mesh>
-      <ambientLight intensity={1} />
-      <directionalLight position={[10, 12, -5]} intensity={2} color="#adf" />
+      <directionalLight position={[10, 12, -5]} intensity={3} color="#adf" />
       <mesh position={[0, 0, 0]} rotation={[0, 0.5, Math.PI / 2.5]} scale={6}>
         <primitive object={gltf.scene} />
       </mesh>

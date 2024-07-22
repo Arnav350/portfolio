@@ -40,9 +40,8 @@ function Solar() {
   }, [scene, camera, gl, size]);
 
   return (
-    <mesh>
+    <mesh position={[0, -60, 0]}>
       <pointLight decay={0} intensity={0.8} />
-      <ambientLight intensity={0.5} />
       <mesh
         position={[0, 0, 0]}
         onPointerOver={() => (document.body.style.cursor = "pointer")}

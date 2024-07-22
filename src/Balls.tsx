@@ -32,8 +32,8 @@ function Balls() {
   }, [scene, camera, gl, size]);
   return (
     <Float speed={1.75} rotationIntensity={0} floatIntensity={2}>
-      <directionalLight position={[0.05, 0, 0]} intensity={0.15} />
-      <ambientLight intensity={0.05} />
+      <directionalLight position={[0.05, 0, 0]} intensity={1} />
+      <ambientLight intensity={0.5} />
       <group position={[0, 7, 0]}>
         <Ball image="c" position={[0, 0, -20]} initialScale={3} />
         <Ball image="python" position={[0, 0, -10]} initialScale={3} />

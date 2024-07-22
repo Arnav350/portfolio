@@ -55,7 +55,7 @@ function Ufo() {
 
   return (
     <>
-      <ambientLight intensity={0.6} />
+      <ambientLight intensity={0.5} />
       <pointLight position={[0, 0, 0]} intensity={8} decay={1} />
       <directionalLight position={[1, 1, -5]} intensity={1} color="#ffaa6b" />
       <mesh position={[0, 12, 0]}>
@@ -87,7 +87,7 @@ function Ufo() {
           <meshStandardMaterial
             color={0x48ff00}
             emissive={0x48ff00}
-            emissiveIntensity={2.63}
+            emissiveIntensity={2.66}
             transparent
             opacity={0.5}
             clippingPlanes={[clippingPlane]}

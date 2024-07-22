@@ -1,11 +1,13 @@
 import { memo, useEffect, useRef, useState } from "react";
 import { Mesh, Vector2 } from "three";
 import { useLoader, useThree, useFrame } from "@react-three/fiber";
-import { Text } from "@react-three/drei";
+import { Text, useGLTF } from "@react-three/drei";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { EffectComposer, RenderPass, UnrealBloomPass } from "three/examples/jsm/Addons.js";
 import { useSpring, animated } from "@react-spring/three";
 import Screen from "./Screen";
+
+useGLTF.preload("../src/assets/computer/scene.gltf");
 
 function Computer() {
   const gltf = useLoader(GLTFLoader, "../src/assets/computer/scene.gltf");
@@ -71,10 +73,8 @@ function Computer() {
 
   return (
     <>
-      <mesh position={[-30, -18, 0]} rotation={[0, Math.PI / 2, 0]} scale={20}>
-        <primitive object={gltf.scene} />
-      </mesh>
-      <directionalLight position={[10, 12, -5]} intensity={5} color="#ffaa6b" />
+      <ambientLight intensity={0.5} />
+      <directionalLight position={[10, 12, -5]} intensity={5} color="#e3813b" />
       <rectAreaLight
         width={28}
         height={18}
@@ -91,6 +91,9 @@ function Computer() {
         position={[-8, 8, 0]}
         rotation={[0, Math.PI / 2, 0]}
       />
+      <mesh position={[-30, -18, 0]} rotation={[0, Math.PI / 2, 0]} scale={20}>
+        <primitive object={gltf.scene} />
+      </mesh>
       <mesh rotation={[0, 0, Math.PI / 26]}>
         <Screen screen={currentScreen} />
         <animated.mesh
