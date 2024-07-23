@@ -13,11 +13,11 @@ function App() {
     <div style={{ height: "100vh" }}>
       <Suspense fallback={<div>Loading...</div>}>
         <Canvas camera={{ position: [60, 0, 0], fov: 45 }}>
-          <ScrollControls pages={6} damping={0} distance={1}>
+          <ScrollControls pages={8} damping={0} distance={1}>
             <Scroll>
               <group>
                 <ambientLight intensity={0.5} />
-                {/* <Intro /> */}
+                <Intro />
                 <Solar />
                 <Computer />
                 <Balls />
@@ -29,27 +29,6 @@ function App() {
         </Canvas>
       </Suspense>
     </div>
-
-    // <div style={{ overflowY: "scroll", height: "100vh" }}>
-    //   <Suspense fallback={<div>Loading</div>}>
-    //     <Canvas camera={{ position: [60, 0, 0], fov: 45 }} style={{ height: "80vh" }}>
-    //       <Preload all />
-    //       <Intro />
-    //     </Canvas>
-    //     <Canvas camera={{ position: [60, 0, 0], fov: 45 }} style={{ height: "80vh" }}>
-    //       <Solar />
-    //     </Canvas>
-    //     <Canvas camera={{ position: [60, 0, 0], fov: 45 }} style={{ height: "80vh" }}>
-    //       <Computer />
-    //     </Canvas>
-    //     <Canvas camera={{ position: [60, 0, 0], fov: 45 }} style={{ height: "80vh" }}>
-    //       <Balls />
-    //     </Canvas>
-    //     <Canvas camera={{ position: [60, 0, 0], fov: 45 }} style={{ height: "80vh" }}>
-    //       <Ufo />
-    //     </Canvas>
-    //   </Suspense>
-    // </div>
   );
 }
 

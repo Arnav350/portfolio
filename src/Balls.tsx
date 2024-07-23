@@ -1,20 +1,15 @@
-import { Float } from "@react-three/drei";
-import Ball from "./Ball";
-import { useFrame, useThree } from "@react-three/fiber";
 import { memo, useEffect, useRef } from "react";
+import { PointLight, Vector2 } from "three";
+import { useFrame, useThree } from "@react-three/fiber";
 import { EffectComposer, RenderPass, UnrealBloomPass } from "three/examples/jsm/Addons.js";
-import { Vector2 } from "three";
+import Ball from "./Ball";
 
 function Balls() {
   const { scene, camera, gl, size } = useThree();
 
   const composerRef = useRef<EffectComposer>();
-
-  useFrame(() => {
-    if (composerRef.current) {
-      composerRef.current.render();
-    }
-  }, 1);
+  const lightRef = useRef<PointLight>(null);
+  const timeRef = useRef(0);
 
   useEffect(() => {
     const renderScene = new RenderPass(scene, camera);
@@ -31,20 +26,33 @@ function Balls() {
     composerRef.current.setSize(size.width, size.height);
   }, [scene, camera, gl, size]);
 
+  useFrame((_, delta) => {
+    if (composerRef.current) {
+      composerRef.current.render();
+    }
+
+    timeRef.current += delta;
+
+    if (lightRef.current) {
+      lightRef.current.position.y = Math.sin(timeRef.current) * 8;
+      lightRef.current.position.z = Math.cos(timeRef.current) * 12;
+    }
+  }, 1);
+
   return (
-    <Float position={[0, -180, 0]} speed={1.75} rotationIntensity={0} floatIntensity={2}>
-      {/* <directionalLight position={[0.05, 0, 0]} intensity={1} /> */}
+    <group position={[0, -180, 0]}>
+      <pointLight ref={lightRef} position={[10, -2, 0]} intensity={300} />
       <group position={[0, 7, 0]}>
         <Ball image="c" position={[0, 0, -20]} initialScale={3} />
         <Ball image="python" position={[0, 0, -10]} initialScale={3} />
         <Ball image="java" position={[0, 0, 0]} initialScale={3} />
-        <Ball image="react" position={[0, 0, 10]} initialScale={3} />
+        <Ball image="mongo" position={[0, 0, 10]} initialScale={3} />
         <Ball image="aws" position={[0, 0, 20]} initialScale={3} />
       </group>
       <group position={[0, -3, 0]}>
         <Ball image="express" position={[0, 0, -20]} initialScale={3} />
         <Ball image="ts" position={[0, 0, -10]} initialScale={3} />
-        <Ball image="mongo" position={[0, 0, 0]} initialScale={3} />
+        <Ball image="react" position={[0, 0, 0]} initialScale={3} />
         <Ball image="scikit" position={[0, 0, 10]} initialScale={3} />
         <Ball image="node" position={[0, 0, 20]} initialScale={3} />
       </group>
@@ -58,7 +66,7 @@ function Balls() {
         <Ball image="firebase" position={[0, 0, 14.3]} initialScale={1.5} />
         <Ball image="expo" position={[0, 0, 20]} initialScale={1.5} />
       </group>
-    </Float>
+    </group>
   );
 }
 

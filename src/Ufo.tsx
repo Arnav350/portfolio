@@ -1,17 +1,12 @@
 import { Html } from "@react-three/drei";
-import { useFrame, useThree } from "@react-three/fiber";
-import { memo, useEffect, useRef, useState } from "react";
-import { Plane, Vector2, Vector3 } from "three";
+import { useFrame } from "@react-three/fiber";
+import { memo, useRef, useState } from "react";
 import { EffectComposer } from "three/examples/jsm/postprocessing/EffectComposer.js";
-import { RenderPass } from "three/examples/jsm/postprocessing/RenderPass.js";
-import { UnrealBloomPass } from "three/examples/jsm/postprocessing/UnrealBloomPass.js";
 import "./App.css";
 
 const speed = 0.15;
 
 function Ufo() {
-  const { scene, camera, gl, size } = useThree();
-
   const composerRef = useRef<EffectComposer>();
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const [activeLight, setActiveLight] = useState(0);
@@ -31,21 +26,6 @@ function Ufo() {
       composerRef.current.render();
     }
   }, 1);
-
-  useEffect(() => {
-    const renderScene = new RenderPass(scene, camera);
-    const bloomPass = new UnrealBloomPass(new Vector2(size.width, size.height), 1.5, 0.4, 0.85);
-
-    composerRef.current = new EffectComposer(gl);
-    composerRef.current.addPass(renderScene);
-    composerRef.current.addPass(bloomPass);
-
-    gl.setSize(size.width, size.height);
-    gl.localClippingEnabled = true;
-    composerRef.current.setSize(size.width, size.height);
-  }, [scene, camera, gl, size]);
-
-  const clippingPlane = new Plane(new Vector3(0, -1, 0), -5);
 
   function handleInput(event: React.FormEvent<HTMLTextAreaElement>) {
     const textarea = event.currentTarget;
@@ -81,19 +61,18 @@ function Ufo() {
               <meshStandardMaterial emissive={0x48ff00} emissiveIntensity={activeLight === i ? 1.5 : 0.5} />
             </mesh>
           ))}
-        <mesh position={[0, -6, 0]} scale={3}>
-          <coneGeometry args={[4, 16, 16]} />
+        <mesh position={[0, -10, 0]} scale={3}>
+          <coneGeometry args={[4, 12, 16]} />
           <meshStandardMaterial
             color={0x48ff00}
             emissive={0x48ff00}
             emissiveIntensity={2.66}
             transparent
             opacity={0.5}
-            clippingPlanes={[clippingPlane]}
           />
         </mesh>
       </mesh>
-      <Html position={[0, -920, 0]}>
+      <Html position={[0, -340, 0]}>
         <div style={{ display: "flex", flexDirection: "column", gap: 8, translate: "-50%" }}>
           <input
             type="text"
