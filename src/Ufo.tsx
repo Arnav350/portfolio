@@ -1,15 +1,14 @@
+import { memo, useRef, useState } from "react";
 import { Html } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
-import { memo, useRef, useState } from "react";
-import { EffectComposer } from "three/examples/jsm/postprocessing/EffectComposer.js";
-import "./App.css";
+import { useSpring } from "@react-spring/three";
 
 const speed = 0.15;
 
 function Ufo() {
-  const composerRef = useRef<EffectComposer>();
   const textareaRef = useRef<HTMLTextAreaElement>(null);
-  const [activeLight, setActiveLight] = useState(0);
+  const [beamHovered, setBeamHovered] = useState<boolean>(false);
+  const [activeLight, setActiveLight] = useState<number>(0);
   const [hovered, setHovered] = useState<string>("");
   const [focused, setFocused] = useState<string>("");
 
@@ -21,11 +20,12 @@ function Ufo() {
       setActiveLight((prev) => (prev + 1) % 9);
       timeAccumulator = 0;
     }
+  });
 
-    if (composerRef.current) {
-      composerRef.current.render();
-    }
-  }, 1);
+  const { intensity } = useSpring({
+    intensity: beamHovered ? 1.8 : 0.8,
+    config: { tension: 15, friction: 50 },
+  });
 
   function handleInput(event: React.FormEvent<HTMLTextAreaElement>) {
     const textarea = event.currentTarget;
@@ -36,7 +36,6 @@ function Ufo() {
   return (
     <group position={[0, -240, 0]}>
       <pointLight position={[0, 0, 0]} intensity={80} />
-      {/* <directionalLight position={[1, 1, -5]} intensity={1} color="#ffaa6b" /> */}
       <mesh position={[0, 12, 0]}>
         <mesh position={[0, 1, 0]} rotation={[-Math.PI / 2, 0, 0]} scale={7.5}>
           <sphereGeometry args={[1, 16, 16, 0, Math.PI]} />
@@ -58,21 +57,26 @@ function Ufo() {
               position={[Math.sin((i / 16) * Math.PI * 2) * 14.9, 0, Math.cos((i / 16) * Math.PI * 2) * 14.9]}
             >
               <sphereGeometry args={[0.3, 8, 8]} />
-              <meshStandardMaterial emissive={0x48ff00} emissiveIntensity={activeLight === i ? 1.5 : 0.5} />
+              <meshStandardMaterial emissive={0x48ff00} emissiveIntensity={activeLight === i ? 1 : 0.1} />
             </mesh>
           ))}
-        <mesh position={[0, -10, 0]} scale={3}>
+        <mesh
+          position={[0, -10, 0]}
+          scale={3}
+          onPointerOver={() => setBeamHovered(true)}
+          onPointerOut={() => setBeamHovered(false)}
+        >
           <coneGeometry args={[4, 12, 16]} />
           <meshStandardMaterial
             color={0x48ff00}
             emissive={0x48ff00}
-            emissiveIntensity={2.66}
+            emissiveIntensity={intensity.get()}
             transparent
             opacity={0.5}
           />
         </mesh>
       </mesh>
-      <Html position={[0, -340, 0]}>
+      <Html position={[0, -360, 0]}>
         <div style={{ display: "flex", flexDirection: "column", gap: 8, translate: "-50%" }}>
           <input
             type="text"

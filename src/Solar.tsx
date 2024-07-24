@@ -1,15 +1,11 @@
-import { useFrame, useLoader, useThree } from "@react-three/fiber";
-import { memo, useEffect, useRef, useState } from "react";
-import { Group, TextureLoader, Vector2 } from "three";
-import { EffectComposer, RenderPass, UnrealBloomPass } from "three/examples/jsm/Addons.js";
+import { useFrame, useLoader } from "@react-three/fiber";
+import { memo, useRef, useState } from "react";
+import { Group, TextureLoader } from "three";
 import Planet from "./Planet";
 
 function Solar() {
-  const { scene, camera, gl, size } = useThree();
-
   const playIcon = useLoader(TextureLoader, "src/assets/play.svg");
   const pauseIcon = useLoader(TextureLoader, "src/assets/pause.svg");
-  const composerRef = useRef<EffectComposer>();
   const groupRef = useRef<Group>(null);
   const iconRef = useRef(null);
 
@@ -21,23 +17,7 @@ function Solar() {
         groupRef.current.rotation.y -= delta / 5;
       }
     }
-
-    if (composerRef.current) {
-      composerRef.current.render();
-    }
-  }, 1);
-
-  useEffect(() => {
-    const renderScene = new RenderPass(scene, camera);
-    const bloomPass = new UnrealBloomPass(new Vector2(size.width, size.height), 1.5, 0.4, 0.85);
-
-    composerRef.current = new EffectComposer(gl);
-    composerRef.current.addPass(renderScene);
-    composerRef.current.addPass(bloomPass);
-
-    gl.setSize(size.width, size.height);
-    composerRef.current.setSize(size.width, size.height);
-  }, [scene, camera, gl, size]);
+  });
 
   return (
     <mesh position={[0, -60, 0]}>

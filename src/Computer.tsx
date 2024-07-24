@@ -1,9 +1,8 @@
-import { memo, useEffect, useRef, useState } from "react";
-import { Mesh, Vector2 } from "three";
-import { useLoader, useThree, useFrame } from "@react-three/fiber";
+import { memo, useEffect, useState } from "react";
+import { Mesh } from "three";
+import { useLoader } from "@react-three/fiber";
 import { Text, useGLTF } from "@react-three/drei";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
-import { EffectComposer, RenderPass, UnrealBloomPass } from "three/examples/jsm/Addons.js";
 import { useSpring, animated } from "@react-spring/three";
 import Screen from "./Screen";
 
@@ -11,8 +10,6 @@ useGLTF.preload("../src/assets/computer/scene.gltf");
 
 function Computer() {
   const gltf = useLoader(GLTFLoader, "../src/assets/computer/scene.gltf");
-  const composerRef = useRef<EffectComposer>();
-  const { gl, scene, camera, size } = useThree();
   const [currentScreen, setCurrentScreen] = useState<number>(0);
   const [arrowState, setArrowState] = useState({
     hoveredLeft: false,
@@ -42,25 +39,10 @@ function Computer() {
     });
   }, [gltf]);
 
-  useEffect(() => {
-    const renderScene = new RenderPass(scene, camera);
-    const bloomPass = new UnrealBloomPass(new Vector2(size.width, size.height), 1.5, 0.4, 0.85);
-
-    bloomPass.threshold = 0.5;
-
-    composerRef.current = new EffectComposer(gl);
-    composerRef.current.addPass(renderScene);
-    composerRef.current.addPass(bloomPass);
-
-    gl.setSize(size.width, size.height);
-    composerRef.current.setSize(size.width, size.height);
-  }, [scene, camera, gl, size]);
-
-  useFrame(() => {
-    if (composerRef.current) {
-      composerRef.current.render();
-    }
-  }, 1);
+  const { rotation } = useSpring({
+    rotation: arrowState.activeLeft ? Math.PI / 4 : arrowState.activeRight ? -Math.PI / 4 : 0,
+    config: { tension: 30, friction: 15 },
+  });
 
   const { scaleLeft } = useSpring({
     scaleLeft: arrowState.activeLeft ? 0.9 : arrowState.hoveredLeft ? 1.15 : 1,
@@ -72,8 +54,7 @@ function Computer() {
   });
 
   return (
-    <group position={[0, -120, 0]}>
-      {/* <pointLight position={[-12, 10, -10]} intensity={1000} color="#ff9142" /> */}
+    <animated.mesh position={[0, -120, 0]} rotation-y={rotation}>
       <mesh rotation={[0, 0, Math.PI / 26]}>
         <rectAreaLight
           width={30}
@@ -107,7 +88,7 @@ function Computer() {
           }}
           onPointerOut={() => {
             document.body.style.cursor = "default";
-            setArrowState((prev) => ({ ...prev, hoveredLeft: false }));
+            setArrowState((prev) => ({ ...prev, hoveredLeft: false, activeLeft: false }));
           }}
           onPointerDown={() => setArrowState((prev) => ({ ...prev, activeLeft: true }))}
           onPointerUp={() => {
@@ -129,7 +110,7 @@ function Computer() {
           }}
           onPointerOut={() => {
             document.body.style.cursor = "default";
-            setArrowState((prev) => ({ ...prev, hoveredRight: false }));
+            setArrowState((prev) => ({ ...prev, hoveredRight: false, activeRight: false }));
           }}
           onPointerDown={() => setArrowState((prev) => ({ ...prev, activeRight: true }))}
           onPointerUp={() => {
@@ -151,7 +132,7 @@ function Computer() {
           <Text fontSize={4}>{currentScreen === 2 ? "◎" : "○"}</Text>
         </animated.mesh>
       </mesh>
-    </group>
+    </animated.mesh>
   );
 }
 
