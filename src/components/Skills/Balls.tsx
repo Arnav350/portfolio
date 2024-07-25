@@ -17,7 +17,7 @@ function Balls() {
   });
 
   return (
-    <group position={[0, -180, 0]}>
+    <group position={[0, -140, 0]}>
       <pointLight ref={lightRef} position={[10, -2, 0]} intensity={300} />
       <group position={[0, 7, 0]}>
         <Ball image="c" position={[0, 0, -20]} initialScale={3} />

@@ -20,7 +20,7 @@ function Solar() {
   });
 
   return (
-    <mesh position={[0, -60, 0]}>
+    <mesh position={[0, -40, 0]}>
       <pointLight intensity={80} />
       <mesh
         position={[0, 0, 0]}

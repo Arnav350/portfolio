@@ -1,6 +1,6 @@
 import { memo, useEffect, useRef, useState } from "react";
-import { Mesh, TextureLoader } from "three";
-import { Decal, Text } from "@react-three/drei";
+import { CanvasTexture, Mesh, TextureLoader } from "three";
+import { Decal, RenderTexture, Text } from "@react-three/drei";
 import { useFrame, useLoader } from "@react-three/fiber";
 import { useSpring, animated } from "@react-spring/three";
 
@@ -52,49 +52,49 @@ function Planet({ title, description, image, github, website, orbiting, position
     config: { tension: 320, friction: 20 },
   });
 
-  const titleArr = title.split("").reverse();
-  const angleOffset = (titleArr.length * 0.4) / radius;
-  const characters: CharacterProps[] = titleArr.map((char, i) => {
-    const angle = -angleOffset / 2 + i * (angleOffset / (titleArr.length - 1));
-    return {
-      char,
-      position: [radius * Math.cos(angle), 0, radius * Math.sin(angle)],
-      rotation: [0, -angle + Math.PI / 2, 0],
-    };
-  });
+  // const titleArr = title.split("").reverse();
+  // const angleOffset = (titleArr.length * 0.4) / radius;
+  // const characters: CharacterProps[] = titleArr.map((char, i) => {
+  //   const angle = -angleOffset / 2 + i * (angleOffset / (titleArr.length - 1));
+  //   return {
+  //     char,
+  //     position: [radius * Math.cos(angle), 0, radius * Math.sin(angle)],
+  //     rotation: [0, -angle + Math.PI / 2, 0],
+  //   };
+  // });
 
-  const words = description.split(" ");
-  const descriptionLines: string[] = [];
-  let line = "";
-  for (let word of words) {
-    if ((line + " " + word).length > descriptionMaxChars) {
-      descriptionLines.push(line.trim());
-      line = word;
-    } else {
-      line += " " + word;
-    }
-  }
-  if (line) descriptionLines.push(line.trim());
+  // const words = description.split(" ");
+  // const descriptionLines: string[] = [];
+  // let line = "";
+  // for (let word of words) {
+  //   if ((line + " " + word).length > descriptionMaxChars) {
+  //     descriptionLines.push(line.trim());
+  //     line = word;
+  //   } else {
+  //     line += " " + word;
+  //   }
+  // }
+  // if (line) descriptionLines.push(line.trim());
 
-  const verticalOffset = (descriptionLines.length * descriptionLineHeight) / 2 - descriptionLineHeight / 2;
-  const descriptionCharacters: CharacterProps[][] = descriptionLines.map((line, lineIndex) => {
-    const lineArr = line.split("").reverse();
-    const lineTotalWidth = lineArr.length * 0.15;
-    const lineAngleOffset = lineTotalWidth / radius;
-    const lineCharacters: CharacterProps[] = lineArr.map((char, i) => {
-      const angle = -lineAngleOffset / 2 + i * (lineAngleOffset / (lineArr.length - 1));
-      return {
-        char,
-        position: [
-          (radius + 0.1) * Math.cos(angle),
-          verticalOffset - lineIndex * descriptionLineHeight,
-          (radius + 0.1) * Math.sin(angle),
-        ],
-        rotation: [0, -angle + Math.PI / 2, 0],
-      };
-    });
-    return lineCharacters;
-  });
+  // const verticalOffset = (descriptionLines.length * descriptionLineHeight) / 2 - descriptionLineHeight / 2;
+  // const descriptionCharacters: CharacterProps[][] = descriptionLines.map((line, lineIndex) => {
+  //   const lineArr = line.split("").reverse();
+  //   const lineTotalWidth = lineArr.length * 0.15;
+  //   const lineAngleOffset = lineTotalWidth / radius;
+  //   const lineCharacters: CharacterProps[] = lineArr.map((char, i) => {
+  //     const angle = -lineAngleOffset / 2 + i * (lineAngleOffset / (lineArr.length - 1));
+  //     return {
+  //       char,
+  //       position: [
+  //         (radius + 0.1) * Math.cos(angle),
+  //         verticalOffset - lineIndex * descriptionLineHeight,
+  //         (radius + 0.1) * Math.sin(angle),
+  //       ],
+  //       rotation: [0, -angle + Math.PI / 2, 0],
+  //     };
+  //   });
+  //   return lineCharacters;
+  // });
 
   return (
     <animated.mesh
