@@ -3,6 +3,7 @@ import { Vector2 } from "three";
 import { useFrame, useThree } from "@react-three/fiber";
 import { EffectComposer, RenderPass, UnrealBloomPass } from "three/examples/jsm/Addons.js";
 import resume from "../assets/Arnav_Patel_Resume.pdf";
+import { OrbitControls } from "@react-three/drei";
 
 const Intro = lazy(() => import("./Intro/Intro"));
 const Solar = lazy(() => import("./Projects/Solar"));
@@ -46,13 +47,14 @@ function Bloom() {
 
   return (
     <group>
+      <OrbitControls />
       <ambientLight intensity={0.5} />
-      <Intro />
+      {/* <Intro /> */}
       <Solar />
-      <Computer />
-      <Balls />
-      <Ufo />
-      <Footer socials={socials} />
+      {/* <Computer /> */}
+      {/* <Balls /> */}
+      {/* <Ufo /> */}
+      {/* <Footer socials={socials} /> */}
     </group>
   );
 }

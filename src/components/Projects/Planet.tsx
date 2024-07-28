@@ -96,6 +96,28 @@ function Planet({ title, description, image, github, website, orbiting, position
   //   return lineCharacters;
   // });
 
+  const createTextTexture = (text: string, fontSize: number) => {
+    const canvas = document.createElement("canvas");
+    const context = canvas.getContext("2d");
+
+    if (context) {
+      context.font = `${fontSize}px AnonymousPro`;
+      const textWidth = context.measureText(text).width;
+
+      // canvas.width = textWidth * 1;
+      // canvas.height = fontSize * 1.5;
+
+      context.font = `${fontSize}px AnonymousPro`;
+      context.fillStyle = "#eee";
+      context.fillText(text, 0, fontSize);
+    }
+
+    return new CanvasTexture(canvas);
+  };
+
+  const titleTexture = createTextTexture(title, 40);
+  // const descriptionTexture = createTextTexture(description, 20, "#eeeeee");
+
   return (
     <animated.mesh
       ref={meshRef}
@@ -111,6 +133,10 @@ function Planet({ title, description, image, github, website, orbiting, position
     >
       <sphereGeometry args={[radius, 24, 24]} />
       <meshStandardMaterial map={texture} />
+      {/* <Decal position={[radius, 0, 0]} rotation={[0, Math.PI / 2, 0]} scale={[6, 1, 1]}>
+        <meshBasicMaterial map={titleTexture} transparent />
+      </Decal> */}
+      <Decal position={[radius, 0, 0]} rotation={[0, Math.PI / 2, 0]} map={titleTexture} scale={[4, 1, 1]} />
       {/* {characters.map(({ char, position, rotation }, i) => (
         <Text
           key={i}
