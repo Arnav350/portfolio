@@ -45,7 +45,7 @@ function Solar() {
         <Planet
           position={[5, 0, -15]}
           title="1. Whispree"
-          description="A React chat app that utilizes Firebase for its authentication, database, and storage functionalities. Users can sign up for an account using zod validation, send text and images, and even customize their own UI."
+          description="A chat app where users can create an account with zod validation, create rooms with users, send text and images, and customize their UI. Utilizes React and Firebase for frontend, auth, and database."
           image={1}
           github="https://github.com/Arnav350/whispree"
           website="https://whispree-ap.netlify.app/"
@@ -54,7 +54,7 @@ function Solar() {
         <Planet
           position={[-13, 0, -9.5]}
           title="2. Spotify-Wrapped"
-          description="A spotify wrapped app, developed in Android Studio using Java. Users link their spotify account and will recieve a list of their top artists, genres, and songs wiht music playing in the background."
+          description="A spotify wrapped app, developed in Android Studio using Java. Users link their spotify account and will recieve a list of their top artists, genres, and songs with music playing in the background."
           image={2}
           github="https://github.com/Arnav350/spotify-wrapped"
           website="https://github.com/Arnav350/spotify-wrapped"
@@ -62,26 +62,26 @@ function Solar() {
         />
         <Planet
           position={[-13, 0, 9.5]}
-          title="3. Titanic Survivors"
-          description="A prediction modeling app that leverages sklearn and pandas to estimate survivability chances on the Titanic based on specific choices. Frontend created through Streamlit."
+          title="3. Image Gen"
+          description="A image generator that uses AI to create images with a user inputed pormpt. Users can then download or share them to the community page. Created with the MERN stack, cloudinary, and OpenAI."
           image={3}
+          github="https://github.com/Arnav350/image-gen"
+          website="https://imagegen-ap.netlify.app/"
+          orbiting={orbiting}
+        />
+        <Planet
+          position={[5, 0, 15]}
+          title="4. Titanic Survivors"
+          description="A prediction modeling app that leverages AI to estimate survivability chances on the Titanic based on specific choices. Developed using Streamlit and Sklearn for modeling and data preprocessing."
+          image={4}
           github="https://github.com/Arnav350/titanic-survivors"
           website="https://titanic-survivors.streamlit.app/"
           orbiting={orbiting}
         />
         <Planet
-          position={[5, 0, 15]}
-          title="4. Snake Game"
-          description="A snake game app built in react that has an arcade style UI and uses canvas for the snake and the food. There are different difficulty settings and a score counter. Use WSAD or the arrow keys to move."
-          image={4}
-          github="https://github.com/Arnav350/snake"
-          website="https://snake-ap.netlify.app"
-          orbiting={orbiting}
-        />
-        <Planet
           position={[16, 0, 0]}
           title="5. More"
-          description="To see more of my projects including a fitness social media app, twitter-clone, connections builder, and more visit my github page."
+          description="To see more of my personal projects including a fitness social media app, twitter-clone, connections builder, snake game, and more visit my github page with either of the links below."
           image={5}
           github="https://github.com/Arnav350"
           website="https://github.com/Arnav350"
