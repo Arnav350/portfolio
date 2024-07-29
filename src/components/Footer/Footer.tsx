@@ -22,7 +22,7 @@ function Footer({ socials: { portfolio, linkedIn, github, email, resume } }: TPr
   });
 
   return (
-    <mesh position={[0, -230, 0]} rotation={[0, Math.PI / 2, 0]}>
+    <mesh position={[0, -218, 0]} rotation={[0, Math.PI / 2, 0]}>
       <animated.mesh position-y={yPos}>
         <Text
           fontSize={0.8}

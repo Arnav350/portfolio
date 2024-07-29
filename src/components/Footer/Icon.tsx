@@ -27,7 +27,7 @@ function Icon({ hovered, setHovered, xPos, name, link, email }: TProps) {
       position-y={yPos}
       onClick={email ? () => navigator.clipboard.writeText(link) : () => window.open(link, "_blank")}
       onPointerOver={() => {
-        document.body.style.cursor = "pointer";
+        document.body.style.cursor = email ? "copy" : "pointer";
         setHovered(name);
       }}
       onPointerOut={() => {
