@@ -72,7 +72,7 @@ function Solar() {
         <Planet
           position={[5, 0, 15]}
           title="4. Titanic Survivors"
-          description="A prediction modeling app that leverages AI to estimate survivability chances on the Titanic based on specific choices. Developed using Streamlit and Sklearn for modeling and data preprocessing."
+          description="A prediction modeling app that leverages AI to estimate survivability chances on the Titanic based on specific choices. Developed using Streamlit and Sklearn for modeling and data filtering."
           image={4}
           github="https://github.com/Arnav350/titanic-survivors"
           website="https://titanic-survivors.streamlit.app/"

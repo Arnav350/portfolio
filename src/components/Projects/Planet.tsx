@@ -75,32 +75,34 @@ function Planet({ title, description, image, github, website, orbiting, position
       <Text
         position={[radius + 0.1, 0, 0]}
         rotation={[0, Math.PI / 2, 0]}
-        maxWidth={4}
-        fontSize={0.3}
-        color="#aaa"
+        maxWidth={6}
+        fontSize={0.4}
+        color="#999"
         textAlign="center"
         fillOpacity={hovered ? 1 : 0}
       >
         {description}
       </Text>
       <mesh
-        position={[radius + 0.1, -2, 0.35]}
+        position={[radius + 0.1, -2.4, 0.5]}
         rotation={[0, Math.PI / 2, 0]}
+        scale={1.5}
         onClick={() => window.open(github, "_blank")}
       >
         <planeGeometry args={[0.5, 0.5]} />
-        <meshBasicMaterial map={githubIcon} transparent opacity={hovered ? 1 : 0} />
+        <meshBasicMaterial map={githubIcon} transparent opacity={hovered ? 1 : 0} color="#ddd" />
       </mesh>
       <mesh
-        position={[radius + 0.1, -2, -0.35]}
+        position={[radius + 0.1, -2.4, -0.5]}
         rotation={[0, Math.PI / 2, 0]}
+        scale={1.5}
         onClick={() => window.open(website, "_blank")}
       >
         <planeGeometry args={[0.5, 0.5]} />
-        <meshBasicMaterial map={linkIcon} transparent opacity={hovered ? 1 : 0} />
+        <meshBasicMaterial map={linkIcon} transparent opacity={hovered ? 1 : 0} color="#ddd" />
       </mesh>
       {hovered && (
-        <Decal position={[radius, 0, 0]} rotation={[0, Math.PI / 2, 0]} scale={8.1} map={projectImage} depthTest />
+        <Decal position={[radius, 0, 0]} rotation={[0, Math.PI / 2, 0]} scale={8} map={projectImage} depthTest />
       )}
     </animated.mesh>
   );
