@@ -49,7 +49,7 @@ function Form() {
   }
 
   return (
-    <Html position={[0, -250, 0]}>
+    <Html position={[0, -230, 0]}>
       <form
         ref={formRef}
         style={{ display: "flex", flexDirection: "column", gap: 8, translate: "-50%" }}

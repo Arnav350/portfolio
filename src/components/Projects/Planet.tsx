@@ -39,7 +39,7 @@ function Planet({ title, description, image, github, website, orbiting, position
   });
 
   const { scale } = useSpring({
-    scale: hovered ? 3 : 1,
+    scale: hovered ? 2 : 1,
     config: { tension: 320, friction: 20 },
   });
 
@@ -56,7 +56,11 @@ function Planet({ title, description, image, github, website, orbiting, position
       }}
       scale={scale}
     >
-      <sphereGeometry args={[radius, 24, 24]} />
+      {hovered ? (
+        <boxGeometry args={[radius * 2, radius * 2, radius * 2]} />
+      ) : (
+        <sphereGeometry args={[radius, 24, 24]} />
+      )}
       <meshStandardMaterial map={texture} />
       <Text
         position={[radius + 0.1, 0, 0]}

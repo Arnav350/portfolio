@@ -8,7 +8,7 @@ function App() {
     <div style={{ height: "100vh" }}>
       <Suspense fallback={<div>Loading...</div>}>
         <Canvas camera={{ position: [60, 0, 0], fov: 45 }}>
-          <ScrollControls pages={5} damping={0} distance={1}>
+          <ScrollControls pages={5}>
             <Scroll>
               <Bloom />
             </Scroll>

@@ -69,7 +69,7 @@ function Screen({ screen, setScreen, arrowState, setArrowState, flash }: TProps)
         anchorX="left"
         fontSize={2}
         font={Inconsolata}
-        color="#fff"
+        color="#ddd"
       >
         {screens[screen].company}
       </Text>
@@ -79,7 +79,7 @@ function Screen({ screen, setScreen, arrowState, setArrowState, flash }: TProps)
         anchorX="left"
         fontSize={1.5}
         font={Inconsolata}
-        color="#fff"
+        color="#ddd"
       >
         {screens[screen].title}
       </Text>
@@ -90,7 +90,7 @@ function Screen({ screen, setScreen, arrowState, setArrowState, flash }: TProps)
         anchorY="top"
         fontSize={1}
         font={Inconsolata}
-        color="#fff"
+        color="#ddd"
         maxWidth={20}
       >
         {screens[screen].bullets}
@@ -100,24 +100,41 @@ function Screen({ screen, setScreen, arrowState, setArrowState, flash }: TProps)
         rotation={[0, Math.PI / 2, 0]}
         fontSize={0.8}
         font={Inconsolata}
-        color="#fff"
+        color="#ddd"
       >
         {screens[screen].dateStart}
       </Text>
       <animated.mesh position={[-11, 8 + screens[screen].heightStart / 2, 13]} rotation={[0, Math.PI / 2, 0]}>
         <planeGeometry args={[2, screens[screen].heightStart]} />
+        <meshBasicMaterial color="#ddd" />
       </animated.mesh>
       <Text
         position={[-11, 9.25 + screens[screen].heightEnd, 9]}
         rotation={[0, Math.PI / 2, 0]}
         fontSize={0.8}
         font={Inconsolata}
-        color="#fff"
+        color="#ddd"
       >
         {screens[screen].dateEnd}
       </Text>
       <animated.mesh position={[-11, 8 + screens[screen].heightEnd / 2, 9]} rotation={[0, Math.PI / 2, 0]}>
         <planeGeometry args={[2, screens[screen].heightEnd]} />
+        <meshBasicMaterial color="#ddd" />
+      </animated.mesh>
+      <animated.mesh position={[-11, 1.3, 14]} rotation={[0, Math.PI / 2, 0]}>
+        <Text fontSize={4} color="#eee">
+          {screen === 0 ? "◎" : "○"}
+        </Text>
+      </animated.mesh>
+      <animated.mesh position={[-11, 1.3, 10]} rotation={[0, Math.PI / 2, 0]}>
+        <Text fontSize={4} color="#eee">
+          {screen === 1 ? "◎" : "○"}
+        </Text>
+      </animated.mesh>
+      <animated.mesh position={[-11, 1.3, 6]} rotation={[0, Math.PI / 2, 0]}>
+        <Text fontSize={4} color="#eee">
+          {screen === 2 ? "◎" : "○"}
+        </Text>
       </animated.mesh>
       <animated.mesh
         position={[-11, 1, -2]}
@@ -137,7 +154,7 @@ function Screen({ screen, setScreen, arrowState, setArrowState, flash }: TProps)
           setScreen((prev) => (prev + 2) % 3);
         }}
       >
-        <Text fontSize={8} color={flash ? "#1fff1f" : "#fff"} lineHeight={0.9}>
+        <Text fontSize={8} color={flash ? "#1fff1f" : "#eee"} lineHeight={0.9}>
           ⇦
         </Text>
       </animated.mesh>
@@ -159,18 +176,9 @@ function Screen({ screen, setScreen, arrowState, setArrowState, flash }: TProps)
           setScreen((prev) => (prev + 1) % 3);
         }}
       >
-        <Text fontSize={8} color={flash ? "#1fff1f" : "#fff"} lineHeight={0.9}>
+        <Text fontSize={8} color={flash ? "#1fff1f" : "#eee"} lineHeight={0.9}>
           ⇨
         </Text>
-      </animated.mesh>
-      <animated.mesh position={[-11, 1.3, 14]} rotation={[0, Math.PI / 2, 0]}>
-        <Text fontSize={4}>{screen === 0 ? "◎" : "○"}</Text>
-      </animated.mesh>
-      <animated.mesh position={[-11, 1.3, 10]} rotation={[0, Math.PI / 2, 0]}>
-        <Text fontSize={4}>{screen === 1 ? "◎" : "○"}</Text>
-      </animated.mesh>
-      <animated.mesh position={[-11, 1.3, 6]} rotation={[0, Math.PI / 2, 0]}>
-        <Text fontSize={4}>{screen === 2 ? "◎" : "○"}</Text>
       </animated.mesh>
     </>
   );
