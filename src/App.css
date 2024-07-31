@@ -1,0 +1,41 @@
+* {
+  font-family: "Work Sans", sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  -webkit-overflow-scrolling: touch;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span {
+  line-height: 1.25;
+}
+
+@keyframes glowWhite {
+  0%,
+  100% {
+    opacity: 0.5;
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #fff;
+  }
+  50% {
+    opacity: 1;
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff;
+  }
+}
+
+@keyframes glowPink {
+  0%,
+  100% {
+    opacity: 0.5;
+    text-shadow: 0 0 5px #d1405f, 0 0 10px #d1405f, 0 0 15px #d1405f, 0 0 20px #d1405f;
+  }
+  50% {
+    opacity: 1;
+    text-shadow: 0 0 10px #d1405f, 0 0 20px #d1405f, 0 0 30px #d1405f, 0 0 40px #d1405f;
+  }
+}

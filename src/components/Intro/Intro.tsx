@@ -74,7 +74,7 @@ function Intro() {
             software engineer
           </Text>
           <Text position={[5, 3, 0]}>based in the</Text>
-          <Text position={[-2, 1.5, 0]}>united States, currently a junior at</Text>
+          <Text position={[-2, 1.5, 0]}>United States, currently a junior at</Text>
           <Text position={[-7, 0, 0]} color="#d1405f">
             Georgia Tech
           </Text>
@@ -86,9 +86,9 @@ function Intro() {
           <Text position={[-3.8, -1.5, 0]} color="#d1405f">
             machine learning
           </Text>
-          <Text position={[3.6, -1.5, 0]}>interested in</Text>
-          <Text position={[-2.5, -3, 0]}>working toegether? Lets' have a</Text>
-          <Text position={[6.2, -3, 0]} color="#d1405f">
+          <Text position={[3.5, -1.5, 0]}>! Interested in</Text>
+          <Text position={[-2.8, -3, 0]}>working together? Let's have a</Text>
+          <Text position={[5.6, -3, 0]} color="#d1405f">
             talk.
           </Text>
         </group>

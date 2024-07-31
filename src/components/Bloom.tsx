@@ -1,9 +1,11 @@
 import { lazy, memo, useEffect, useRef } from "react";
 import { Vector2 } from "three";
 import { useFrame, useThree } from "@react-three/fiber";
+import { useScroll } from "@react-three/drei";
 import { EffectComposer, RenderPass, UnrealBloomPass } from "three/examples/jsm/Addons.js";
 import resume from "../assets/Arnav_Patel_Resume.pdf";
 
+const Stars = lazy(() => import("./Stars/Stars"));
 const Intro = lazy(() => import("./Intro/Intro"));
 const Solar = lazy(() => import("./Projects/Solar"));
 const Computer = lazy(() => import("./Experience/Computer"));
@@ -23,6 +25,7 @@ function Bloom() {
   const { scene, camera, gl, size } = useThree();
 
   const composerRef = useRef<EffectComposer>();
+  const scroll = useScroll();
 
   useEffect(() => {
     const renderScene = new RenderPass(scene, camera);
@@ -47,6 +50,7 @@ function Bloom() {
   return (
     <group>
       <ambientLight intensity={0.5} />
+      <Stars scrollOffset={scroll.offset} />
       <Intro />
       <Solar />
       <Computer />
