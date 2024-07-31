@@ -16,11 +16,12 @@ import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 function Intro() {
   const gltf = useLoader(GLTFLoader, "../src/assets/station/scene.gltf");
   const groupRef = useRef<Group>(null);
-  const [mouse, setMouse] = useState({ x: 0, y: 0 });
+  const targetRotation = useRef({ y: 0, z: 0 });
+  const [mouse, setMouse] = useState({ y: 0, z: 0 });
 
   useEffect(() => {
     const handleMouseMove = (event: MouseEvent) => {
-      setMouse({ x: event.clientX - window.innerWidth / 2, y: event.clientY - window.innerHeight / 2 });
+      setMouse({ y: event.clientX - window.innerWidth / 2, z: event.clientY - window.innerHeight / 2 });
     };
 
     window.addEventListener("mousemove", handleMouseMove);
@@ -44,8 +45,13 @@ function Intro() {
 
   useFrame(() => {
     if (groupRef.current) {
-      groupRef.current.rotation.z = mouse.y * -0.0005;
-      groupRef.current.rotation.y = mouse.x * 0.0005;
+      const newTargetRotationY = mouse.y * 0.0005;
+      const newTargetRotationZ = mouse.z * -0.0005;
+      targetRotation.current.y += (newTargetRotationY - targetRotation.current.y) * 0.2;
+      targetRotation.current.z += (newTargetRotationZ - targetRotation.current.z) * 0.2;
+
+      groupRef.current.rotation.y = targetRotation.current.y;
+      groupRef.current.rotation.z = targetRotation.current.z;
     }
   });
 
