@@ -1,18 +1,8 @@
 import "../App.css";
 
-type TProps = {
-  progress: number;
-};
-
-function Loading({ progress }: TProps) {
+function Loading() {
   return (
-    <div
-      className="loading"
-      style={{
-        opacity: progress < 100 ? 1 : 0,
-        pointerEvents: progress < 100 ? "all" : "none",
-      }}
-    >
+    <div className="loading">
       <div>
         <h1>Hello,</h1>
         <h2>I'm Arnav</h2>

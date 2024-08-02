@@ -29,32 +29,32 @@ span {
 .loading div {
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  margin-bottom: 16px;
+  gap: 0.55vh;
+  margin-bottom: 1.5vh;
   color: #fff;
-  font-size: 22px;
+  font-size: 1.98vh;
 }
 
 .loading h1 {
-  margin-bottom: -28px;
-  font-size: 90px;
+  margin-bottom: -2.8vh;
+  font-size: 8vh;
   font-weight: 400;
-  text-shadow: 0 0 2px #fff, 0 0 4px #fff, 0 0 6px #fff, 0 0 8px #fff;
+  text-shadow: 0 0 0.2vh #ffffff, 0 0 0.4vh #ffffff, 0 0 0.6vh #ffffff, 0 0 2vh #ffffffaa;
 }
 
 .loading h2 {
-  margin-bottom: -8px;
+  margin-bottom: -0.75vh;
   color: #d1405f;
-  font-size: 90px;
+  font-size: 8vh;
   font-weight: 400;
-  text-shadow: 0 0 2px #d1405f, 0 0 4px #d1405f, 0 0 6px #d1405f, 0 0 8px #d1405f;
+  text-shadow: 0 0 0.2vh #d1405f, 0 0 0.4vh #d1405f, 0 0 0.6vh #d1405f, 0 0 2vh #d1405faa;
 }
 
 .loading h4 {
-  text-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 3px #fff, 0 0 4px #fff;
+  text-shadow: 0 0 0.1vh #ffffff, 0 0 0.2vh #ffffff, 0 0 0.3vh #ffffff, 0 0 1vh #ffffffaa;
 }
 
 .loading span {
   color: #d1405f;
-  text-shadow: 0 0 1px #d1405f, 0 0 2px #d1405f, 0 0 3px #d1405f, 0 0 4px #d1405f;
+  text-shadow: 0 0 0.1vh #d1405f, 0 0 0.2vh #d1405f, 0 0 0.3vh #d1405f, 0 0 1vh #d1405faa;
 }

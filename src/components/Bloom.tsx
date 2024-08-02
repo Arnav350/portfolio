@@ -1,4 +1,4 @@
-import { lazy, memo, useEffect, useRef } from "react";
+import { Dispatch, lazy, memo, SetStateAction, useEffect, useRef } from "react";
 import { Vector2 } from "three";
 import { useFrame, useThree } from "@react-three/fiber";
 import { useScroll } from "@react-three/drei";
@@ -13,6 +13,10 @@ const Balls = lazy(() => import("./Skills/Balls"));
 const Ufo = lazy(() => import("./Contact/Ufo"));
 const Footer = lazy(() => import("./Footer/Footer"));
 
+type TProps = {
+  setScrollTop: Dispatch<SetStateAction<number>>;
+};
+
 const socials = {
   portfolio: "https://github.com/Arnav350/portfolio",
   linkedIn: "https://www.linkedin.com/in/patel-arnav",
@@ -21,11 +25,11 @@ const socials = {
   resume: resume,
 };
 
-function Bloom() {
+function Bloom({ setScrollTop }: TProps) {
   const { scene, camera, gl, size } = useThree();
+  const scroll = useScroll();
 
   const composerRef = useRef<EffectComposer>();
-  const scroll = useScroll();
 
   useEffect(() => {
     const renderScene = new RenderPass(scene, camera);
@@ -45,12 +49,14 @@ function Bloom() {
     if (composerRef.current) {
       composerRef.current.render();
     }
+
+    setScrollTop(scroll.offset * ((window.innerHeight * 9) / 10 - 6) + 3);
   }, 1);
 
   return (
     <group>
       <ambientLight intensity={0.5} />
-      <Stars scrollOffset={scroll.offset} />
+      <Stars />
       <Intro />
       <Solar />
       <Computer />
