@@ -4,7 +4,7 @@ type TProps = {
 
 function ScrollBar({ scrollTop }: TProps) {
   return (
-    <div style={{ position: "absolute", top: 0, right: 0, height: "100vh", width: 17, backgroundColor: "#222" }}>
+    <div style={{ position: "absolute", top: 0, right: 0, height: "100%", width: 17, backgroundColor: "#222" }}>
       <div
         style={{
           position: "absolute",

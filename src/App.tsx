@@ -13,7 +13,7 @@ function App() {
   return (
     <div style={{ height: "100vh", backgroundColor: "#000" }}>
       <Loading />
-      <div style={{ height: "100%", opacity: progress < 100 ? 0 : 1, transition: "opacity 300ms ease" }}>
+      <div style={{ height: "100%", opacity: progress === 100 ? 1 : 0, transition: "opacity 300ms ease" }}>
         <Canvas camera={{ position: [60, 0, 0], fov: 45 }}>
           <ScrollControls pages={5} damping={0.1}>
             <Scroll>
@@ -23,7 +23,7 @@ function App() {
           <Preload all />
         </Canvas>
       </div>
-      <ScrollBar scrollTop={scrollTop} />
+      {progress === 100 && <ScrollBar scrollTop={scrollTop} />}
     </div>
   );
 }
