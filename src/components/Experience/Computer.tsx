@@ -2,7 +2,7 @@ import { memo, useEffect, useState } from "react";
 import { Mesh } from "three";
 import { useLoader } from "@react-three/fiber";
 import { useGLTF } from "@react-three/drei";
-import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
+import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
 import { useSpring, animated } from "@react-spring/three";
 import Screen from "./Screen";
 

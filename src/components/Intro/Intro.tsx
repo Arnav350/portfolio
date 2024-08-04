@@ -2,7 +2,7 @@ import { Billboard, Text } from "@react-three/drei";
 import { useFrame, useLoader } from "@react-three/fiber";
 import { memo, useEffect, useRef, useState } from "react";
 import { Group, Mesh } from "three";
-import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
+import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
 
 // 4 large debree
 // 6 all small debree
