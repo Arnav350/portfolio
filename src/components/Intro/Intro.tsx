@@ -1,7 +1,7 @@
-import { Billboard, Text } from "@react-three/drei";
-import { useFrame, useLoader } from "@react-three/fiber";
 import { memo, useEffect, useRef, useState } from "react";
 import { Group, Mesh } from "three";
+import { Billboard, Text, useGLTF } from "@react-three/drei";
+import { useFrame, useLoader } from "@react-three/fiber";
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
 
 // 4 large debree
@@ -11,10 +11,12 @@ import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
 // 12 front circle outer
 // 14 back circle outer
 // 16 front circle inner
-// 18 back circle innter
+// 18 back circle inner
+
+useGLTF.preload("../../../src/assets/station/scene.gltf");
 
 function Intro() {
-  const gltf = useLoader(GLTFLoader, "../src/assets/station/scene.gltf");
+  const gltf = useLoader(GLTFLoader, "../../../src/assets/station/scene.gltf");
   const groupRef = useRef<Group>(null);
   const targetRotation = useRef({ y: 0, z: 0 });
   const [mouse, setMouse] = useState({ y: 0, z: 0 });

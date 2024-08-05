@@ -15,7 +15,7 @@ function App() {
       <Loading />
       <div style={{ height: "100%", opacity: progress === 100 ? 1 : 0, transition: "opacity 300ms ease" }}>
         <Canvas camera={{ position: [60, 0, 0], fov: 45 }}>
-          <ScrollControls pages={5} damping={0.1}>
+          <ScrollControls pages={6} damping={0.1}>
             <Scroll>
               <Bloom setScrollTop={setScrollTop} />
             </Scroll>
