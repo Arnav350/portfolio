@@ -1,10 +1,10 @@
+import { useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import { Preload, Scroll, ScrollControls, useProgress } from "@react-three/drei";
 import Loading from "./components/Loading";
 import Bloom from "./components/Bloom";
-import "./App.css";
-import { useState } from "react";
 import ScrollBar from "./components/ScrollBar";
+import "./App.css";
 
 function App() {
   const { progress } = useProgress();

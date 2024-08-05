@@ -47,8 +47,8 @@ function Solar() {
           title="1. Whispree"
           description="A chat app where users can create an account with zod validation, create rooms with users, send text and images, and customize their UI. Utilizes React and Firebase for frontend, auth, and database."
           image={1}
-          github="https://github.com/Arnav350/whispree"
-          website="https://whispree-ap.netlify.app/"
+          github="https://github.com/Arnav350/whispreeold"
+          website="https://whispreeold-ap.netlify.app/"
           orbiting={orbiting}
         />
         <Planet
@@ -65,8 +65,8 @@ function Solar() {
           title="3. Image Gen"
           description="A image generator that uses AI to create images with a user inputed pormpt. Users can then download or share them to the community page. Created with the MERN stack, cloudinary, and OpenAI."
           image={3}
-          github="https://github.com/Arnav350/image-gen"
-          website="https://imagegen-ap.netlify.app/"
+          github="https://github.com/Arnav350/creativize"
+          website="https://creativize-ap.netlify.app/"
           orbiting={orbiting}
         />
         <Planet
