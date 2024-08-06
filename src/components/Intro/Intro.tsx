@@ -13,10 +13,10 @@ import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
 // 16 front circle inner
 // 18 back circle inner
 
-useGLTF.preload("../../../src/assets/station/scene.gltf");
+useGLTF.preload("../../../public/assets/station/scene.gltf");
 
 function Intro() {
-  const gltf = useLoader(GLTFLoader, "../../../src/assets/station/scene.gltf");
+  const gltf = useLoader(GLTFLoader, "../../../public/assets/station/scene.gltf");
   const groupRef = useRef<Group>(null);
   const targetRotation = useRef({ y: 0, z: 0 });
   const [mouse, setMouse] = useState({ y: 0, z: 0 });

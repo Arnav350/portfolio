@@ -5,7 +5,7 @@ import { useScroll } from "@react-three/drei";
 import { EffectComposer } from "three/addons/postprocessing/EffectComposer.js";
 import { RenderPass } from "three/addons/postprocessing/RenderPass.js";
 import { UnrealBloomPass } from "three/addons/postprocessing/UnrealBloomPass.js";
-import resume from "../assets/Arnav_Patel_Resume.pdf";
+import resume from "../../public/assets/Arnav_Patel_Resume.pdf";
 
 const Stars = lazy(() => import("./Stars/Stars"));
 const Intro = lazy(() => import("./Intro/Intro"));

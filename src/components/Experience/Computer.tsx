@@ -13,10 +13,10 @@ type TArrowState = {
   activeRight: boolean;
 };
 
-useGLTF.preload("../../../src/assets/computer/scene.gltf");
+useGLTF.preload("../../../public/assets/computer/scene.gltf");
 
 function Computer() {
-  const gltf = useLoader(GLTFLoader, "../../../src/assets/computer/scene.gltf");
+  const gltf = useLoader(GLTFLoader, "../../../public/assets/computer/scene.gltf");
   const [currentScreen, setCurrentScreen] = useState<number>(0);
   const [arrowState, setArrowState] = useState<TArrowState>({
     hoveredLeft: false,

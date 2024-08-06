@@ -14,7 +14,7 @@ type TProps = {
 };
 
 function Icon({ hovered, setHovered, xPos, name, link, email }: TProps) {
-  const icon = useLoader(TextureLoader, `../../../src/assets/${name}.svg`);
+  const icon = useLoader(TextureLoader, `../../../public/assets/${name}.svg`);
 
   const { yPos } = useSpring({
     yPos: hovered == name ? 0.2 : 0,

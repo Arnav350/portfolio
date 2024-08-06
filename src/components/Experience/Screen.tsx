@@ -1,7 +1,7 @@
 import { Dispatch, memo, SetStateAction } from "react";
 import { Text } from "@react-three/drei";
 import { animated, useSpring } from "@react-spring/three";
-import Inconsolata from "../../assets/Inconsolata.ttf";
+import Inconsolata from "../../../public/assets/Inconsolata.ttf";
 
 type TArrowState = {
   hoveredLeft: boolean;

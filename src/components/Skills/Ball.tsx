@@ -11,7 +11,7 @@ type Props = {
 };
 
 function Ball({ image, position, initialScale }: Props) {
-  const texture = useLoader(TextureLoader, `../../../src/assets/languages/language_${image}.png`);
+  const texture = useLoader(TextureLoader, `../../../public/assets/languages/language_${image}.png`);
 
   const [hovered, setHovered] = useState(false);
 
