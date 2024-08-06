@@ -4,8 +4,8 @@ import { Group, TextureLoader } from "three";
 import Planet from "./Planet";
 
 function Solar() {
-  const playIcon = useLoader(TextureLoader, "../../../public/assets/play.svg");
-  const pauseIcon = useLoader(TextureLoader, "../../../public/assets/pause.svg");
+  const playIcon = useLoader(TextureLoader, "/assets/play.svg");
+  const pauseIcon = useLoader(TextureLoader, "/assets/pause.svg");
   const groupRef = useRef<Group>(null);
   const iconRef = useRef(null);
 
