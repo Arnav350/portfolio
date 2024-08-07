@@ -17,10 +17,10 @@ type Props = {
 const radius = 4;
 
 function Planet({ title, description, image, github, website, orbiting, position }: Props) {
-  const texture = useLoader(TextureLoader, `/assets/planet${image}.jpg`);
+  const texture = useLoader(TextureLoader, `/assets/planet${image}.webp`);
+  const projectImage = useLoader(TextureLoader, `/assets/project${image}.webp`);
   const githubIcon = useLoader(TextureLoader, "/assets/github.svg");
   const linkIcon = useLoader(TextureLoader, "/assets/link.svg");
-  const projectImage = useLoader(TextureLoader, `/assets/project${image}.png`);
 
   const meshRef = useRef<Mesh>(null);
 
