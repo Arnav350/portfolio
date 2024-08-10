@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Canvas } from "@react-three/fiber";
-import { Preload, Scroll, ScrollControls, useProgress } from "@react-three/drei";
+import { Scroll, ScrollControls, useProgress } from "@react-three/drei";
 import Loading from "./components/Loading";
 import Bloom from "./components/Bloom";
 import ScrollBar from "./components/ScrollBar";
@@ -20,7 +20,6 @@ function App() {
               <Bloom setScrollTop={setScrollTop} />
             </Scroll>
           </ScrollControls>
-          <Preload all />
         </Canvas>
       </div>
       {progress === 100 && <ScrollBar scrollTop={scrollTop} />}
